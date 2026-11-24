@@ -1,0 +1,5 @@
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+
+---
+
+Tests for Stage 4 have been manually verified. Commit the changes for this stage and proceed to the next stage.

@@ -1,0 +1,65 @@
+{
+  "cli_version": "0.13.4",
+  "checkpoint_id": "01M85RE6V3DPST1PJGKZ5X30KN",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "PLAN.md",
+    "deliverables/snapshots/05-option-generation.json",
+    "deliverables/snapshots/06-feasibility-testing.json",
+    "deliverables/snapshots/07-decision-and-approval.json",
+    "event-planning-coordination-brief/SKILL.md",
+    "event-planning-coordination-brief/references/command.md",
+    "event-planning-coordination-brief/references/options.md",
+    "event-planning-coordination-brief/references/planning-policy.json",
+    "event-planning-coordination-brief/scripts/options.py",
+    "event-planning-coordination-brief/scripts/pipeline.py",
+    "event-planning-coordination-brief/scripts/run.py",
+    "event-planning-coordination-brief/scripts/schedule.py",
+    "event-planning-coordination-brief/scripts/snapshots.py",
+    "tests/fixtures/review-case.json",
+    "tests/test_options.py",
+    "tests/test_review_pipeline.py",
+    "tests/test_schedule.py",
+    "tests/test_snapshots.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 66148,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 11354752,
+    "output_tokens": 34983,
+    "api_call_count": 41,
+    "subagent_tokens": {
+      "input_tokens": 83671,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 2054272,
+      "output_tokens": 19079,
+      "api_call_count": 52
+    },
+    "subagent_tokens_complete": true
+  },
+  "redaction": {
+    "replacements": 118,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 120,
+      "key_context": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    }
+  }
+}

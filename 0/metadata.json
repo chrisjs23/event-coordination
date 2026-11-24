@@ -1,0 +1,83 @@
+{
+  "cli_version": "0.13.4",
+  "checkpoint_id": "01M85RE6V3DPST1PJGKZ5X30KN",
+  "session_id": "01a20b2c-ed30-71c3-8192-e0beb2754279",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-24T03:08:54.232728528Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "PLAN.md",
+    "deliverables/snapshots/05-option-generation.json",
+    "deliverables/snapshots/06-feasibility-testing.json",
+    "deliverables/snapshots/07-decision-and-approval.json",
+    "event-planning-coordination-brief/SKILL.md",
+    "event-planning-coordination-brief/references/command.md",
+    "event-planning-coordination-brief/references/options.md",
+    "event-planning-coordination-brief/references/planning-policy.json",
+    "event-planning-coordination-brief/scripts/options.py",
+    "event-planning-coordination-brief/scripts/pipeline.py",
+    "event-planning-coordination-brief/scripts/run.py",
+    "event-planning-coordination-brief/scripts/schedule.py",
+    "event-planning-coordination-brief/scripts/snapshots.py",
+    "tests/fixtures/review-case.json",
+    "tests/test_options.py",
+    "tests/test_review_pipeline.py",
+    "tests/test_schedule.py",
+    "tests/test_snapshots.py"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "d2c97bb2b660",
+  "checkpoint_transcript_start": 1191,
+  "transcript_lines_at_start": 1191,
+  "compact_transcript_start": 266,
+  "token_usage": {
+    "input_tokens": 66148,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 11354752,
+    "output_tokens": 34983,
+    "api_call_count": 41,
+    "subagent_tokens": {
+      "input_tokens": 83671,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 2054272,
+      "output_tokens": 19079,
+      "api_call_count": 52
+    },
+    "subagent_tokens_complete": true
+  },
+  "session_token_usage": {
+    "input_tokens": 409156,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 29795712,
+    "output_tokens": 100101,
+    "api_call_count": 186,
+    "subagent_tokens": {
+      "input_tokens": 237718,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 4818816,
+      "output_tokens": 55736,
+      "api_call_count": 134
+    },
+    "subagent_tokens_complete": true
+  },
+  "redaction": {
+    "replacements": 118,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 120,
+      "key_context": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 10
+  }
+}
