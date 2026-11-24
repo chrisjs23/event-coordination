@@ -1,0 +1,81 @@
+{
+  "cli_version": "0.13.4",
+  "checkpoint_id": "01M87524ZABAAPMJAT13NDPY2E",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "HANDOFF.md",
+    "PLAN.md",
+    "README.md",
+    "deliverables/draft-communications.md",
+    "deliverables/event-calendar.ics",
+    "deliverables/event-plan.md",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/archive-manifest.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/draft-communications.md",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/event-calendar.ics",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/event-plan.md",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/01-scope-and-approval-gates.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/02-source-capture.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/03-constraint-model.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/04-planning-baseline.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/05-option-generation.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/06-feasibility-testing.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/07-decision-and-approval.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/08-draft-propagation.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/09-publication-validation.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/attendees.csv",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/brief.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/budget.csv",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/calendar.csv",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/capture-attempts.json",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/floorplan.pdf",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/interview-policies.txt",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/snapshots/evidence/vendors.csv",
+    "deliverables/history/run-6caf453ae6ab4299bbde8f18764ac26d/vendor-comparison.csv",
+    "deliverables/history/run-74ecce1c2b1a42a1b4f53f77a66ccd52/archive-manifest.json",
+    "deliverables/history/run-74ecce1c2b1a42a1b4f53f77a66ccd52/failure.json",
+    "deliverables/history/run-74ecce1c2b1a42a1b4f53f77a66ccd52/snapshots/evidence/capture-attempts.json",
+    "deliverables/history/run-74ecce1c2b1a42a1b4f53f77a66ccd52/snapshots/evidence/interview-policies.txt",
+    "deliverables/snapshots/01-scope-and-approval-gates.json",
+    "deliverables/snapshots/02-source-capture.json",
+    "deliverables/snapshots/03-constraint-model.json",
+    "deliverables/snapshots/04-planning-baseline.json",
+    "deliverables/snapshots/05-option-generation.json",
+    "deliverables/snapshots/06-feasibility-testing.json",
+    "deliverables/snapshots/07-decision-and-approval.json",
+    "deliverables/snapshots/08-draft-propagation.json",
+    "deliverables/snapshots/09-publication-validation.json",
+    "deliverables/snapshots/evidence/capture-attempts.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 37577,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1600384,
+    "output_tokens": 10007,
+    "api_call_count": 22
+  },
+  "redaction": {
+    "replacements": 139,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 141,
+      "key_context": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    }
+  }
+}
