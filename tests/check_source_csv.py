@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """Check a source CSV's structural contract without exposing row values."""
 
-import csv
 import json
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "event-planning-coordination-brief" / "scripts"))
+from records import SourceError, read_sheet
 
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTRACT_PATH = ROOT / "event-planning-coordination-brief" / "references" / "sheets.json"
 
 
-class ContractError(Exception):
-    """A safe, user-facing validation error."""
+ContractError = SourceError
 
 
 def validate(source, csv_path):
@@ -30,46 +31,13 @@ def validate(source, csv_path):
     key = spec.get("key")
     if not isinstance(fields, dict) or not isinstance(key, str) or key not in fields:
         raise ContractError("source contract is invalid")
-    required = list(fields)
-
     try:
-        with Path(csv_path).open("r", encoding="utf-8-sig", newline="") as stream:
-            reader = csv.reader(stream, strict=True)
-            try:
-                header = next(reader)
-            except StopIteration:
-                raise ContractError("CSV is empty; header is missing")
-
-            if not header or any(name == "" for name in header):
-                raise ContractError("CSV header contains a blank column name")
-            if len(set(header)) != len(header):
-                raise ContractError("CSV header contains duplicate column names")
-            missing = [name for name in required if name not in header]
-            if missing:
-                raise ContractError("CSV header is missing required columns")
-
-            key_index = header.index(key)
-            identities = set()
-            count = 0
-            for row in reader:
-                line = reader.line_num
-                if len(row) != len(header):
-                    raise ContractError(f"CSV row {line} has a malformed width")
-                identity = row[key_index].strip()
-                if not identity:
-                    raise ContractError(f"CSV row {line} has a blank identity")
-                if identity in identities:
-                    raise ContractError(f"CSV row {line} has a duplicate identity")
-                identities.add(identity)
-                count += 1
-    except ContractError:
+        parsed = read_sheet(Path(csv_path).read_bytes(), spec)
+    except SourceError:
         raise
-    except (OSError, UnicodeError, csv.Error) as exc:
+    except OSError as exc:
         raise ContractError("cannot read CSV source") from exc
-
-    if count == 0:
-        raise ContractError("CSV has no records")
-    return count
+    return len(parsed["records"])
 
 
 def main(argv=None):

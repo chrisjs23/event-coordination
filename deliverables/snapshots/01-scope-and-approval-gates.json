@@ -1,0 +1,83 @@
+{
+  "schema_version": "event-coordination-stage-snapshot/2",
+  "snapshot_id": "run-578b49d04cc24714a6c8740bd56db374:01",
+  "run_id": "run-578b49d04cc24714a6c8740bd56db374",
+  "stage": "scope-and-approval-gates",
+  "sequence": 1,
+  "created_at": "2026-11-24T02:34:57.230844+00:00",
+  "status": "partial",
+  "predecessor": null,
+  "consumed_record_ids": [],
+  "produced_record_ids": [
+    "scope:objective",
+    "scope:deadline",
+    "scope:category-approval",
+    "scope:operations-approval"
+  ],
+  "state": {
+    "objective": "Plan the Quillhaven AI Fellowship Demo Day at Taipei International Convention Center. The preferred date is Saturday 17 October 2026, with Saturday 24 October as a fallback. Plan for 245 people including attendees, speakers, and staff.",
+    "decision_deadline": "2026-09-04T17:00:00+08:00",
+    "owners": [
+      "Communications",
+      "Learner Experience",
+      "Operations",
+      "Programme"
+    ],
+    "approval_gates": [
+      "Category owners review spending before Operations review",
+      "Operations reviews the overall plan"
+    ],
+    "scope_records": [
+      {
+        "id": "scope:objective",
+        "summary": "Plan the Quillhaven AI Fellowship Demo Day at Taipei International Convention Center. The preferred date is Saturday 17 October 2026, with Saturday 24 October as a fallback. Plan for 245 people including attendees, speakers, and staff.",
+        "evidence_ids": [
+          "obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1"
+        ],
+        "owner": "Operations"
+      },
+      {
+        "id": "scope:deadline",
+        "summary": "Plan and budget decision deadline",
+        "evidence_ids": [
+          "obs:calendar:CAL-005"
+        ],
+        "value": "2026-09-04T17:00:00+08:00",
+        "owner": "Operations"
+      }
+    ],
+    "approval_requirements": [
+      {
+        "id": "scope:category-approval",
+        "summary": "Category owners review spending before Operations review",
+        "evidence_ids": [
+          "source:brief",
+          "source:interview"
+        ],
+        "status": "pending",
+        "owner": "Category budget owners"
+      },
+      {
+        "id": "scope:operations-approval",
+        "summary": "Operations reviews the overall plan",
+        "evidence_ids": [
+          "source:brief"
+        ],
+        "status": "pending",
+        "owner": "Operations"
+      }
+    ],
+    "business_clock": "2026-08-26T12:00:00+08:00"
+  },
+  "unresolved": [
+    {
+      "id": "issue:buffer-policy",
+      "summary": "A headcount buffer has yet to be chosen with cost/shortage reasoning",
+      "evidence_ids": [
+        "source:interview"
+      ],
+      "owner": "Planner"
+    }
+  ],
+  "decisions": []
+}

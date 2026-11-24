@@ -1,0 +1,82 @@
+{
+  "schema_version": "event-coordination-stage-snapshot/2",
+  "snapshot_id": "run-c1142d60fa184bf9a0e80f193028e7e8:01",
+  "run_id": "run-c1142d60fa184bf9a0e80f193028e7e8",
+  "stage": "scope-and-approval-gates",
+  "sequence": 1,
+  "created_at": "2026-11-24T02:30:23.852895+00:00",
+  "status": "partial",
+  "predecessor": null,
+  "consumed_record_ids": [],
+  "produced_record_ids": [
+    "scope:objective",
+    "scope:deadline",
+    "scope:category-approval",
+    "scope:operations-approval"
+  ],
+  "state": {
+    "objective": "Prepare a review-ready Fellowship Demo Day plan",
+    "decision_deadline": "2026-09-04T17:00:00+08:00",
+    "owners": [
+      "Communications",
+      "Learner Experience",
+      "Operations",
+      "Programme"
+    ],
+    "approval_gates": [
+      "Category owners review spending before Operations review",
+      "Operations reviews the overall plan"
+    ],
+    "scope_records": [
+      {
+        "id": "scope:objective",
+        "summary": "Fellowship Demo Day planning draft",
+        "evidence_ids": [
+          "source:brief"
+        ],
+        "owner": "Operations"
+      },
+      {
+        "id": "scope:deadline",
+        "summary": "Plan and budget decision deadline",
+        "evidence_ids": [
+          "obs:calendar:CAL-005"
+        ],
+        "value": "2026-09-04T17:00:00+08:00",
+        "owner": "Operations"
+      }
+    ],
+    "approval_requirements": [
+      {
+        "id": "scope:category-approval",
+        "summary": "Category owners review spending before Operations review",
+        "evidence_ids": [
+          "source:brief"
+        ],
+        "status": "pending",
+        "owner": "Category budget owners"
+      },
+      {
+        "id": "scope:operations-approval",
+        "summary": "Operations reviews the overall plan",
+        "evidence_ids": [
+          "source:brief"
+        ],
+        "status": "pending",
+        "owner": "Operations"
+      }
+    ],
+    "business_clock": "2026-08-26T12:00:00+08:00"
+  },
+  "unresolved": [
+    {
+      "id": "issue:buffer-policy",
+      "summary": "A headcount buffer has yet to be chosen with cost/shortage reasoning",
+      "evidence_ids": [
+        "source:interview"
+      ],
+      "owner": "Planner"
+    }
+  ],
+  "decisions": []
+}

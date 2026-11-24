@@ -1,0 +1,242 @@
+{
+  "schema_version": "event-coordination-stage-snapshot/2",
+  "snapshot_id": "run-c1142d60fa184bf9a0e80f193028e7e8:03",
+  "run_id": "run-c1142d60fa184bf9a0e80f193028e7e8",
+  "stage": "constraint-model",
+  "sequence": 3,
+  "created_at": "2026-11-24T02:30:23.871760+00:00",
+  "status": "partial",
+  "predecessor": {
+    "snapshot_id": "run-c1142d60fa184bf9a0e80f193028e7e8:02",
+    "path": "snapshots/02-source-capture.json",
+    "sha256": "sha256:dc7c427c257d91743370fa8e480a1c1a66bad58b33f781472b2fffc552bbf11e"
+  },
+  "consumed_record_ids": [
+    "scope:objective",
+    "scope:deadline",
+    "scope:category-approval",
+    "scope:operations-approval",
+    "source:brief",
+    "obs:brief:3ba0b700-541e-81d0-af55-dc1a8f49f5af",
+    "obs:brief:fe0e1946-b3c9-4a62-8a82-938eecfc8854",
+    "obs:brief:792e90b1-947b-45db-8397-24e8ecf8a3f8",
+    "obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1",
+    "obs:brief:4aa2f6dc-3460-435b-8649-99a67d325798",
+    "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91",
+    "obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc",
+    "obs:brief:2fe3fca1-8583-47f9-bc95-bf1805acb28c",
+    "obs:brief:7b00ee3a-16fa-4538-a6ce-890593513cc9",
+    "obs:brief:5eb74389-3826-4942-83bb-41e6bad56dd6",
+    "obs:brief:333afcd6-4e59-4fde-a1c0-6a470363a4d9",
+    "obs:brief:99d8d3b3-2fd2-496c-a8ee-1dddd5d49507",
+    "obs:brief:1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc",
+    "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f",
+    "obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f",
+    "obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45",
+    "obs:brief:f58c12b1-089e-42b8-974c-4dd2305d3f26",
+    "obs:brief:4a86cac9-38e6-44f5-9d04-0eb3bac6c92b",
+    "obs:brief:cad780df-377c-4b3f-a1ae-64f3b0b4b02d",
+    "obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c",
+    "obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b",
+    "obs:brief:413649ad-9782-4a9f-8ade-40adb5f58ccb",
+    "obs:brief:0e9768a0-7cc6-4096-8bc9-77b1956b9be4",
+    "obs:brief:99807928-2434-4e30-9f24-d3d878803331",
+    "obs:brief:3af34366-805b-42d8-a40a-e1a7d56ee103",
+    "source:attendees",
+    "obs:attendees:SIG-001",
+    "obs:attendees:SIG-002",
+    "obs:attendees:SIG-003",
+    "obs:attendees:SIG-004",
+    "obs:attendees:SIG-005",
+    "obs:attendees:SIG-006",
+    "obs:attendees:SIG-007",
+    "obs:attendees:SIG-008",
+    "obs:attendees:SIG-009",
+    "obs:attendees:SIG-010",
+    "obs:attendees:SIG-011",
+    "obs:attendees:SIG-012",
+    "obs:attendees:SIG-013",
+    "source:budget",
+    "obs:budget:venue",
+    "obs:budget:catering",
+    "obs:budget:accessibility",
+    "obs:budget:production",
+    "obs:budget:communications",
+    "obs:budget:security",
+    "obs:budget:contingency",
+    "source:vendors",
+    "obs:vendors:Q-001",
+    "obs:vendors:Q-002",
+    "obs:vendors:Q-003",
+    "obs:vendors:Q-004",
+    "obs:vendors:Q-005",
+    "obs:vendors:Q-006",
+    "obs:vendors:Q-007",
+    "obs:vendors:Q-008",
+    "obs:vendors:Q-009",
+    "obs:vendors:Q-010",
+    "source:calendar",
+    "obs:calendar:CAL-001",
+    "obs:calendar:CAL-002",
+    "obs:calendar:CAL-003",
+    "obs:calendar:CAL-004",
+    "obs:calendar:CAL-005",
+    "obs:calendar:CAL-006",
+    "obs:calendar:CAL-007",
+    "obs:calendar:CAL-008",
+    "source:floorplan",
+    "obs:floorplan:wheelchair",
+    "obs:floorplan:elevators",
+    "obs:floorplan:restroom",
+    "obs:floorplan:quiet-room",
+    "source:interview",
+    "obs:interview:supplier-preference",
+    "obs:interview:buffer-policy"
+  ],
+  "produced_record_ids": [
+    "constraint:brief-hard",
+    "constraint:calendar:CAL-001",
+    "constraint:calendar:CAL-003",
+    "constraint:calendar:CAL-004",
+    "constraint:calendar:CAL-005",
+    "constraint:calendar:CAL-006",
+    "constraint:calendar:CAL-008",
+    "constraint:calendar:CAL-002",
+    "constraint:calendar:CAL-007",
+    "preference:familiar-suppliers",
+    "issue:buffer-policy"
+  ],
+  "state": {
+    "hard_constraints": [
+      {
+        "id": "constraint:brief-hard",
+        "summary": "Hard requirements are step-free access to the main programme and restrooms, wheelchair seating, live captions, a staffed quiet room, a 09:30 opening, and completion by 17:00. The total approved planning ceiling is TWD 520000. The recommendation must not assume an expired quote or unconfirmed availability.",
+        "evidence_ids": [
+          "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91"
+        ],
+        "owner": "Operations"
+      },
+      {
+        "id": "constraint:calendar:CAL-001",
+        "summary": "preferred_event_window: Preferred event date",
+        "evidence_ids": [
+          "obs:calendar:CAL-001"
+        ],
+        "owner": "Operations",
+        "start_at": "2026-10-17T09:30:00+08:00",
+        "end_at": "2026-10-17T17:00:00+08:00",
+        "priority": "hard"
+      },
+      {
+        "id": "constraint:calendar:CAL-003",
+        "summary": "venue_hold: Hold expires 2026-09-05",
+        "evidence_ids": [
+          "obs:calendar:CAL-003"
+        ],
+        "owner": "TICC",
+        "start_at": "2026-10-17T07:30:00+08:00",
+        "end_at": "2026-10-17T18:30:00+08:00",
+        "priority": "hard"
+      },
+      {
+        "id": "constraint:calendar:CAL-004",
+        "summary": "keynote_availability: Keynote unavailable on fallback date",
+        "evidence_ids": [
+          "obs:calendar:CAL-004"
+        ],
+        "owner": "Programme",
+        "start_at": "2026-10-17T10:00:00+08:00",
+        "end_at": "2026-10-17T11:00:00+08:00",
+        "priority": "hard"
+      },
+      {
+        "id": "constraint:calendar:CAL-005",
+        "summary": "decision_deadline: Plan and budget decision",
+        "evidence_ids": [
+          "obs:calendar:CAL-005"
+        ],
+        "owner": "Operations",
+        "start_at": "2026-09-04T17:00:00+08:00",
+        "end_at": "2026-09-04T17:00:00+08:00",
+        "priority": "hard"
+      },
+      {
+        "id": "constraint:calendar:CAL-006",
+        "summary": "accessibility_walkthrough: Venue confirmation required first",
+        "evidence_ids": [
+          "obs:calendar:CAL-006"
+        ],
+        "owner": "Learner Experience",
+        "start_at": "2026-09-25T14:00:00+08:00",
+        "end_at": "2026-09-25T16:00:00+08:00",
+        "priority": "hard"
+      },
+      {
+        "id": "constraint:calendar:CAL-008",
+        "summary": "teardown_deadline: All vendors clear by 18:30",
+        "evidence_ids": [
+          "obs:calendar:CAL-008"
+        ],
+        "owner": "TICC",
+        "start_at": "2026-10-17T17:00:00+08:00",
+        "end_at": "2026-10-17T18:30:00+08:00",
+        "priority": "hard"
+      }
+    ],
+    "preferences": [
+      {
+        "id": "constraint:calendar:CAL-002",
+        "summary": "fallback_event_window: Fallback date",
+        "evidence_ids": [
+          "obs:calendar:CAL-002"
+        ],
+        "owner": "Operations",
+        "start_at": "2026-10-24T09:30:00+08:00",
+        "end_at": "2026-10-24T17:00:00+08:00",
+        "priority": "soft"
+      },
+      {
+        "id": "constraint:calendar:CAL-007",
+        "summary": "rehearsal_window: Remote backup acceptable",
+        "evidence_ids": [
+          "obs:calendar:CAL-007"
+        ],
+        "owner": "Programme",
+        "start_at": "2026-10-16T15:00:00+08:00",
+        "end_at": "2026-10-16T18:00:00+08:00",
+        "priority": "soft"
+      },
+      {
+        "id": "preference:familiar-suppliers",
+        "summary": "Prefer familiar suppliers when constraints permit",
+        "evidence_ids": [
+          "obs:interview:supplier-preference"
+        ],
+        "owner": "Operations"
+      }
+    ],
+    "assumptions": [],
+    "unknowns": [
+      {
+        "id": "issue:buffer-policy",
+        "summary": "A headcount buffer has yet to be chosen with cost/shortage reasoning",
+        "evidence_ids": [
+          "source:interview"
+        ],
+        "owner": "Planner"
+      }
+    ],
+    "conflicts": []
+  },
+  "unresolved": [
+    {
+      "id": "issue:buffer-policy",
+      "summary": "A headcount buffer has yet to be chosen with cost/shortage reasoning",
+      "evidence_ids": [
+        "source:interview"
+      ],
+      "owner": "Planner"
+    }
+  ],
+  "decisions": []
+}

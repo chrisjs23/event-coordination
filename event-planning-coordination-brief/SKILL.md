@@ -7,7 +7,7 @@ description: Prepare or refresh Quillhaven Fellowship Demo Day planning drafts f
 
 Work in the repository containing this skill folder and `snapshot.schema.json`. Read the repository's `PLAN.md` for the approved implementation stage before changing the workflow.
 
-The stage 2 command supports local preflight. Read [command usage](references/command.md) before executing it. Its report includes `pipeline_available`, which is currently false. Report that limitation when asked to execute the full workflow.
+The command supports local preflight and explicit capture through the planning baseline with `--through planning-baseline`. Read [command usage](references/command.md) before executing it. Its report includes `pipeline_available`, which is currently false. Report that limitation when asked to execute the full workflow.
 
 ## Workflow
 

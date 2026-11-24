@@ -1,41 +1,79 @@
 # Command setup and verification
 
-Stage 2 provides the command interface and a local preflight. The planning pipeline is scheduled for stages 3–6. Its availability is exposed in the preflight JSON so callers can distinguish setup readiness from a completed event plan.
+The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Options, recommendations, final drafts and automatic history/recovery handling are scheduled for stages 4–6.
 
-## Prerequisites and usage
+## Setup
 
-Use Python 3.10 or later. This stage uses the Python standard library and requires no package installation, credentials or network connection. Keep the skill in this repository with `snapshot.schema.json` in the root. Snapshot validation dependencies will be selected when that implementation is added.
-
-From the repository root, run the local setup check.
+Use Python 3.10 or later from the repository root. Install the pinned validator and date-time checker in a local virtual environment.
 
 ```sh
-python3 event-planning-coordination-brief/scripts/run.py --check
+python3 -m venv .venv
+.venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
 ```
 
-Expect exit code 0 and JSON containing `mode` equal to `preflight`, `status` equal to `ready`, `pipeline_available` equal to false, the exercise business clock, and resolved paths for the schema, source map and proposed output directory. The check reads local metadata and validates the known schema identity and sheet map structure. It creates no output files. A preflight error exits 1. Argument errors exit 2.
+The installed dependencies are jsonschema 4.26.0 and rfc3339-validator 0.1.4. Snapshot checks use Draft 2020-12 with date-time format checking enabled. The library's validation interface is documented by its maintainers. [jsonschema validation documentation](https://python-jsonschema.readthedocs.io/en/stable/validate/)
 
-Use `--help` to inspect available arguments. `--output-dir PATH` selects the eventual output root. The default is this repository's `deliverables/`, regardless of the current directory. Relative supplied paths are resolved from the caller's current directory.
+Live capture requires outbound HTTPS to the disclosed Notion, Google Sheets and TICC hosts and their normal redirects. The inspected sources need no credentials. Offline tests use synthetic responses injected into the capture function.
+
+## Commands
+
+Inspect help or run the local metadata preflight.
 
 ```sh
-python3 event-planning-coordination-brief/scripts/run.py --check --output-dir /tmp/demo-day-review
+.venv/bin/python event-planning-coordination-brief/scripts/run.py --help
+.venv/bin/python event-planning-coordination-brief/scripts/run.py --check
 ```
 
-The reserved end-to-end entry point is the same script without `--check`.
+Expect exit code 0 and preflight JSON with `status: ready`, `mode: preflight`, `pipeline_available: false`, the exercise business clock, and resolved paths. This checks local schema identity and the sheet map. It creates no files and does not test source access.
+
+To independently repeat Stage 3, choose a fresh output path. The checked-in `deliverables/` already contains a live baseline run.
 
 ```sh
-python3 event-planning-coordination-brief/scripts/run.py
+stage3_review_parent=$(mktemp -d)
+.venv/bin/python -B event-planning-coordination-brief/scripts/run.py --through planning-baseline --output-dir "$stage3_review_parent/run"
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py "$stage3_review_parent/run"
 ```
 
-At stage 2, expect exit code 3 and a diagnostic that the pipeline is incomplete. Output generation will be wired into this entry point in subsequent approved stages. Until then, each invocation preserves existing outputs. The eventual pipeline writes local drafts, evidence and linked snapshots under the selected output directory, with prior runs retained under `history/`.
+Both commands should exit 0 and report `status: partial`, four snapshots, and seven evidence files when all sources remain available. Seven includes the local interview-policy extract alongside the six remote sources. The execution report also gives the new run ID and output path. Successful scoped execution reports a partial planning run because the remaining five snapshots and drafts are future stages.
 
-## Independent verification
+The default output root is this repository's `deliverables/`. An explicit relative `--output-dir` is resolved from the caller's working directory. Capture requires the selected directory to be absent. Existing directories are rejected before retrieval so prior work is preserved while automatic archival is pending Stage 6.
 
-From the repository root with Python 3.10 or later, run the retained regression suite.
+To verify the retained current run without network access, use:
 
 ```sh
-python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables
 ```
 
-`tests/test_command.py` exercises the command through subprocesses, including help, preflight from another directory, output path resolution, missing or malformed prerequisites, and preservation of existing files. `tests/test_source_csv.py` and `tests/test_source_inventory.py` retain the stage 1 source checks. All tests must pass without network access.
+The verifier checks schema and timestamp formats, run/record identities, predecessor bytes and paths, evidence hashes and path containment, and evidence references. A successful integrity check can also report partial status for unresolved source or planning conditions.
 
-For manual verification, run `--help` and both preflight examples above. Confirm their exit codes and paths, and verify that the proposed output directories were not created. Run the reserved entry point and confirm its exit code 3. These checks establish the command contract. Live retrieval, business rules, artifact rendering and recovery will receive their own tests in later stages.
+The entry point without `--check` or `--through` remains reserved for the full pipeline and exits 3. CLI/preflight/capture failures exit 1, and argument errors exit 2. A failed execution in a new output directory preserves actual evidence and writes `failure.json`. If the brief or calendar deadline is unavailable, it withholds scope snapshots instead of supplying an unsupported deadline.
+
+## Independent tests and manual checks
+
+From the repository root after setup, run:
+
+```sh
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+Expect 34 passing tests.
+
+| Test file | What it verifies |
+| --- | --- |
+| `tests/test_command.py` | Existing preflight/help, output paths, invocation from another directory and setup failures. |
+| `tests/test_records.py` | Header/row permutations with extras, permitted-column extracts, duplicate identities, numeric/date/unit meanings and calendar intervals. |
+| `tests/test_capture.py` | Four-stage offline integration, headcount arithmetic, calendar preservation, pending budgets, privacy filtering, source failure isolation, invalid inputs, changed PDF handling and existing-output protection. |
+| `tests/test_snapshots.py` | Schema/hash-linked serialization, record/evidence references, timestamps, path containment, corruption detection and overwrite protection. |
+| `tests/test_source_csv.py`, `tests/test_source_inventory.py` | Stage 1 regression checks using the shared structural parser and disclosed source links. |
+
+For manual review, inspect the retained evidence under `deliverables/snapshots/evidence/`. Compare the CSV records and brief blocks with their Stage 02 observations. Inspect the official PDF's legend and the regions cited in `venue-evidence.json`. Spatial observations are reused only when the newly retrieved PDF has the reviewed hash. Changed PDF bytes are retained as unverified, and spatial observations are withheld pending a new visual review.
+
+In Stage 04, confirm 180 registered people, 30 required staff/speakers and 35 forecast walk-ins, yielding 245 before a buffer decision. Support requests remain separate demand measures. Confirm all eight calendar records, category limits and commitments, and pending approval statuses.
+
+## Limitations
+
+The Notion content route is a site implementation detail. Pagination, missing linked blocks or unsupported block types produce an invalid source outcome. Changed or ambiguous prose quantities remain unresolved rather than inheriting earlier values.
+
+CSV evidence retains declared aggregate columns in source order, preserving cell values and row order. Unrelated column values are omitted for privacy. Metadata records the original response hash, retained extract hash and ignored-column count. Review changes to declared free-text fields for privacy before sharing artifacts.
+
+The exercise clock governs dated planning inputs. Actual capture timestamps describe the live reads. Venue coordination statements remain fictional exercise evidence, and the drawing supplies spatial observations with separate operational limits. Automatic replacements, recovery, and full artifact validation remain scheduled for later stages.

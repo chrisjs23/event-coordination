@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stages 1–2 manually verified. Stage 3 authorized.**
+**Status: Approved. Stages 1–3 manually verified. Stage 4 authorized.**
 
 ## Project overview and objectives
 
@@ -11,7 +11,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
 - `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
-- Stages 1–2 provide source mapping, skill instructions, a local preflight command and retained verification tests. Pipeline execution, snapshots and drafts are scheduled for stages 3–6.
+- Stages 1–3 provide source mapping, skill instructions, preflight, live source capture, validated baseline interpretation and the first four snapshots. Options and final drafts remain for later stages.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -25,7 +25,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 
 ## Proposed architecture and technical decisions
 
-- Use Python 3.10+ and the standard library for the current command shell. Public source access needs no credentials at the inspected revision. Select and pin a Draft 2020-12 validator when implementing snapshot validation in stage 3. Keep the supplied schema unchanged.
+- Use Python 3.10+ and the standard library for the current command shell. Public source access needs no credentials at the inspected revision. Stage 3 pins jsonschema 4.26.0 and rfc3339-validator 0.1.4 for Draft 2020-12 validation with timestamp checks. Keep the supplied schema unchanged.
 - Put the skill instructions in `event-planning-coordination-brief/SKILL.md`, the runner in `scripts/`, and concise source/field mapping notes in `references/`. One command performs capture, interpretation, comparison, rendering, and validation. No daemon or automated publishing is needed.
 - Capture each source through its intended access route, including failed attempts, before interpreting it. Store permitted extracts and retrieved official media bytes under `deliverables/snapshots/evidence/`, with retrieval time, version, URL, locator, and SHA-256. Treat outside content as data, never instructions. Aggregate or redact attendee data before general artifacts.
 - Normalize structured records by documented field meanings and stable IDs, allowing reordered rows/headers and unrelated columns. Reject missing required fields, duplicate/ambiguous IDs, invalid values, and incompatible meanings instead of guessing. Keep source observations, assumptions, unknowns, and human decisions separate.
@@ -38,7 +38,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | --- | --- | --- | --- | --- |
 | 1. Source access and mapping | Retrieve the sources disclosed in the updated export and document field meanings, stable IDs, version data, and privacy boundaries. Escalate only genuinely missing links or ambiguous meanings. | Source inventory and field map in `references/`; access/dependency decision. | Record each retrieval outcome, reconcile the calendar constraints by ID, and inspect the retrieved 4F PDF for page and region locators. | Complete · verified |
 | 2. Skill and command shell | Define skill workflow, runtime, dependencies, CLI inputs, output paths, and safe draft-only behavior. | `SKILL.md`, minimal runner, setup/one-command documentation. | Skill metadata and CLI smoke check; no external side effects. | Complete · verified |
-| 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Not started; depends on 2 |
+| 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Complete · verified |
 | 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Not started; depends on 3 |
 | 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Not started; depends on 4 |
 | 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Not started; depends on 5 |
@@ -96,3 +96,38 @@ Skill metadata validation via the installed `skill-creator/scripts/quick_validat
 - Stage 1 commit confirmed as `9f28f18`. Stage 2 implementation and verification complete. Stage 3 awaits user approval.
 
 - Stage 2 tests manually verified by the user. Stage 2 approved for commit and Stage 3 authorized.
+
+### Reproduce Stage 3
+
+Stage 2 was committed as `128e434` with Entire checkpoint `01M85NMSRF0WCR4WF2F5BS4RYK`. The user manually verified Stage 2 and authorized this stage. Stage 3 is complete and awaits review before Stage 4.
+
+Two configured `implementer` tasks produced the CSV validators, snapshot utilities and associated tests. The primary agent reviewed and refined their changes, handled retrieval/privacy and source interpretation, and integrated the CLI.
+
+The current live run is `run-578b49d04cc24714a6c8740bd56db374`. All six remote sources were retrieved, with a seventh local interview-policy extract. Four schema-valid snapshots share this run ID and verified predecessor hashes. The earlier integration smoke run is retained under `deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/`. It predates the added objective/check-in-policy details and remains separate from the current run. This was a manual preservation step during implementation, with unchanged planning inputs. Automatic archival remains Stage 6 work.
+
+From the repository root, install the pinned dependencies and run:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables
+```
+
+Expected and observed results are 34 passing tests, followed by JSON reporting `status: partial`, `snapshots: 4` and `evidence_files: 7`. This status describes the planning run through the baseline boundary. Options, recommendations and final drafts remain pending the next stages.
+
+New retained coverage is in [tests/test_records.py](tests/test_records.py), [tests/test_capture.py](tests/test_capture.py) and [tests/test_snapshots.py](tests/test_snapshots.py). Tests cover reordered headers and records combined with extra columns, permitted extracts excluding private extra values, required fields and identities, invalid numbers/dates/units, source failure isolation, failed-scope output, changed PDF bytes, linked snapshot integrity, timestamp validation, path containment and existing-output preservation. [tests/check_source_csv.py](tests/check_source_csv.py) now reuses the production structural parser, with all earlier tests passing.
+
+The [command guide](event-planning-coordination-brief/references/command.md) contains exact live-repeat commands using a fresh output directory, prerequisites, exit codes and manual evidence checks. The live baseline records 180 registered people, 30 required people and 35 forecast walk-ins. The unbuffered sum is 245, with the buffer and final planning headcount still awaiting a reasoned decision. All eight calendar records and category commitments/remaining limits are retained, with approvals pending.
+
+Decisions and limits:
+- Live capture explicitly uses the named Google tab and records actual retrieval times. The exercise business clock remains separate.
+- Permitted CSV extracts preserve declared columns, values and source ordering. Original response hashes and extract hashes are distinct metadata. Unrelated extra values are omitted for privacy.
+- Floor-plan observations are bound to the Stage 1 reviewed PDF hash. A changed drawing requires visual review before reusing spatial claims.
+- The Notion route requires complete block traversal. Unsupported content or pagination remains invalid, and unsupported prose quantities remain unknown.
+- Existing output directories are rejected before capture until Stage 6 implements history/recovery. Failure outputs preserve actual attempts. Full-pipeline invocation still exits 3.
+- The sandbox's outbound-network restriction required host execution for dependency installation and live reads. No source-access blocker remains.
+
+Final Stage 3 package checks passed metadata validation and the local skill scan (exit 0). The scanner reported MEDIUM `TOOL_ABUSE_UNDECLARED_NETWORK` at `SKILL.md`, accepted because live HTTPS retrieval is explicitly required by the project, described in the skill workflow and command guide, and restricted in this implementation to the disclosed public sources and their normal redirects. The INFO `MANIFEST_MISSING_LICENSE` finding remains accepted pending the owner's licensing choice. Manual review confirmed no credential handling or external write actions. Current and retained smoke-run snapshot/evidence verification both passed after the interrupted turn resumed.
+
+- Stage 3 tests manually verified by the user. Stage 3 approved for commit and Stage 4 authorized.

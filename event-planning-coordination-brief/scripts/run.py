@@ -17,17 +17,18 @@ SHEETS = ("attendees", "budget", "vendors", "calendar")
 
 def _parser():
     parser = argparse.ArgumentParser(
-        description="Preflight the event planning inputs (planning pipeline is incomplete)."
+        description="Check local inputs or capture sources through the planning baseline."
     )
-    parser.add_argument(
-        "--check", action="store_true", help="validate local schema and source map"
-    )
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--check", action="store_true", help="validate local schema and source map")
+    modes.add_argument("--through", choices=("planning-baseline",),
+                       help="capture sources and write the first four snapshots")
     parser.add_argument(
         "--output-dir",
         type=Path,
         default=Path(__file__).resolve().parents[2] / "deliverables",
         metavar="PATH",
-        help="report the output directory (default: repository deliverables)",
+        help="output root; capture currently requires a new directory (default: repository deliverables)",
     )
     return parser
 
@@ -65,7 +66,7 @@ def _validate_inputs(root):
 
 def main(argv=None):
     args = _parser().parse_args(argv)
-    if not args.check:
+    if not args.check and not args.through:
         print(
             "Planning pipeline is incomplete (stages 3–6); --check is available for preflight.",
             file=sys.stderr,
@@ -80,6 +81,18 @@ def main(argv=None):
         return 1
 
     output_dir = args.output_dir.expanduser().resolve()
+    if args.through:
+        try:
+            from pipeline import run_baseline
+            report = run_baseline(root, output_dir)
+        except ImportError:
+            print("Install dependencies from event-planning-coordination-brief/requirements.txt", file=sys.stderr)
+            return 1
+        except (ValueError, OSError) as exc:
+            print(f"Capture failed: {exc}", file=sys.stderr)
+            return 1
+        print(json.dumps(report, indent=2))
+        return 0
     report = {
         "status": "ready",
         "mode": "preflight",

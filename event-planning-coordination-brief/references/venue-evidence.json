@@ -1,0 +1,11 @@
+{
+  "url": "https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf",
+  "reviewed_sha256": "sha256:8805ab527b7bb202a70534120ed4037dbde633301f1935e80bd04f12a7c70367",
+  "review_basis": "Stage 1 visual review of the retrieved official one-page PDF. Reuse these observations only when newly fetched bytes match this hash.",
+  "observations": [
+    {"id": "obs:floorplan:wheelchair", "summary": "Wheelchair-area symbols are shown beside seating near the Plenary Hall Stage.", "locator": {"kind": "page-region", "value": "page 1, right half, seating beside Plenary Hall Stage"}},
+    {"id": "obs:floorplan:elevators", "summary": "Accessible-elevator symbols are shown beside JOY.", "locator": {"kind": "page-region", "value": "page 1, lower centre beside JOY"}},
+    {"id": "obs:floorplan:restroom", "summary": "An accessible-restroom symbol is shown in the lower restroom cluster.", "locator": {"kind": "page-region", "value": "page 1, lower restroom cluster beside stairs A/B"}},
+    {"id": "obs:floorplan:quiet-room", "summary": "The V.I.P. ROOM is labelled on the floor drawing.", "locator": {"kind": "page-region", "value": "page 1, lower-left wing, V.I.P. ROOM label"}}
+  ]
+}

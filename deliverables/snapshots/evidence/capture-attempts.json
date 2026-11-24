@@ -1,0 +1,1193 @@
+{
+  "run_id": "run-578b49d04cc24714a6c8740bd56db374",
+  "sources": [
+    {
+      "id": "source:brief",
+      "summary": "Captured brief",
+      "evidence_ids": [],
+      "source_role": "event-brief",
+      "locator": "https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af",
+      "retrieved_at": "2026-11-24T02:34:52.728530+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "application/json",
+      "version_metadata": {
+        "response_url": "https://private-pecorino-70e.notion.site/api/v3/loadPageChunk",
+        "etag": "W/\"bc41-rth5s15Eo4x6obu8vI7uK7k3kt8\"",
+        "last_modified": null,
+        "response_sha256": "sha256:9fab47894809fb622174ad3f085861933b743c077f51551376b490951cb3977f",
+        "representation": "permitted ordered block extract",
+        "revisions": [
+          "Brief version: EVENT-BRIEF-2026-08-26",
+          "Record: VEN-2026-08-26; case clock: 26 August 2026, Asia/Taipei.",
+          "Coordination clarification: VEN-2026-08-26-R2; the simulated business clock remains 26 August 2026.",
+          "Programme clarification: PROG-2026-08-26-R3; the simulated business clock remains 26 August 2026."
+        ]
+      },
+      "content_hash": "sha256:72eb021d990cf1e8a27f45a2515d230758752aaefcd047f216a2478d68e4671b",
+      "local_reference": "snapshots/evidence/brief.json",
+      "observations": [
+        {
+          "id": "obs:brief:3ba0b700-541e-81d0-af55-dc1a8f49f5af",
+          "summary": "Project 3 Event Coordination — Event Brief",
+          "locator": {
+            "kind": "section",
+            "value": "block 3ba0b700-541e-81d0-af55-dc1a8f49f5af"
+          }
+        },
+        {
+          "id": "obs:brief:fe0e1946-b3c9-4a62-8a82-938eecfc8854",
+          "summary": "Event brief",
+          "locator": {
+            "kind": "section",
+            "value": "block fe0e1946-b3c9-4a62-8a82-938eecfc8854"
+          }
+        },
+        {
+          "id": "obs:brief:792e90b1-947b-45db-8397-24e8ecf8a3f8",
+          "summary": "Brief version: EVENT-BRIEF-2026-08-26",
+          "locator": {
+            "kind": "section",
+            "value": "block 792e90b1-947b-45db-8397-24e8ecf8a3f8"
+          }
+        },
+        {
+          "id": "obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1",
+          "summary": "Plan the Quillhaven AI Fellowship Demo Day at Taipei International Convention Center. The preferred date is Saturday 17 October 2026, with Saturday 24 October as a fallback. Plan for 245 people including attendees, speakers, and staff.",
+          "locator": {
+            "kind": "section",
+            "value": "block 298c39a7-ff6a-49a9-a259-bfbc100124b1"
+          }
+        },
+        {
+          "id": "obs:brief:4aa2f6dc-3460-435b-8649-99a67d325798",
+          "summary": "The event should let fellows present work, give partners a useful programme overview, and support accessible participation. The draft must include two feasible options, a recommended option with trade-offs, a cost and risk view, floor-plan observations with page or region references, a run of show, calendar drafts, and unsent attendee and vendor messages.",
+          "locator": {
+            "kind": "section",
+            "value": "block 4aa2f6dc-3460-435b-8649-99a67d325798"
+          }
+        },
+        {
+          "id": "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91",
+          "summary": "Hard requirements are step-free access to the main programme and restrooms, wheelchair seating, live captions, a staffed quiet room, a 09:30 opening, and completion by 17:00. The total approved planning ceiling is TWD 520000. The recommendation must not assume an expired quote or unconfirmed availability.",
+          "locator": {
+            "kind": "section",
+            "value": "block 14165ffe-1d73-4931-a197-998aff3efd91"
+          }
+        },
+        {
+          "id": "obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc",
+          "summary": "Success means at least 80 percent of registered attendees check in, all scheduled fellow demos run, and accessibility requests receive a documented response before the event.",
+          "locator": {
+            "kind": "section",
+            "value": "block e6940ea5-d391-47cb-b64c-196387d979fc"
+          }
+        },
+        {
+          "id": "obs:brief:2fe3fca1-8583-47f9-bc95-bf1805acb28c",
+          "summary": "Operations approves the plan. Budget owners approve spending. Do not send invitations, book a venue, commit to a vendor, make payment, or write to a production calendar automatically.",
+          "locator": {
+            "kind": "section",
+            "value": "block 2fe3fca1-8583-47f9-bc95-bf1805acb28c"
+          }
+        },
+        {
+          "id": "obs:brief:7b00ee3a-16fa-4538-a6ce-890593513cc9",
+          "summary": "Exercise source clarification — authored 12 September 2026",
+          "locator": {
+            "kind": "section",
+            "value": "block 7b00ee3a-16fa-4538-a6ce-890593513cc9"
+          }
+        },
+        {
+          "id": "obs:brief:5eb74389-3826-4942-83bb-41e6bad56dd6",
+          "summary": "Use the simulated business clock 26 August 2026 when evaluating the supplied dated quotes and hold; record actual source retrieval separately. The venue coordination record supplies the fictional room allocation and service basis. Recommend within supported evidence; an option with a remaining hard-constraint dependency is conditional, not feasible. Retain two materially different alternatives when supported; do not fabricate a second feasible option if source failure or a material update makes one unavailable. All original hard requirements and the TWD 520,000 ceiling remain.",
+          "locator": {
+            "kind": "section",
+            "value": "block 5eb74389-3826-4942-83bb-41e6bad56dd6"
+          }
+        },
+        {
+          "id": "obs:brief:333afcd6-4e59-4fde-a1c0-6a470363a4d9",
+          "summary": "Venue coordination record",
+          "locator": {
+            "kind": "section",
+            "value": "block 333afcd6-4e59-4fde-a1c0-6a470363a4d9"
+          }
+        },
+        {
+          "id": "obs:brief:99d8d3b3-2fd2-496c-a8ee-1dddd5d49507",
+          "summary": "Record: VEN-2026-08-26; case clock: 26 August 2026, Asia/Taipei.",
+          "locator": {
+            "kind": "section",
+            "value": "block 99d8d3b3-2fd2-496c-a8ee-1dddd5d49507"
+          }
+        },
+        {
+          "id": "obs:brief:1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc",
+          "summary": "This is a newly authored fictional business document for the Quillhaven exercise. It is not a statement from TICC, a real quote, accessibility certification, reservation or permission to use an outside supplier. Public venue rules continue to govern claims about the real venue.",
+          "locator": {
+            "kind": "section",
+            "value": "block 1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc"
+          }
+        },
+        {
+          "id": "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f",
+          "summary": "Operations' exercise record covers 17 October and 24 October 2026, 07:30–18:30. The quoted TWD 155,000 package is a synthetic negotiated all-inclusive venue amount, not an official published tariff. It allocates 500 usable audience places in the 4F Plenary Hall, including six wheelchair spaces; companions use ordinary places. The V.I.P. Room on the same floor is the quiet space, with occupancy up to 20 people. Room 401 is not selected: the official venue description warns about sound interference during Plenary Hall use.",
+          "locator": {
+            "kind": "section",
+            "value": "block 071b80d1-36cd-4615-906d-da9cf47e860f"
+          }
+        },
+        {
+          "id": "obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f",
+          "summary": "For this case, venue coordination confirms step-free access between the 4F accessible elevators, audience area, V.I.P. Room and accessible restroom. The public floor plan supplies spatial locators; it does not prove today's elevator operation, unobstructed route, seating configuration or acoustic performance. Those case conditions are supplied by this fictional coordination record, and a real deployment must obtain current confirmation rather than treat this exercise note as evidence about TICC.",
+          "locator": {
+            "kind": "section",
+            "value": "block 8f25fe93-a57e-441f-be1b-f1875290301f"
+          }
+        },
+        {
+          "id": "obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45",
+          "summary": "The package includes setup and teardown access, the quiet space and its separation from the programme. QuietWorks supplies staffing under Q-010; ClearText supplies captions under Q-005. Q-003/Q-004 catering and Q-006/Q-007 AV are fictional TICC-coordinated service offers, not permission to bring external food or equipment. StreamNorth Q-008 still requires its stated network test and venue confirmation before use. The exercise record confirms adequate captioning, hearing-loop and allergy coordination for the base plan using Q-004/Q-005/Q-006/Q-010; both catering options include an Operations-coordinated dietary response for the 28 vegetarian meals, 12 halal meals and four severe-allergy requests. Named contacts are held by Operations; the learner records the response state without inventing or publishing personal medical details. The two menus differ in capacity and cost, not in whether safety may be ignored.",
+          "locator": {
+            "kind": "section",
+            "value": "block 2fdefb04-6881-4c55-8302-3822705b5a45"
+          }
+        },
+        {
+          "id": "obs:brief:f58c12b1-089e-42b8-974c-4dd2305d3f26",
+          "summary": "No booking or spend has been approved. Operations receives the versioned plan, selected date/room, headcount policy, per-option hard-constraint results and unresolved issues. Budget owners receive their category cost, remaining ceiling and cited quote validity. They may approve, reject, request changes or defer with reasons and affected scope. In this exercise the completed output is a review-ready draft, not obtaining those decisions. If a later actual response is provided, retain actor, subject, plan revision, timestamp, outcome and reasons; stale or unrelated replies confer no authority.",
+          "locator": {
+            "kind": "section",
+            "value": "block f58c12b1-089e-42b8-974c-4dd2305d3f26"
+          }
+        },
+        {
+          "id": "obs:brief:4a86cac9-38e6-44f5-9d04-0eb3bac6c92b",
+          "summary": "Exercise readiness confirmation — authored 12 September 2026",
+          "locator": {
+            "kind": "section",
+            "value": "block 4a86cac9-38e6-44f5-9d04-0eb3bac6c92b"
+          }
+        },
+        {
+          "id": "obs:brief:cad780df-377c-4b3f-a1ae-64f3b0b4b02d",
+          "summary": "Coordination clarification: VEN-2026-08-26-R2; the simulated business clock remains 26 August 2026.",
+          "locator": {
+            "kind": "section",
+            "value": "block cad780df-377c-4b3f-a1ae-64f3b0b4b02d"
+          }
+        },
+        {
+          "id": "obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c",
+          "summary": "For the 17 October 2026 exercise plan, Operations' fictional supplier-coordination record confirms that the venue arrangement and the base service bundles using either Q-003 or Q-004 together with Q-005, Q-006, Q-009 and Q-010 can complete setup and all pre-opening readiness checks between 07:30 and the 09:30 opening. The required captioning, hearing-loop, staffed quiet space and security services are ready by 09:30; the catering service covers the planned event window. These base bundles can finish teardown and clear the venue between the 17:00 programme finish and 18:30. This confirms schedule feasibility for the exercise only, not a completed real-world test, booking, spending approval or an optional livestream; Q-008's network-test and venue-confirmation conditions remain unresolved until evidenced.",
+          "locator": {
+            "kind": "section",
+            "value": "block 5adfbcd1-1ab9-4161-a22a-5d200888f65c"
+          }
+        },
+        {
+          "id": "obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b",
+          "summary": "The planner may choose a compatible setup and check sequence within 07:30–09:30 and a compatible teardown sequence within 17:00–18:30. No individual vendor duration or additional mandatory buffer is specified. Q-009 is SafeVenue security and first-aid staffing; communications and contingency are budget allowances, not additional vendor services covered by this readiness confirmation.",
+          "locator": {
+            "kind": "section",
+            "value": "block 41f6349d-bb54-4100-8044-09a06878ec6b"
+          }
+        },
+        {
+          "id": "obs:brief:413649ad-9782-4a9f-8ade-40adb5f58ccb",
+          "summary": "Exercise programme confirmation — authored 12 September 2026",
+          "locator": {
+            "kind": "section",
+            "value": "block 413649ad-9782-4a9f-8ade-40adb5f58ccb"
+          }
+        },
+        {
+          "id": "obs:brief:0e9768a0-7cc6-4096-8bc9-77b1956b9be4",
+          "summary": "Programme clarification: PROG-2026-08-26-R3; the simulated business clock remains 26 August 2026.",
+          "locator": {
+            "kind": "section",
+            "value": "block 0e9768a0-7cc6-4096-8bc9-77b1956b9be4"
+          }
+        },
+        {
+          "id": "obs:brief:99807928-2434-4e30-9f24-d3d878803331",
+          "summary": "Programme has scheduled twelve team demonstrations for 17 October 2026: DEMO-01, DEMO-02, DEMO-03, DEMO-04, DEMO-05, DEMO-06, DEMO-07, DEMO-08, DEMO-09, DEMO-10, DEMO-11 and DEMO-12. Each demonstration needs 10 minutes of presentation plus a separate 3-minute changeover allowance. Include each demonstration once. These are team slots, not counts inferred from the 148 fellow attendees or 12 speakers; they add no people to the declared attendance.",
+          "locator": {
+            "kind": "section",
+            "value": "block 99807928-2434-4e30-9f24-d3d878803331"
+          }
+        },
+        {
+          "id": "obs:brief:3af34366-805b-42d8-a40a-e1a7d56ee103",
+          "summary": "Keep the existing 10:00–11:00 keynote and 09:30–17:00 event window. The planner chooses the demonstration order, grouping and compatible meal and break schedule. Programme owns roster or duration changes. This is newly authored fictional planning knowledge, not confirmation that a demonstration has run or that a plan has been approved.",
+          "locator": {
+            "kind": "section",
+            "value": "block 3af34366-805b-42d8-a40a-e1a7d56ee103"
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:attendees",
+      "summary": "Captured attendees",
+      "evidence_ids": [],
+      "source_role": "attendee-signals",
+      "locator": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU",
+      "retrieved_at": "2026-11-24T02:34:52.883132+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/csv",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU/gviz/tq?tqx=out%3Acsv&sheet=Attendee+Signals",
+        "response_url": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU/gviz/tq?tqx=out%3Acsv&sheet=Attendee+Signals",
+        "etag": null,
+        "last_modified": null,
+        "response_sha256": "sha256:2de49aa879905d2157ccd5543d513368a005f436cf44a22bdb000db46ff9ce72",
+        "representation": "permitted CSV columns in source order; original values retained",
+        "tab": "Attendee Signals",
+        "columns": [
+          "signal_id",
+          "source",
+          "segment",
+          "signal",
+          "value",
+          "unit",
+          "observed_at",
+          "confidence"
+        ],
+        "ignored_columns": 0
+      },
+      "content_hash": "sha256:e04cfd19d5023ecf71c0d4a67e97b9ab71c19dd96c76479b348bfe5d26e12276",
+      "local_reference": "snapshots/evidence/attendees.csv",
+      "observations": [
+        {
+          "id": "obs:attendees:SIG-001",
+          "summary": "Aggregate record SIG-001",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 2, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-001",
+            "source": "registration_form",
+            "segment": "fellows",
+            "signal": "registered_attendees",
+            "value": 148,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 2
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-002",
+          "summary": "Aggregate record SIG-002",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 3, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-002",
+            "source": "partner_form",
+            "segment": "partners",
+            "signal": "registered_attendees",
+            "value": 32,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 3
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-003",
+          "summary": "Aggregate record SIG-003",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 4, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-003",
+            "source": "operations_plan",
+            "segment": "staff",
+            "signal": "required_on_site",
+            "value": 18,
+            "unit": "people",
+            "observed_at": "2026-08-25",
+            "confidence": "high",
+            "_row": 4
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-004",
+          "summary": "Aggregate record SIG-004",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 5, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-004",
+            "source": "programme_plan",
+            "segment": "speakers",
+            "signal": "required_on_site",
+            "value": 12,
+            "unit": "people",
+            "observed_at": "2026-08-25",
+            "confidence": "high",
+            "_row": 5
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-005",
+          "summary": "Aggregate record SIG-005",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 6, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-005",
+            "source": "forecast",
+            "segment": "walk_ins",
+            "signal": "expected_attendees",
+            "value": 35,
+            "unit": "people",
+            "observed_at": "2026-08-26",
+            "confidence": "medium",
+            "_row": 6
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-006",
+          "summary": "Aggregate record SIG-006",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 7, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-006",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "wheelchair_spaces",
+            "value": 6,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 7
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-007",
+          "summary": "Aggregate record SIG-007",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 8, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-007",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "mobility_companions",
+            "value": 4,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 8
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-008",
+          "summary": "Aggregate record SIG-008",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 9, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-008",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "live_caption_requests",
+            "value": 23,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 9
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-009",
+          "summary": "Aggregate record SIG-009",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 10, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-009",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "hearing_loop_requests",
+            "value": 7,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "medium",
+            "_row": 10
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-010",
+          "summary": "Aggregate record SIG-010",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 11, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-010",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "quiet_room_requests",
+            "value": 9,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 11
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-011",
+          "summary": "Aggregate record SIG-011",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 12, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-011",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "vegetarian_meals",
+            "value": 28,
+            "unit": "meals",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 12
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-012",
+          "summary": "Aggregate record SIG-012",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 13, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-012",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "halal_meals",
+            "value": 12,
+            "unit": "meals",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 13
+          }
+        },
+        {
+          "id": "obs:attendees:SIG-013",
+          "summary": "Aggregate record SIG-013",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Attendee Signals, row 14, fields signal_id, source, segment, signal, value, unit, observed_at, confidence"
+          },
+          "data": {
+            "signal_id": "SIG-013",
+            "source": "registration_form",
+            "segment": "all",
+            "signal": "severe_allergy_follow_up",
+            "value": 4,
+            "unit": "people",
+            "observed_at": "2026-08-24",
+            "confidence": "high",
+            "_row": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:budget",
+      "summary": "Captured budget",
+      "evidence_ids": [],
+      "source_role": "budget",
+      "locator": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM",
+      "retrieved_at": "2026-11-24T02:34:53.249110+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/csv",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM/gviz/tq?tqx=out%3Acsv&sheet=Budget",
+        "response_url": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM/gviz/tq?tqx=out%3Acsv&sheet=Budget",
+        "etag": null,
+        "last_modified": null,
+        "response_sha256": "sha256:24a0a50dfb536a4160eff55caabdf2c71e1ddf01fe7f79a3e3d4d52e35696cf1",
+        "representation": "permitted CSV columns in source order; original values retained",
+        "tab": "Budget",
+        "columns": [
+          "category",
+          "planned_amount_twd",
+          "approval_limit_twd",
+          "committed_amount_twd",
+          "owner",
+          "record_version"
+        ],
+        "ignored_columns": 0,
+        "record_version": "budget-2026-08-26"
+      },
+      "content_hash": "sha256:14647562a43d9029d9223239c2dcfb8f5b04182b1e6ce58ccdddb225405bf407",
+      "local_reference": "snapshots/evidence/budget.csv",
+      "observations": [
+        {
+          "id": "obs:budget:venue",
+          "summary": "Aggregate record venue",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 2, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "venue",
+            "planned_amount_twd": 155000,
+            "approval_limit_twd": 180000,
+            "committed_amount_twd": 0,
+            "owner": "Operations",
+            "record_version": "budget-2026-08-26",
+            "_row": 2
+          }
+        },
+        {
+          "id": "obs:budget:catering",
+          "summary": "Aggregate record catering",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 3, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "catering",
+            "planned_amount_twd": 115000,
+            "approval_limit_twd": 135000,
+            "committed_amount_twd": 0,
+            "owner": "Operations",
+            "record_version": "budget-2026-08-26",
+            "_row": 3
+          }
+        },
+        {
+          "id": "obs:budget:accessibility",
+          "summary": "Aggregate record accessibility",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 4, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "accessibility",
+            "planned_amount_twd": 65000,
+            "approval_limit_twd": 80000,
+            "committed_amount_twd": 0,
+            "owner": "Learner Experience",
+            "record_version": "budget-2026-08-26",
+            "_row": 4
+          }
+        },
+        {
+          "id": "obs:budget:production",
+          "summary": "Aggregate record production",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 5, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "production",
+            "planned_amount_twd": 85000,
+            "approval_limit_twd": 100000,
+            "committed_amount_twd": 0,
+            "owner": "Programme",
+            "record_version": "budget-2026-08-26",
+            "_row": 5
+          }
+        },
+        {
+          "id": "obs:budget:communications",
+          "summary": "Aggregate record communications",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 6, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "communications",
+            "planned_amount_twd": 25000,
+            "approval_limit_twd": 30000,
+            "committed_amount_twd": 0,
+            "owner": "Communications",
+            "record_version": "budget-2026-08-26",
+            "_row": 6
+          }
+        },
+        {
+          "id": "obs:budget:security",
+          "summary": "Aggregate record security",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 7, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "security",
+            "planned_amount_twd": 25000,
+            "approval_limit_twd": 35000,
+            "committed_amount_twd": 0,
+            "owner": "Operations",
+            "record_version": "budget-2026-08-26",
+            "_row": 7
+          }
+        },
+        {
+          "id": "obs:budget:contingency",
+          "summary": "Aggregate record contingency",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Budget, row 8, fields category, planned_amount_twd, approval_limit_twd, committed_amount_twd, owner, record_version"
+          },
+          "data": {
+            "category": "contingency",
+            "planned_amount_twd": 40000,
+            "approval_limit_twd": 50000,
+            "committed_amount_twd": 0,
+            "owner": "Operations",
+            "record_version": "budget-2026-08-26",
+            "_row": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:vendors",
+      "summary": "Captured vendors",
+      "evidence_ids": [],
+      "source_role": "vendor-record",
+      "locator": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko",
+      "retrieved_at": "2026-11-24T02:34:53.757943+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/csv",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko/gviz/tq?tqx=out%3Acsv&sheet=Vendor+Quotes",
+        "response_url": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko/gviz/tq?tqx=out%3Acsv&sheet=Vendor+Quotes",
+        "etag": null,
+        "last_modified": null,
+        "response_sha256": "sha256:2ffdd17ddf19b5f4400d6b916e1cdef181ed1a3c9827353546da9e563d11325d",
+        "representation": "permitted CSV columns in source order; original values retained",
+        "tab": "Vendor Quotes",
+        "columns": [
+          "quote_id",
+          "vendor",
+          "category",
+          "option",
+          "quote_amount_twd",
+          "capacity",
+          "available_date",
+          "valid_until",
+          "status",
+          "notes"
+        ],
+        "ignored_columns": 0
+      },
+      "content_hash": "sha256:5f387ebcee49e3cff4755ad25e5608ba9473002601ed60d0bf10e48a3e7afedf",
+      "local_reference": "snapshots/evidence/vendors.csv",
+      "observations": [
+        {
+          "id": "obs:vendors:Q-001",
+          "summary": "Aggregate record Q-001",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 2, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          }
+        },
+        {
+          "id": "obs:vendors:Q-002",
+          "summary": "Aggregate record Q-002",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 3, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-002",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-24",
+            "valid_until": "2026-09-05",
+            "status": "available",
+            "notes": "Keynote is unavailable on this date; Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 3
+          }
+        },
+        {
+          "id": "obs:vendors:Q-003",
+          "summary": "Aggregate record Q-003",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 4, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          }
+        },
+        {
+          "id": "obs:vendors:Q-004",
+          "summary": "Aggregate record Q-004",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 5, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          }
+        },
+        {
+          "id": "obs:vendors:Q-005",
+          "summary": "Aggregate record Q-005",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 6, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          }
+        },
+        {
+          "id": "obs:vendors:Q-006",
+          "summary": "Aggregate record Q-006",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 7, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          }
+        },
+        {
+          "id": "obs:vendors:Q-007",
+          "summary": "Aggregate record Q-007",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 8, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-007",
+            "vendor": "LiteStage",
+            "category": "production",
+            "option": "basic AV package",
+            "quote_amount_twd": 52000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "No hearing loop included; supplied through TICC coordination in this synthetic case",
+            "_row": 8
+          }
+        },
+        {
+          "id": "obs:vendors:Q-008",
+          "summary": "Aggregate record Q-008",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 9, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-008",
+            "vendor": "StreamNorth",
+            "category": "production",
+            "option": "livestream add-on",
+            "quote_amount_twd": 55000,
+            "capacity": 1000,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-11",
+            "status": "conditional",
+            "notes": "Network test required; supplied through TICC coordination in this synthetic case",
+            "_row": 9
+          }
+        },
+        {
+          "id": "obs:vendors:Q-009",
+          "summary": "Aggregate record Q-009",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 10, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          }
+        },
+        {
+          "id": "obs:vendors:Q-010",
+          "summary": "Aggregate record Q-010",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Vendor Quotes, row 11, fields quote_id, vendor, category, option, quote_amount_twd, capacity, available_date, valid_until, status, notes"
+          },
+          "data": {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:calendar",
+      "summary": "Captured calendar",
+      "evidence_ids": [],
+      "source_role": "calendar",
+      "locator": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s",
+      "retrieved_at": "2026-11-24T02:34:54.108197+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/csv",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s/gviz/tq?tqx=out%3Acsv&sheet=Calendar+Constraints",
+        "response_url": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s/gviz/tq?tqx=out%3Acsv&sheet=Calendar+Constraints",
+        "etag": null,
+        "last_modified": null,
+        "response_sha256": "sha256:ebc4bf48445b5593def4b7a07b8312830dbb955f92fa9b15e05545ccab28dd91",
+        "representation": "permitted CSV columns in source order; original values retained",
+        "tab": "Calendar Constraints",
+        "columns": [
+          "constraint_id",
+          "owner",
+          "constraint_type",
+          "start_at",
+          "end_at",
+          "priority",
+          "notes",
+          "record_version"
+        ],
+        "ignored_columns": 0,
+        "record_version": "calendar-2026-08-26"
+      },
+      "content_hash": "sha256:58955b175e66ccd7cd22cb12602d9534bf3fbe6d128e6a002757eac5cd9b1619",
+      "local_reference": "snapshots/evidence/calendar.csv",
+      "observations": [
+        {
+          "id": "obs:calendar:CAL-001",
+          "summary": "Aggregate record CAL-001",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 2, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-001",
+            "owner": "Operations",
+            "constraint_type": "preferred_event_window",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "priority": "hard",
+            "notes": "Preferred event date",
+            "record_version": "calendar-2026-08-26",
+            "_row": 2
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-002",
+          "summary": "Aggregate record CAL-002",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 3, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-002",
+            "owner": "Operations",
+            "constraint_type": "fallback_event_window",
+            "start_at": "2026-10-24T09:30:00+08:00",
+            "end_at": "2026-10-24T17:00:00+08:00",
+            "priority": "soft",
+            "notes": "Fallback date",
+            "record_version": "calendar-2026-08-26",
+            "_row": 3
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-003",
+          "summary": "Aggregate record CAL-003",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 4, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-003",
+            "owner": "TICC",
+            "constraint_type": "venue_hold",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "priority": "hard",
+            "notes": "Hold expires 2026-09-05",
+            "record_version": "calendar-2026-08-26",
+            "_row": 4
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-004",
+          "summary": "Aggregate record CAL-004",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 5, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-004",
+            "owner": "Programme",
+            "constraint_type": "keynote_availability",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "priority": "hard",
+            "notes": "Keynote unavailable on fallback date",
+            "record_version": "calendar-2026-08-26",
+            "_row": 5
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-005",
+          "summary": "Aggregate record CAL-005",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 6, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-005",
+            "owner": "Operations",
+            "constraint_type": "decision_deadline",
+            "start_at": "2026-09-04T17:00:00+08:00",
+            "end_at": "2026-09-04T17:00:00+08:00",
+            "priority": "hard",
+            "notes": "Plan and budget decision",
+            "record_version": "calendar-2026-08-26",
+            "_row": 6
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-006",
+          "summary": "Aggregate record CAL-006",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 7, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-006",
+            "owner": "Learner Experience",
+            "constraint_type": "accessibility_walkthrough",
+            "start_at": "2026-09-25T14:00:00+08:00",
+            "end_at": "2026-09-25T16:00:00+08:00",
+            "priority": "hard",
+            "notes": "Venue confirmation required first",
+            "record_version": "calendar-2026-08-26",
+            "_row": 7
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-007",
+          "summary": "Aggregate record CAL-007",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 8, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-007",
+            "owner": "Programme",
+            "constraint_type": "rehearsal_window",
+            "start_at": "2026-10-16T15:00:00+08:00",
+            "end_at": "2026-10-16T18:00:00+08:00",
+            "priority": "soft",
+            "notes": "Remote backup acceptable",
+            "record_version": "calendar-2026-08-26",
+            "_row": 8
+          }
+        },
+        {
+          "id": "obs:calendar:CAL-008",
+          "summary": "Aggregate record CAL-008",
+          "locator": {
+            "kind": "cell-range",
+            "value": "Calendar Constraints, row 9, fields constraint_id, owner, constraint_type, start_at, end_at, priority, notes, record_version"
+          },
+          "data": {
+            "constraint_id": "CAL-008",
+            "owner": "TICC",
+            "constraint_type": "teardown_deadline",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "priority": "hard",
+            "notes": "All vendors clear by 18:30",
+            "record_version": "calendar-2026-08-26",
+            "_row": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:floorplan",
+      "summary": "Captured floorplan",
+      "evidence_ids": [],
+      "source_role": "floor-plan-or-image",
+      "locator": "https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf",
+      "retrieved_at": "2026-11-24T02:34:54.456654+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "application/pdf",
+      "version_metadata": {
+        "response_url": "https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf",
+        "etag": "W/\"522512-1710485827039\"",
+        "last_modified": "Fri, 15 Mar 2024 06:57:07 GMT",
+        "response_sha256": "sha256:8805ab527b7bb202a70534120ed4037dbde633301f1935e80bd04f12a7c70367",
+        "review_basis": "Stage 1 visual review of the retrieved official one-page PDF. Reuse these observations only when newly fetched bytes match this hash."
+      },
+      "content_hash": "sha256:8805ab527b7bb202a70534120ed4037dbde633301f1935e80bd04f12a7c70367",
+      "local_reference": "snapshots/evidence/floorplan.pdf",
+      "observations": [
+        {
+          "id": "obs:floorplan:wheelchair",
+          "summary": "Wheelchair-area symbols are shown beside seating near the Plenary Hall Stage.",
+          "locator": {
+            "kind": "page-region",
+            "value": "page 1, right half, seating beside Plenary Hall Stage"
+          }
+        },
+        {
+          "id": "obs:floorplan:elevators",
+          "summary": "Accessible-elevator symbols are shown beside JOY.",
+          "locator": {
+            "kind": "page-region",
+            "value": "page 1, lower centre beside JOY"
+          }
+        },
+        {
+          "id": "obs:floorplan:restroom",
+          "summary": "An accessible-restroom symbol is shown in the lower restroom cluster.",
+          "locator": {
+            "kind": "page-region",
+            "value": "page 1, lower restroom cluster beside stairs A/B"
+          }
+        },
+        {
+          "id": "obs:floorplan:quiet-room",
+          "summary": "The V.I.P. ROOM is labelled on the floor drawing.",
+          "locator": {
+            "kind": "page-region",
+            "value": "page 1, lower-left wing, V.I.P. ROOM label"
+          }
+        }
+      ]
+    },
+    {
+      "id": "source:interview",
+      "summary": "Captured interview",
+      "evidence_ids": [],
+      "source_role": "other",
+      "locator": "interviews/project-c-event-coordination-interview2.md",
+      "retrieved_at": "2026-11-24T02:34:57.190337+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/plain",
+      "version_metadata": {
+        "representation": "permitted planning-policy paragraphs",
+        "response_sha256": "sha256:5636e2dce80cd64551e8a10cb83e5a1233bbd6de2cc3d483335abf112b44669c"
+      },
+      "content_hash": "sha256:955cd3df1d54122063bf735faf13de39f3380d78e07a6fded1a02b6237f16bd5",
+      "local_reference": "snapshots/evidence/interview-policies.txt",
+      "observations": [
+        {
+          "id": "obs:interview:supplier-preference",
+          "summary": "A preference I have is using familiar suppliers because it makes setup much easier for the team, though it is not a hard rule. Is there another aspect of the workflow you'd like to dive into?",
+          "locator": {
+            "kind": "section",
+            "value": "A preference I have is using familiar suppliers because it makes setup"
+          }
+        },
+        {
+          "id": "obs:interview:buffer-policy",
+          "summary": "Since our attendee numbers change constantly, and I haven't established a standard policy for how many extra meals or seats to plan for, it's difficult to settle on a final headcount without risking a shortage or waste.",
+          "locator": {
+            "kind": "section",
+            "value": "Since our attendee numbers change constantly, and I haven't establishe"
+          }
+        },
+        {
+          "id": "obs:interview:approval-order",
+          "summary": "Yes, that's their typical order. Each category owner reviews their budget allocation and commits amounts first, and then Operations gives the final approval for the plan as a whole. Do you want to dive into how we handle exceptions or changes?",
+          "locator": {
+            "kind": "section",
+            "value": "Yes, that's their typical order. Each category owner reviews their bud"
+          }
+        }
+      ]
+    }
+  ]
+}
