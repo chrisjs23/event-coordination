@@ -1,6 +1,6 @@
 # Command setup and verification
 
-The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Options, recommendations, final drafts and automatic history/recovery handling are scheduled for stages 4–6.
+The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Stage 4 adds options, feasibility and review requests through snapshot 07. Final drafts and automatic history/recovery handling remain for stages 5–6.
 
 ## Setup
 
@@ -12,6 +12,8 @@ python3 -m venv .venv
 ```
 
 The installed dependencies are jsonschema 4.26.0 and rfc3339-validator 0.1.4. Snapshot checks use Draft 2020-12 with date-time format checking enabled. The library's validation interface is documented by its maintainers. [jsonschema validation documentation](https://python-jsonschema.readthedocs.io/en/stable/validate/)
+
+Local review of an existing capture uses `--through decision-and-approval --resume-baseline`. This preserves the captured run and its retrieval timestamps.
 
 Live capture requires outbound HTTPS to the disclosed Notion, Google Sheets and TICC hosts and their normal redirects. The inspected sources need no credentials. Offline tests use synthetic responses injected into the capture function.
 
@@ -56,7 +58,7 @@ From the repository root after setup, run:
 .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Expect 34 passing tests.
+Expect 55 passing tests. For the Stage 4 endpoint and its independent repeat procedure, read [option comparison and review](options.md).
 
 | Test file | What it verifies |
 | --- | --- |

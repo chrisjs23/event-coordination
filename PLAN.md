@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stages 1–3 manually verified. Stage 4 authorized.**
+**Status: Approved. Stages 1–4 manually verified. Stage 5 authorized.**
 
 ## Project overview and objectives
 
@@ -11,7 +11,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
 - `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
-- Stages 1–3 provide source mapping, skill instructions, preflight, live source capture, validated baseline interpretation and the first four snapshots. Options and final drafts remain for later stages.
+- Stages 1–4 provide source capture, a validated baseline, option comparisons, feasibility checks and pending review gates through snapshot 07. Draft rendering and publication checks remain for Stage 5.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -39,7 +39,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | 1. Source access and mapping | Retrieve the sources disclosed in the updated export and document field meanings, stable IDs, version data, and privacy boundaries. Escalate only genuinely missing links or ambiguous meanings. | Source inventory and field map in `references/`; access/dependency decision. | Record each retrieval outcome, reconcile the calendar constraints by ID, and inspect the retrieved 4F PDF for page and region locators. | Complete · verified |
 | 2. Skill and command shell | Define skill workflow, runtime, dependencies, CLI inputs, output paths, and safe draft-only behavior. | `SKILL.md`, minimal runner, setup/one-command documentation. | Skill metadata and CLI smoke check; no external side effects. | Complete · verified |
 | 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Complete · verified |
-| 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Not started; depends on 3 |
+| 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Complete · verified |
 | 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Not started; depends on 4 |
 | 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Not started; depends on 5 |
 | 7. End-to-end execution and handoff | Run against the disclosed live sources, inspect outputs, document choices, tradeoffs, unresolved owners, and exact command/setup; verify session capture. | Review-ready current `deliverables/` plus usage documentation. | Full schema chain, evidence/media existence, source-to-claim traceability, cross-artifact audit, and Entire checkpoint check. | Not started; depends on 6 |
@@ -131,3 +131,41 @@ Decisions and limits:
 Final Stage 3 package checks passed metadata validation and the local skill scan (exit 0). The scanner reported MEDIUM `TOOL_ABUSE_UNDECLARED_NETWORK` at `SKILL.md`, accepted because live HTTPS retrieval is explicitly required by the project, described in the skill workflow and command guide, and restricted in this implementation to the disclosed public sources and their normal redirects. The INFO `MANIFEST_MISSING_LICENSE` finding remains accepted pending the owner's licensing choice. Manual review confirmed no credential handling or external write actions. Current and retained smoke-run snapshot/evidence verification both passed after the interrupted turn resumed.
 
 - Stage 3 tests manually verified by the user. Stage 3 approved for commit and Stage 4 authorized.
+
+### Reproduce Stage 4
+
+Stage 3 was committed as `7ac692b` with verified Entire checkpoint `01M85Q3BNK5V8PP46ADAW8KA1Y`. The user manually verified its tests and authorized Stage 4. Stage 4 is complete and awaits review before Stage 5.
+
+Two configured `implementer` tasks wrote the schedule helper, snapshot extension and focused tests. The primary agent retained business-rule interpretation, wrote the option engine and integration, reviewed the delegated changes and strengthened the tests.
+
+The current captured run, `run-578b49d04cc24714a6c8740bd56db374`, now has snapshots 05–07. The first four snapshots and original evidence bytes are unchanged. Review explicitly used `--resume-baseline` on verified captured evidence, with original retrieval timestamps preserved. A separate fresh-capture path through snapshot 07 is tested with deterministic synthetic responses.
+
+From the repository root with the pinned virtual environment installed:
+
+```sh
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables --through decision-and-approval
+```
+
+Expected and observed results are 55 passing tests and verification JSON with seven snapshots, seven evidence files and partial planning status. [Option verification and manual repeat instructions](event-planning-coordination-brief/references/options.md) include exact commands to copy the four-snapshot captured baseline into a temporary directory and reproduce the review there.
+
+New tests:
+- [tests/test_options.py](tests/test_options.py) and [tests/fixtures/review-case.json](tests/fixtures/review-case.json) freeze the verified case for cost, capacity, expiry, source-conflict, changed-demand, missing-input, recommendation and pending-approval regression checks.
+- [tests/test_schedule.py](tests/test_schedule.py) checks all demos and distinct changeovers, interval ordering and setup/programme/teardown bounds, with invalid/overfull schedules rejected.
+- [tests/test_review_pipeline.py](tests/test_review_pipeline.py) checks fresh seven-stage capture and CLI resume, preserving earlier files and rejecting repeated overwrites.
+- [tests/test_snapshots.py](tests/test_snapshots.py) extends schema/link verification through snapshot 07 and tests option/result coverage and recommendation references. Semantic mutation tests repair predecessor hashes so they exercise the intended semantic rejection.
+
+Decisions for owner review:
+- Propose 15 additional people above the 245-person attendance basis, giving 260 planning people. This is a learner decision for this plan, with explicit shortage/waste tradeoffs.
+- Two base alternatives pass the hard constraints. Their complete costs are TWD 494,000 and TWD 512,000, including communications and contingency allowances.
+- Recommend City Pantry's larger catering coverage within the overall ceiling. It has 40 places beyond the proposed headcount and leaves TWD 8,000 of overall budget. The Green Table alternative leaves TWD 26,000.
+- Retain all ten generated combinations, including fallback-date, basic-AV and livestream rejections. The programme contains twelve presentations and twelve changeovers, a fixed keynote, lunch and two breaks within the event window.
+- All category reviews and Operations approval remain pending. Operations lists the category requests as prerequisites. No real booking or supplier readiness test is claimed.
+
+The [planning policy](event-planning-coordination-brief/references/planning-policy.json) makes role mappings, reviewed scope/condition bindings and selection rationale explicit. Numeric inputs are re-evaluated. Changed or conflicting source meanings remain unverified until reviewed. Existing commitments are carried alongside proposed spending, with owners responsible for reconciling overlap before approval.
+
+Known limits remain automatic archival/replacement and recovery (Stage 6), and final drafts/publication validation (Stage 5). The full-pipeline entry point still exits 3. The explicit seven-stage entry point returns a partial planning run. No new source-access blocker was found.
+
+Package metadata validation passed. The local skill scan exited 0 with the same MEDIUM network-declaration heuristic and INFO missing-license findings documented for Stage 3. Their dispositions remain unchanged after manual review of the new read-only comparison code.
+
+- Stage 4 tests manually verified by the user. Stage 4 approved for commit and Stage 5 authorized.

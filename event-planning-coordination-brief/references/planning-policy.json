@@ -1,0 +1,91 @@
+{
+  "description": "Reviewed interpretations of the disclosed exercise records. Numeric quote fields remain dynamic. Changed scope text requires renewed review.",
+  "buffer_people": 15,
+  "buffer_rationale": "Allow for some forecast error while keeping the supported catering packages comparable. This is a plan-specific proposal to reconsider after confirmed attendance changes.",
+  "selection_rule": "Among feasible options prefer greater catering coverage, then lower total cost. This spends more for shortage protection while preserving the overall ceiling.",
+  "roles": {
+    "venue": [
+      "Q-001",
+      "Q-002"
+    ],
+    "catering": [
+      "Q-003",
+      "Q-004"
+    ],
+    "captions": [
+      "Q-005"
+    ],
+    "av": [
+      "Q-006",
+      "Q-007"
+    ],
+    "livestream": [
+      "Q-008"
+    ],
+    "security": [
+      "Q-009"
+    ],
+    "quiet_room": [
+      "Q-010"
+    ]
+  },
+  "hearing_loop_quotes": [
+    "Q-006"
+  ],
+  "allowance_categories": [
+    "communications",
+    "contingency"
+  ],
+  "claims": {
+    "venue-allocation": {
+      "block_id": "071b80d1-36cd-4615-906d-da9cf47e860f",
+      "sha256": "sha256:05249d1454abe1ab3542b41d5e4a916bc298bc8c8bbd33b7ef0321ea51cfdb7c"
+    },
+    "step-free": {
+      "block_id": "8f25fe93-a57e-441f-be1b-f1875290301f",
+      "sha256": "sha256:cabb1b5a97ef536097a0b823e074e32552bdf06d5f35355194e057b1de61290f"
+    },
+    "dietary-and-services": {
+      "block_id": "2fdefb04-6881-4c55-8302-3822705b5a45",
+      "sha256": "sha256:2a1aa3d870101afb7351bcbd56fed24e871bbc6aed902ce7ac170bbd86365ee7"
+    },
+    "readiness": {
+      "block_id": "5adfbcd1-1ab9-4161-a22a-5d200888f65c",
+      "sha256": "sha256:79fcbc48f3aa5a5c5fce0ea7c537667e61e59a0000d363987c539c4a63553a6a"
+    },
+    "setup-choice": {
+      "block_id": "41f6349d-bb54-4100-8044-09a06878ec6b",
+      "sha256": "sha256:5396d4691d73b90b3214eeb01257ab091e42a1ab40e3fb544c2c95f065614d61"
+    },
+    "programme": {
+      "block_id": "99807928-2434-4e30-9f24-d3d878803331",
+      "sha256": "sha256:ec7f81a5962783f286f6745f38f9e00d9078badd177b4029b39a6752a69acc77"
+    },
+    "hard-requirements": {
+      "block_id": "14165ffe-1d73-4931-a197-998aff3efd91",
+      "sha256": "sha256:06fc67151fc3188bff42ed7fb5ffe632b544582283cbc9980907913c9667514b"
+    }
+  },
+  "quote_scope_hashes": {
+    "Q-001": "sha256:a61579d2bac6ddab0c15caf31450e45b592d7bc7c0fd5352e0ed4acf619980d2",
+    "Q-002": "sha256:ae7eee20947d45ffb39e15e6eb0961355e61291678537b2a2829c517d17d3989",
+    "Q-003": "sha256:2cbb5dc15d27f90685709ddebab96c4f6e8141692db53f45f3b0dd67aea7502d",
+    "Q-004": "sha256:263729547fc7812e46314dfd226495b00c8bf684b4dbbff01cc87281867834c0",
+    "Q-005": "sha256:603a6203222b1dfc681a8c48cab1e3bab196ad1c5b00aacec4ef0cca84acc03d",
+    "Q-006": "sha256:08764cfeea539b575ea1ec44e91059dd5949755b053c37cec70aa394ea8a7174",
+    "Q-007": "sha256:9d88f50f232cea144b6610a13d3fe81ad221912881b478c0eb15bbeb8cae625c",
+    "Q-008": "sha256:fedba804042afd2684bd70ba4fece82e41ea27fdc5e43af6a5667f7138c23e95",
+    "Q-009": "sha256:27d6d5e22eea1153cc6591de964ecdda87892237873391e90ab76e743fca7c90",
+    "Q-010": "sha256:f525956c975f9fc15ae958e6e89f7124bc547b2f57a0737ac13950caccd12d84"
+  },
+  "calendar_note_hashes": {
+    "CAL-001": "sha256:6811741de33c33878c07872d867433bbf3f8dc5fae53a0f452a48bdc218ea4f2",
+    "CAL-002": "sha256:aa82f3650c10c9dfc3a8b9fb0566b2862af2fe30f5a407718368c576b970ba2f",
+    "CAL-003": "sha256:12ac4733fd82fbda4335309a2dba1eea982df8c0b9c226785c996ab5be73bddf",
+    "CAL-004": "sha256:d5ed0d3545e99da563fec3d6767392c99a70480d94b8e47aa42a8272c95d009e",
+    "CAL-005": "sha256:dd19b0da2b4e73465c1b896eef4f6f444819748f595d8d3049d257b4e1d917f7",
+    "CAL-006": "sha256:fde881aba00676485c98968f70ba240824a4f35ed60e76e487be3624eb01cebc",
+    "CAL-007": "sha256:8c3fd7904c774bcf38f15e452054f2cc278f98c2a94490e210ff903370ce120a",
+    "CAL-008": "sha256:aa4cbee42dcf463c9c46a09a2d4dbc967e8e0f77f3df566578c0e33bddeea062"
+  }
+}

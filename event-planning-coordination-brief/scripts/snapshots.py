@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write and verify the first four event-planning stage snapshots."""
+"""Write and verify event-planning stage snapshots."""
 
 import argparse
 from datetime import datetime, timezone
@@ -20,12 +20,18 @@ STAGES = (
     "source-capture",
     "constraint-model",
     "planning-baseline",
+    "option-generation",
+    "feasibility-testing",
+    "decision-and-approval",
 )
 FILENAMES = (
     "01-scope-and-approval-gates.json",
     "02-source-capture.json",
     "03-constraint-model.json",
     "04-planning-baseline.json",
+    "05-option-generation.json",
+    "06-feasibility-testing.json",
+    "07-decision-and-approval.json",
 )
 
 
@@ -66,8 +72,8 @@ class SnapshotWriter:
 
     def write(self, sequence: int, state: dict, consumed: list[str], produced: list[str],
               unresolved: list[dict], *, status="partial", decisions=None) -> Path:
-        if not isinstance(sequence, int) or isinstance(sequence, bool) or not 1 <= sequence <= 4:
-            raise ValueError("sequence must be an integer from 1 through 4")
+        if not isinstance(sequence, int) or isinstance(sequence, bool) or not 1 <= sequence <= 7:
+            raise ValueError("sequence must be an integer from 1 through 7")
         self.snapshot_dir.mkdir(parents=True, exist_ok=True)
         target = self.snapshot_dir / FILENAMES[sequence - 1]
         if target.exists():
@@ -125,17 +131,19 @@ def _local_evidence_path(output_dir: Path, reference: str) -> Path:
     return path
 
 
-def verify_baseline(output_dir: Path, schema_path: Path) -> dict:
+def _verify(output_dir: Path, schema_path: Path, snapshot_count: int) -> dict:
     output_dir = Path(output_dir)
     snapdir = output_dir / "snapshots"
     validator = _validator(Path(schema_path))
     docs, raws = [], []
-    for seq, filename in enumerate(FILENAMES, 1):
+    filenames = FILENAMES[:snapshot_count]
+    stages = STAGES[:snapshot_count]
+    for seq, filename in enumerate(filenames, 1):
         path = snapdir / filename
         raw = path.read_bytes()
         doc = json.loads(raw)
         _validate(validator, doc)
-        if doc["sequence"] != seq or doc["stage"] != STAGES[seq - 1]:
+        if doc["sequence"] != seq or doc["stage"] != stages[seq - 1]:
             raise ValueError(f"wrong sequence or stage in {path}")
         try:
             created = datetime.fromisoformat(doc["created_at"].replace("Z", "+00:00"))
@@ -154,12 +162,40 @@ def verify_baseline(output_dir: Path, schema_path: Path) -> dict:
     for idx, doc in enumerate(docs):
         expected = None if idx == 0 else {
             "snapshot_id": docs[idx - 1]["snapshot_id"],
-            "path": (Path("snapshots") / FILENAMES[idx - 1]).as_posix(),
+            "path": (Path("snapshots") / filenames[idx - 1]).as_posix(),
             "sha256": sha256(raws[idx - 1]),
         }
         if doc["predecessor"] != expected:
-            raise ValueError(f"invalid predecessor link in {FILENAMES[idx]}")
+            raise ValueError(f"invalid predecessor link in {filenames[idx]}")
     produced = set()
+    options = {}
+    results = {}
+    for doc in docs:
+        if doc["sequence"] == 5:
+            for option in doc["state"]["options"]:
+                if option["id"] in options:
+                    raise ValueError("option IDs are not unique")
+                options[option["id"]] = option
+        elif doc["sequence"] == 6:
+            seen_options = set()
+            for result in doc["state"]["option_results"]:
+                option_id = result.get("option_id")
+                if option_id not in options:
+                    raise ValueError(f"option result references unknown option: {option_id}")
+                if option_id in seen_options:
+                    raise ValueError(f"duplicate option result for {option_id}")
+                seen_options.add(option_id)
+                results[option_id] = result
+            if seen_options != set(options):
+                raise ValueError("Every generated option needs a feasibility result")
+        elif doc["sequence"] == 7:
+            recommendation = doc["state"]["recommendation"]
+            if recommendation is not None and (
+                recommendation not in results
+                or results[recommendation]["feasibility"] != "feasible"
+            ):
+                raise ValueError("recommendation must reference an existing feasible option result")
+
     for doc in docs:
         if any(record_id not in produced for record_id in doc["consumed_record_ids"]):
             raise ValueError(f"consumed record ID has no earlier producer in {doc['snapshot_id']}")
@@ -235,16 +271,29 @@ def verify_baseline(output_dir: Path, schema_path: Path) -> dict:
     overall_status = next((s for s in ("failed", "blocked", "partial") if s in statuses), "complete")
     return {"run_id": run_id,
             "status": overall_status,
-            "snapshots": 4, "evidence_files": evidence_count}
+            "snapshots": snapshot_count, "evidence_files": evidence_count}
+
+
+def verify_baseline(output_dir: Path, schema_path: Path) -> dict:
+    """Verify the original four-snapshot planning baseline contract."""
+    return _verify(output_dir, schema_path, 4)
+
+
+def verify_review(output_dir: Path, schema_path: Path) -> dict:
+    """Verify the seven-snapshot review contract."""
+    return _verify(output_dir, schema_path, 7)
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Verify the first four event-planning snapshots")
+    parser = argparse.ArgumentParser(description="Verify event-planning snapshots")
     parser.add_argument("output", type=Path)
+    parser.add_argument("--through", choices=("planning-baseline", "decision-and-approval"),
+                        default="planning-baseline")
     args = parser.parse_args(argv)
     schema_path = Path(__file__).resolve().parents[2] / "snapshot.schema.json"
     try:
-        print(json.dumps(verify_baseline(args.output, schema_path), indent=2))
+        verifier = verify_review if args.through == "decision-and-approval" else verify_baseline
+        print(json.dumps(verifier(args.output, schema_path), indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError, jsonschema.ValidationError) as exc:
         print(f"verification failed: {exc}", file=sys.stderr)

@@ -21,8 +21,10 @@ def _parser():
     )
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--check", action="store_true", help="validate local schema and source map")
-    modes.add_argument("--through", choices=("planning-baseline",),
-                       help="capture sources and write the first four snapshots")
+    modes.add_argument("--through", choices=("planning-baseline", "decision-and-approval"),
+                       help="capture sources through the selected snapshot boundary")
+    parser.add_argument("--resume-baseline", action="store_true",
+                        help="review a verified captured baseline without refreshing sources")
     parser.add_argument(
         "--output-dir",
         type=Path,
@@ -65,10 +67,13 @@ def _validate_inputs(root):
 
 
 def main(argv=None):
-    args = _parser().parse_args(argv)
+    parser = _parser()
+    args = parser.parse_args(argv)
+    if args.resume_baseline and args.through != "decision-and-approval":
+        parser.error("--resume-baseline requires --through decision-and-approval")
     if not args.check and not args.through:
         print(
-            "Planning pipeline is incomplete (stages 3–6); --check is available for preflight.",
+            "Planning pipeline is incomplete (draft publication and recovery); --check is available for preflight.",
             file=sys.stderr,
         )
         return 3
@@ -83,8 +88,11 @@ def main(argv=None):
     output_dir = args.output_dir.expanduser().resolve()
     if args.through:
         try:
-            from pipeline import run_baseline
-            report = run_baseline(root, output_dir)
+            from pipeline import run_baseline, resume_review
+            if args.resume_baseline:
+                report = resume_review(root, output_dir)
+            else:
+                report = run_baseline(root, output_dir, through=args.through)
         except ImportError:
             print("Install dependencies from event-planning-coordination-brief/requirements.txt", file=sys.stderr)
             return 1

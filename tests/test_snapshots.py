@@ -35,9 +35,19 @@ def fixture_chain(tmp_path):
                                       "evidence_ids": ["obs-1"]}]},
         {"headcount_basis": [], "schedule_dependencies": [], "budget_baseline": [],
          "accessibility_baseline": []},
+        {"options": [{"id": "option-1", "summary": "Candidate",
+                       "evidence_ids": []}], "rejected_early": []},
+        {"option_results": [{"id": "result-1", "option_id": "option-1",
+                              "summary": "Feasible candidate", "evidence_ids": [],
+                              "feasibility": "feasible"}], "unresolved_conditions": []},
+        {"recommendation": "option-1", "tradeoffs": [], "learner_decisions": [],
+         "approval_requirements": [{"id": "approval-1", "summary": "Human review",
+                                    "evidence_ids": [], "status": "pending"}]},
     ]
-    consumed = ([], ["scope-1"], ["source-1"], ["constraint-1"])
-    produced = (["scope-1"], ["source-1", "obs-1"], ["constraint-1"], [])
+    consumed = ([], ["scope-1"], ["source-1"], ["constraint-1"],
+                ["constraint-1"], ["option-1"], ["result-1"])
+    produced = (["scope-1"], ["source-1", "obs-1"], ["constraint-1"], [],
+                ["option-1"], ["result-1"], ["approval-1"])
     for i, state in enumerate(states, 1):
         writer.write(i, state, consumed[i - 1], produced[i - 1], [])
     return output
@@ -54,6 +64,79 @@ class SnapshotTests(unittest.TestCase):
         result = snapshots.verify_baseline(output, ROOT / "snapshot.schema.json")
         self.assertEqual(result, {"run_id": "run-test", "status": "partial", "snapshots": 4,
                                   "evidence_files": 1})
+
+    def test_seven_snapshot_review_round_trip(self):
+        output = fixture_chain(self.tmp_path)
+        result = snapshots.verify_review(output, ROOT / "snapshot.schema.json")
+        self.assertEqual(result["snapshots"], 7)
+
+    def test_review_requires_all_seven_snapshots(self):
+        output = fixture_chain(self.tmp_path)
+        (output / "snapshots" / snapshots.FILENAMES[4]).unlink()
+        with self.assertRaises(OSError):
+            snapshots.verify_review(output, ROOT / "snapshot.schema.json")
+
+    def test_review_rejects_bad_option_links_and_recommendations(self):
+        for mutation in ("unknown-option", "duplicate-option", "duplicate-result",
+                         "non-feasible-recommendation", "unknown-recommendation", "missing-result"):
+            with self.subTest(mutation=mutation):
+                case = self.tmp_path / mutation
+                case.mkdir()
+                output = fixture_chain(case)
+                option_results = output / "snapshots" / snapshots.FILENAMES[5]
+                options = output / "snapshots" / snapshots.FILENAMES[4]
+                decision = output / "snapshots" / snapshots.FILENAMES[6]
+                if mutation == "unknown-option":
+                    data = json.loads(option_results.read_text())
+                    data["state"]["option_results"][0]["option_id"] = "missing"
+                    option_results.write_text(json.dumps(data))
+                elif mutation == "duplicate-option":
+                    data = json.loads(options.read_text())
+                    data["state"]["options"].append(dict(data["state"]["options"][0]))
+                    options.write_text(json.dumps(data))
+                elif mutation == "duplicate-result":
+                    data = json.loads(options.read_text())
+                    data["state"]["options"].append({"id": "option-2", "summary": "Second",
+                                                       "evidence_ids": []})
+                    options.write_text(json.dumps(data))
+                    data = json.loads(option_results.read_text())
+                    data["state"]["option_results"].append({
+                        "id": "result-2", "option_id": "option-1", "summary": "Duplicate",
+                        "evidence_ids": [], "feasibility": "feasible"})
+                    option_results.write_text(json.dumps(data))
+                elif mutation == "missing-result":
+                    data = json.loads(option_results.read_text())
+                    data["state"]["option_results"] = []
+                    option_results.write_text(json.dumps(data))
+                    data = json.loads(decision.read_text())
+                    data["state"]["recommendation"] = None
+                    decision.write_text(json.dumps(data))
+                else:
+                    data = json.loads(decision.read_text())
+                    data["state"]["recommendation"] = "missing" if mutation == "unknown-recommendation" else "option-1"
+                    if mutation == "non-feasible-recommendation":
+                        data6 = json.loads(option_results.read_text())
+                        data6["state"]["option_results"][0]["feasibility"] = "conditional"
+                        option_results.write_text(json.dumps(data6))
+                    else:
+                        decision.write_text(json.dumps(data))
+                # Rebind predecessor hashes so this reaches semantic checks.
+                for index, filename in enumerate(snapshots.FILENAMES[1:], 1):
+                    path = output / "snapshots" / filename
+                    data = json.loads(path.read_text())
+                    previous = output / "snapshots" / snapshots.FILENAMES[index - 1]
+                    data["predecessor"]["sha256"] = snapshots.sha256(previous.read_bytes())
+                    path.write_text(json.dumps(data))
+                expected = {
+                    "unknown-option": "unknown option",
+                    "duplicate-option": "option IDs are not unique",
+                    "duplicate-result": "duplicate option result",
+                    "non-feasible-recommendation": "existing feasible",
+                    "unknown-recommendation": "existing feasible",
+                    "missing-result": "Every generated option",
+                }
+                with self.assertRaisesRegex(ValueError, expected[mutation]):
+                    snapshots.verify_review(output, ROOT / "snapshot.schema.json")
 
     def test_writer_does_not_overwrite(self):
         output = fixture_chain(self.tmp_path)
