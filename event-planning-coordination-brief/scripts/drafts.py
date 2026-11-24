@@ -186,6 +186,25 @@ def render_plan(context):
                      ". Recheck affordability before adding optional services.")
     for issue in context.get("unresolved", []):
         lines.append("- " + md(issue["summary"]) + " Owner " + md(issue.get("owner", "Operations")) + ".")
+    scope = context["scope"]
+    if scope.get("predecessor_history"):
+        lines += ["", "## Changes from the preceding run", "",
+                  "Previous run " + md(scope.get("supersedes_run_id")) + " is retained at " +
+                  md(scope["predecessor_history"]) + ".",
+                  "Reason — " + md(scope.get("change_reason")) + ". Previous integrity — " +
+                  md(scope.get("previous_integrity")) + ". Comparison — " +
+                  md(scope.get("comparison_status")) + ".", ""]
+        fields = (("Changed sources", "changed_source_ids"), ("Changed records", "changed_record_ids"),
+                  ("Changed planning decisions", "changed_decision_ids"),
+                  ("Decisions reconsidered", "affected_decision_ids"),
+                  ("Unchanged sources", "unchanged_source_ids"),
+                  ("Unchanged evidence observations", "unchanged_evidence_ids"))
+        missing = "none" if scope.get("comparison_status") == "compared" else "not established"
+        lines.append(table(("Change basis", "Records"),
+                           [(label, ", ".join(scope.get(key, [])) or missing) for label, key in fields]))
+        lines += ["", "All current sources were attempted again. Headcount, costs, programme, option checks, "
+                  "review requests and the four drafts were regenerated. Unknown historical observations were "
+                  "excluded from comparison. Category and Operations decisions remain pending for this revision."]
     lines += ["", "## Review requests", "",
               table(("Request", "Owner", "Status", "Scope"),
                     [(r["id"], r.get("owner"), r["status"], r["summary"]) for r in review["approval_requirements"]]),

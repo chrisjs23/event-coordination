@@ -33,7 +33,7 @@ def _parser():
         type=Path,
         default=Path(__file__).resolve().parents[2] / "deliverables",
         metavar="PATH",
-        help="output root; capture currently requires a new directory (default: repository deliverables)",
+        help="output root; full runs archive and replace earlier results (default: repository deliverables)",
     )
     return parser
 
@@ -94,14 +94,21 @@ def main(argv=None):
     if args.through:
         try:
             from pipeline import run_baseline, resume_review
+            from locking import output_lock
             if args.resume_review:
                 from publication import publish_review
-                report = publish_review(root, output_dir)
+                with output_lock(output_dir):
+                    report = publish_review(root, output_dir)
                 report["basis"] = "captured-run-publication"
             elif args.resume_baseline:
-                report = resume_review(root, output_dir)
+                with output_lock(output_dir):
+                    report = resume_review(root, output_dir)
+            elif args.through == "publication-validation":
+                from refresh import refresh_run
+                report = refresh_run(root, output_dir)
             else:
-                report = run_baseline(root, output_dir, through=args.through)
+                with output_lock(output_dir):
+                    report = run_baseline(root, output_dir, through=args.through)
         except ImportError:
             print("Install dependencies from event-planning-coordination-brief/requirements.txt", file=sys.stderr)
             return 1

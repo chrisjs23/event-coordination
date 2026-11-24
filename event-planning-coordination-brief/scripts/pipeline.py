@@ -1,4 +1,4 @@
-"""Execute only the currently implemented source-to-baseline stages."""
+"""Execute the supported capture, review and publication boundaries."""
 
 import json
 from pathlib import Path
@@ -10,6 +10,7 @@ from snapshots import FILENAMES, SnapshotWriter, verify_baseline, verify_review
 from options import build_review
 from records import read_sheet, validate_sheet
 from publication import publish_review
+from changes import describe_change
 
 
 def record_ids(value):
@@ -26,7 +27,7 @@ def record_ids(value):
     return list(dict.fromkeys(ids))
 
 
-def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline"):
+def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline", previous=None):
     root, output = Path(root), Path(output)
     # Until history/recovery is implemented, a fresh directory preserves all earlier work.
     output.mkdir(parents=True, exist_ok=False)
@@ -38,6 +39,12 @@ def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline
         attempts = output / "snapshots/evidence/capture-attempts.json"
         attempts.write_bytes(json_bytes({"run_id": run_id, "sources": sources}))
         scope, constraints, baseline, unresolved = build_baseline(sources, rows, blocks)
+        if previous is not None:
+            policy = json.loads((root / "event-planning-coordination-brief/references/planning-policy.json").read_text())
+            scope.update(describe_change(previous, sources, policy))
+            scope["predecessor_archive_sha256"] = previous.get("archive_manifest_sha256")
+            scope["previous_identity_verified"] = previous.get("identity_verified", False)
+            scope["previous_integrity_checks"] = previous.get("integrity_errors", [])
         states = [scope, {"sources": sources}, constraints, baseline]
         states = json.loads(json_bytes(states))
         writer = SnapshotWriter(output, root / "snapshot.schema.json", run_id)
@@ -68,6 +75,10 @@ def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline
                                           for p in sorted(output.glob("snapshots/*.json"))],
                    "next_owner": "Operations",
                    "recovery_action": "Inspect retained attempts and source validation; retry in a fresh output directory"}
+        if previous:
+            failure.update(supersedes_run_id=previous.get("run_id"),
+                           predecessor_history=previous.get("history_path"),
+                           previous_integrity=previous.get("integrity"))
         if not (output / "failure.json").exists():
             (output / "failure.json").write_bytes(json_bytes(failure))
         label = "baseline execution failed" if through == "planning-baseline" else "planning execution failed"

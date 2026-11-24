@@ -6,7 +6,7 @@ BEGIN:VEVENT
 SUMMARY:UNSENT DRAFT — Fellowship Demo Day
 DTSTART:20261017T013000Z
 DTEND:20261017T090000Z
-DTSTAMP:20261124T032155Z
+DTSTAMP:20261124T143357Z
 UID:quillhaven-fellowship-demo-day@event-coordination.local
 DESCRIPTION:Pending human approval\; this is an unsent planning draft.\nPl
  anning people: 260\nCost: 512000 TWD\nCalendar records considered:\nconstr
@@ -38,6 +38,6 @@ DESCRIPTION:Pending human approval\; this is an unsent planning draft.\nPl
  y 18:30\; record_version=calendar-2026-08-26
 STATUS:TENTATIVE
 X-OPTION-ID:option:Q-001-Q-004-Q-005-Q-006-Q-009-Q-010
-X-RUN-ID:run-578b49d04cc24714a6c8740bd56db374
+X-RUN-ID:run-6caf453ae6ab4299bbde8f18764ac26d
 END:VEVENT
 END:VCALENDAR

@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stages 1–5 manually verified. Stage 6 authorized.**
+**Status: Approved. Stages 1–5 manually verified and committed. Stage 6 implemented; awaiting manual review. Stage 7 not started.**
 
 ## Project overview and objectives
 
@@ -11,7 +11,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
 - `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
-- Stages 1–5 provide the nine linked snapshots and four consistent local planning drafts, with evidence, option checks and pending owner review requests. Automatic archival and recovery remain for Stage 6.
+- Stages 1–6 provide nine linked snapshots, four consistent local planning drafts, verified archival, fresh reruns and interrupted-run recovery. Owner approvals remain pending. Stage 7 handoff remains.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -41,7 +41,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Complete · verified |
 | 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Complete · verified |
 | 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Complete · verified |
-| 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Not started; depends on 5 |
+| 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Complete · awaiting manual verification |
 | 7. End-to-end execution and handoff | Run against the disclosed live sources, inspect outputs, document choices, tradeoffs, unresolved owners, and exact command/setup; verify session capture. | Review-ready current `deliverables/` plus usage documentation. | Full schema chain, evidence/media existence, source-to-claim traceability, cross-artifact audit, and Entire checkpoint check. | Not started; depends on 6 |
 
 ## Acceptance criteria and verification strategy
@@ -207,3 +207,38 @@ Limitations are automatic replacements, archival and recovery (Stage 6), plus ac
 Skill metadata validation passed. The local skill scan exited 0 with the previously documented MEDIUM network-declaration heuristic and INFO missing-license finding at `SKILL.md`. Both dispositions remain unchanged after manual review. The scanner's GPU warning did not prevent completion. No new source-access blocker was encountered.
 
 - Stage 5 tests manually verified by the user. Stage 5 approved for commit and Stage 6 authorized.
+
+### Stage 6 — rerun, archival and recovery
+
+Stage 5 was committed as `36ba282`, with local Entire checkpoint `01M86Y94ZHJVGF4BBSPWPYRA9A` confirmed. Stage 6 is implemented and awaits the user's manual verification before commit or Stage 7. Two configured lower-cost `implementer` agents handled bounded archive and change-comparison modules/tests. The primary agent reviewed and corrected those changes, implemented transaction integration, and owns final validation.
+
+Full `--through publication-validation` runs now archive actual current bytes before processing sources, capture fresh inputs, regenerate all dependent work and verify the candidate before replacing current output. Every attempt receives a new run ID. Source, observation and policy comparisons identify changed and unchanged evidence without treating retrieval timestamps or row order as business changes. Only verified predecessor boundaries contribute reusable comparison evidence. Pending approvals are regenerated from the current model.
+
+The implementation uses exact-file archive manifests, a nonblocking POSIX writer lock, a journal and sibling candidate/backup directories. Recovery reconciles interrupted directory switches; failed fresh attempts retain their actual state while the prior successful drafts remain archived. Existing damaged or legacy histories are preserved without claiming verification. This deliberately uses a full rebuild per invocation rather than adding a cache. Narrower resume modes remain one-time extensions.
+
+#### Reproduce Stage 6
+
+Prerequisites: Python 3.10+, a local Linux/WSL POSIX filesystem and the existing virtual environment. From the repository root:
+
+```sh
+.venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables --through publication-validation
+```
+
+Expected and observed: 115 passing tests; verifier JSON with `status: complete`, nine snapshots and seven evidence files for the retained current case. Tests use retained deterministic fixtures and temporary outputs; network access is required only for the separate live rerun procedure.
+
+| Added/modified tests | What they verify |
+| --- | --- |
+| `tests/test_history.py` (17 tests) | Exact archived bytes, manifest integrity, collisions and corrupt/legacy archives, predecessor links, path containment and symlink handling. |
+| `tests/test_changes.py` (10 tests) | Verified prior boundaries, changed sources/records/policy, representation reorder, unknown history and refusal to reuse unverified evidence. |
+| `tests/test_refresh.py` (16 tests) | Fresh/unchanged reruns, price and policy changes, repair of each draft, source failure and recovery, writer locking, invalid journals and interruption at directory-switch boundaries. |
+| `tests/test_publication.py` (7 tests) | Existing publication checks plus rejection of unresolved failure markers; fixtures no longer depend on mutable current deliverables. |
+
+Follow [recovery.md](event-planning-coordination-brief/references/recovery.md) for exact commands to copy the deliverables to a temporary directory, perform a live refresh, delete a copied draft and verify regeneration. Manually inspect the predecessor manifest, Stage 1 supersession/change lists, Stage 2 actual retrieval times, the plan's changes section and pending approval requests. Remote changes can legitimately produce partial, blocked or failed results instead of the retained case's complete result.
+
+The live refresh produced `run-6caf453ae6ab4299bbde8f18764ac26d`, superseding `run-578b49d04cc24714a6c8740bd56db374`. All seven source hashes compared unchanged and new retrieval times were recorded. The predecessor archive's 21 files matched the Stage 5 committed bytes exactly. Standalone verification passed for both current and archived runs. The current recommendation remains TWD 512,000 for 260 planning people; all human approvals remain pending.
+
+Skill metadata validation passed. The local scan exited 0 with no HIGH/CRITICAL findings; the previously reviewed MEDIUM network-declaration heuristic and INFO missing-license finding remain. Public reads are documented in the workflow; a license choice remains with the owner.
+
+Known limits: locking requires POSIX `fcntl`; native Windows and network filesystems are untested. Two directory renames can briefly leave the current path unavailable to unlocked readers. Tests cover process interruptions and ordinary I/O failure paths, not physical power loss or arbitrary tampering with private transaction directories. Concurrent manual edits cause an explicit refusal. No new source-access blocker was found. Stage 7 remains pending review.

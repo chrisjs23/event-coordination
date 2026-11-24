@@ -1,15 +1,15 @@
 {
   "schema_version": "event-coordination-stage-snapshot/2",
-  "snapshot_id": "run-578b49d04cc24714a6c8740bd56db374:04",
-  "run_id": "run-578b49d04cc24714a6c8740bd56db374",
+  "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:04",
+  "run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
   "stage": "planning-baseline",
   "sequence": 4,
-  "created_at": "2026-11-24T02:34:57.255844+00:00",
+  "created_at": "2026-11-24T14:33:57.458699+00:00",
   "status": "partial",
   "predecessor": {
-    "snapshot_id": "run-578b49d04cc24714a6c8740bd56db374:03",
+    "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:03",
     "path": "snapshots/03-constraint-model.json",
-    "sha256": "sha256:5ccbcfbc39354a31c440b21a5d6490fdfc65a489168325027f43bd8f25d5d26a"
+    "sha256": "sha256:eb81bd3af5c4f538dc69971a0a8ee8903b969461f069cea8fa7df66e33a1dcf6"
   },
   "consumed_record_ids": [
     "scope:objective",

@@ -364,6 +364,8 @@ def main(argv=None):
         if args.through == "publication-validation":
             from publication import validate_existing
             validate_existing(args.output)
+            from history import verify_history_link
+            verify_history_link(args.output)
         print(json.dumps(result, indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError, jsonschema.ValidationError) as exc:

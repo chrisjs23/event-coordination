@@ -6,7 +6,7 @@ Review requested from Operations and the category owners.
 
 | Item | Value |
 | --- | --- |
-| Run | run-578b49d04cc24714a6c8740bd56db374 |
+| Run | run-6caf453ae6ab4299bbde8f18764ac26d |
 | Recommended option | option:Q-001-Q-004-Q-005-Q-006-Q-009-Q-010 |
 | Event date | 2026-10-17 |
 | Planning people | 260 |
@@ -15,7 +15,7 @@ Review requested from Operations and the category owners.
 | Overall budget remaining TWD | 8000 |
 | Approval status | pending |
 
-Prepared at 2026-11-24T03:21:55.846958+00:00. Exercise business clock 2026-08-26T12:00:00+08:00. Actual retrieval times are listed below.
+Prepared at 2026-11-24T14:33:57.737254+00:00. Exercise business clock 2026-08-26T12:00:00+08:00. Actual retrieval times are listed below.
 
 ## Objective and success measures
 
@@ -172,6 +172,22 @@ Operations holds individual contacts and coordinates dietary and accessibility r
 
 Current remaining overall budget is TWD 8000. Recheck affordability before adding optional services.
 
+## Changes from the preceding run
+
+Previous run run-578b49d04cc24714a6c8740bd56db374 is retained at history/run-578b49d04cc24714a6c8740bd56db374.
+Reason — unchanged inputs refreshed and revalidated. Previous integrity — validated-publication. Comparison — compared.
+
+| Change basis | Records |
+| --- | --- |
+| Changed sources | none |
+| Changed records | none |
+| Changed planning decisions | none |
+| Decisions reconsidered | none |
+| Unchanged sources | source:attendees, source:brief, source:budget, source:calendar, source:floorplan, source:interview, source:vendors |
+| Unchanged evidence observations | obs:attendees:SIG-001, obs:attendees:SIG-002, obs:attendees:SIG-003, obs:attendees:SIG-004, obs:attendees:SIG-005, obs:attendees:SIG-006, obs:attendees:SIG-007, obs:attendees:SIG-008, obs:attendees:SIG-009, obs:attendees:SIG-010, obs:attendees:SIG-011, obs:attendees:SIG-012, obs:attendees:SIG-013, obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f, obs:brief:0e9768a0-7cc6-4096-8bc9-77b1956b9be4, obs:brief:14165ffe-1d73-4931-a197-998aff3efd91, obs:brief:1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc, obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1, obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45, obs:brief:2fe3fca1-8583-47f9-bc95-bf1805acb28c, obs:brief:333afcd6-4e59-4fde-a1c0-6a470363a4d9, obs:brief:3af34366-805b-42d8-a40a-e1a7d56ee103, obs:brief:3ba0b700-541e-81d0-af55-dc1a8f49f5af, obs:brief:413649ad-9782-4a9f-8ade-40adb5f58ccb, obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b, obs:brief:4a86cac9-38e6-44f5-9d04-0eb3bac6c92b, obs:brief:4aa2f6dc-3460-435b-8649-99a67d325798, obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c, obs:brief:5eb74389-3826-4942-83bb-41e6bad56dd6, obs:brief:792e90b1-947b-45db-8397-24e8ecf8a3f8, obs:brief:7b00ee3a-16fa-4538-a6ce-890593513cc9, obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f, obs:brief:99807928-2434-4e30-9f24-d3d878803331, obs:brief:99d8d3b3-2fd2-496c-a8ee-1dddd5d49507, obs:brief:cad780df-377c-4b3f-a1ae-64f3b0b4b02d, obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc, obs:brief:f58c12b1-089e-42b8-974c-4dd2305d3f26, obs:brief:fe0e1946-b3c9-4a62-8a82-938eecfc8854, obs:budget:accessibility, obs:budget:catering, obs:budget:communications, obs:budget:contingency, obs:budget:production, obs:budget:security, obs:budget:venue, obs:calendar:CAL-001, obs:calendar:CAL-002, obs:calendar:CAL-003, obs:calendar:CAL-004, obs:calendar:CAL-005, obs:calendar:CAL-006, obs:calendar:CAL-007, obs:calendar:CAL-008, obs:floorplan:elevators, obs:floorplan:quiet-room, obs:floorplan:restroom, obs:floorplan:wheelchair, obs:interview:approval-order, obs:interview:buffer-policy, obs:interview:supplier-preference, obs:vendors:Q-001, obs:vendors:Q-002, obs:vendors:Q-003, obs:vendors:Q-004, obs:vendors:Q-005, obs:vendors:Q-006, obs:vendors:Q-007, obs:vendors:Q-008, obs:vendors:Q-009, obs:vendors:Q-010 |
+
+All current sources were attempted again. Headcount, costs, programme, option checks, review requests and the four drafts were regenerated. Unknown historical observations were excluded from comparison. Category and Operations decisions remain pending for this revision.
+
 ## Review requests
 
 | Request | Owner | Status | Scope |
@@ -191,13 +207,13 @@ Category owners review their allocations and commitments before Operations revie
 
 | Source ID | Retrieval | Actual retrieval time | Version | Captured file |
 | --- | --- | --- | --- | --- |
-| source:brief | retrieved | 2026-11-24T02:34:52.728530+00:00 | see source-capture snapshot | snapshots/evidence/brief.json |
-| source:attendees | retrieved | 2026-11-24T02:34:52.883132+00:00 | see source-capture snapshot | snapshots/evidence/attendees.csv |
-| source:budget | retrieved | 2026-11-24T02:34:53.249110+00:00 | budget-2026-08-26 | snapshots/evidence/budget.csv |
-| source:vendors | retrieved | 2026-11-24T02:34:53.757943+00:00 | see source-capture snapshot | snapshots/evidence/vendors.csv |
-| source:calendar | retrieved | 2026-11-24T02:34:54.108197+00:00 | calendar-2026-08-26 | snapshots/evidence/calendar.csv |
-| source:floorplan | retrieved | 2026-11-24T02:34:54.456654+00:00 | see source-capture snapshot | snapshots/evidence/floorplan.pdf |
-| source:interview | retrieved | 2026-11-24T02:34:57.190337+00:00 | see source-capture snapshot | snapshots/evidence/interview-policies.txt |
+| source:brief | retrieved | 2026-11-24T14:33:52.039951+00:00 | see source-capture snapshot | snapshots/evidence/brief.json |
+| source:attendees | retrieved | 2026-11-24T14:33:52.393627+00:00 | see source-capture snapshot | snapshots/evidence/attendees.csv |
+| source:budget | retrieved | 2026-11-24T14:33:52.791612+00:00 | budget-2026-08-26 | snapshots/evidence/budget.csv |
+| source:vendors | retrieved | 2026-11-24T14:33:53.304898+00:00 | see source-capture snapshot | snapshots/evidence/vendors.csv |
+| source:calendar | retrieved | 2026-11-24T14:33:53.658089+00:00 | calendar-2026-08-26 | snapshots/evidence/calendar.csv |
+| source:floorplan | retrieved | 2026-11-24T14:33:53.951759+00:00 | see source-capture snapshot | snapshots/evidence/floorplan.pdf |
+| source:interview | retrieved | 2026-11-24T14:33:57.396983+00:00 | see source-capture snapshot | snapshots/evidence/interview-policies.txt |
 
 Inspect snapshots/02-source-capture.json for original URLs, response and extract hashes, block/cell locators and individual observations. Each comparison preserves its quote evidence IDs.
 

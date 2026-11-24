@@ -10,6 +10,7 @@ import unittest
 from unittest.mock import patch
 
 import test_capture as fixtures
+import test_refresh as golden
 from publication import publish_review
 from snapshots import FILENAMES, verify_publication
 import pipeline
@@ -21,13 +22,12 @@ VERIFY = ROOT / "event-planning-coordination-brief/scripts/snapshots.py"
 
 class PublicationTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
-        self.addCleanup(self.temp.cleanup)
-        self.output = Path(self.temp.name) / "run"
-        (self.output / "snapshots").mkdir(parents=True)
-        for name in FILENAMES[:7]:
-            shutil.copy2(ROOT / "deliverables/snapshots" / name, self.output / "snapshots" / name)
-        shutil.copytree(ROOT / "deliverables/snapshots/evidence", self.output / "snapshots/evidence")
+        case = golden.RefreshTests()
+        case.setUp()
+        self.addCleanup(case.doCleanups)
+        self.output = case.output
+        pipeline.run_baseline(case.root, self.output, fetch=golden.FixtureTransport(case.root),
+                              through="decision-and-approval")
 
     def test_cli_publication_then_standalone_verification(self):
         old = {name: (self.output / "snapshots" / name).read_bytes() for name in FILENAMES[:7]}
@@ -96,6 +96,14 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(verify_publication(case.output, case.root / "snapshot.schema.json")["snapshots"], 9)
         from icalendar import Calendar
         self.assertEqual(Calendar.from_ical((case.output / "event-calendar.ics").read_bytes()).walk("VEVENT"), [])
+
+    def test_failure_record_prevents_a_stale_success_report(self):
+        publish_review(ROOT, self.output)
+        (self.output / "failure.json").write_text('{"error":"unresolved attempt"}')
+        result = subprocess.run([sys.executable, "-B", str(VERIFY), str(self.output),
+                                 "--through", "publication-validation"], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unresolved failure", result.stderr)
 
     def test_resume_review_requires_publication_boundary(self):
         result = subprocess.run([sys.executable, "-B", str(SCRIPT), "--resume-review"],

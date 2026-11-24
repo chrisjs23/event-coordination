@@ -1,6 +1,6 @@
 # Command setup and verification
 
-The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Stage 4 adds options, feasibility and review requests through snapshot 07. Stage 5 adds all four drafts and publication checks through snapshot 09. Automatic history/recovery remains Stage 6 work.
+The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Stage 4 adds options, feasibility and review requests through snapshot 07. Stage 5 adds all four drafts and publication checks through snapshot 09. Stage 6 adds verified archival, transactional full reruns and recovery.
 
 ## Setup
 
@@ -38,7 +38,7 @@ stage3_review_parent=$(mktemp -d)
 
 Both commands should exit 0 and report `status: partial`, four snapshots, and seven evidence files when all sources remain available. Seven includes the local interview-policy extract alongside the six remote sources. The execution report also gives the new run ID and output path. Successful scoped execution reports a partial planning run because the remaining five snapshots and drafts are future stages.
 
-The default output root is this repository's `deliverables/`. An explicit relative `--output-dir` is resolved from the caller's working directory. Capture requires the selected directory to be absent. Existing directories are rejected before retrieval so prior work is preserved while automatic archival is pending Stage 6.
+The default output root is this repository's `deliverables/`. An explicit relative `--output-dir` is resolved from the caller's working directory. The planning-baseline endpoint requires a fresh directory. Full publication runs archive and replace an existing recognized planning run, with fresh source capture and validation. See [recovery](recovery.md).
 
 To verify the retained current run without network access, use:
 
@@ -58,7 +58,7 @@ From the repository root after setup, run:
 .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Expect 71 passing tests. For the Stage 4 endpoint and its independent repeat procedure, read [option comparison and review](options.md).
+Expect 115 passing tests. For the Stage 4 endpoint and its independent repeat procedure, read [option comparison and review](options.md).
 
 | Test file | What it verifies |
 | --- | --- |
@@ -78,6 +78,6 @@ The Notion content route is a site implementation detail. Pagination, missing li
 
 CSV evidence retains declared aggregate columns in source order, preserving cell values and row order. Unrelated column values are omitted for privacy. Metadata records the original response hash, retained extract hash and ignored-column count. Review changes to declared free-text fields for privacy before sharing artifacts.
 
-The exercise clock governs dated planning inputs. Actual capture timestamps describe the live reads. Venue coordination statements remain fictional exercise evidence, and the drawing supplies spatial observations with separate operational limits. Automatic replacements, recovery, and full artifact validation remain scheduled for later stages.
+The exercise clock governs dated planning inputs. Actual capture timestamps describe the live reads. Venue coordination statements remain fictional exercise evidence, and the drawing supplies spatial observations with separate operational limits. Full artifact validation and transactional reruns are implemented. See the recovery guide for interruption and filesystem limits.
 
 For the full nine-stage endpoint, independent publication repeat commands, manual checks and remaining limits, read [draft publication](publication.md). Calendar serialization uses the maintained [icalendar library](https://icalendar.readthedocs.io/en/stable/how-to/usage.html).

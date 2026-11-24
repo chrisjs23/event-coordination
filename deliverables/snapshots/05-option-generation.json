@@ -1,15 +1,15 @@
 {
   "schema_version": "event-coordination-stage-snapshot/2",
-  "snapshot_id": "run-578b49d04cc24714a6c8740bd56db374:05",
-  "run_id": "run-578b49d04cc24714a6c8740bd56db374",
+  "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:05",
+  "run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
   "stage": "option-generation",
   "sequence": 5,
-  "created_at": "2026-11-24T02:59:12.430913+00:00",
+  "created_at": "2026-11-24T14:33:57.550664+00:00",
   "status": "partial",
   "predecessor": {
-    "snapshot_id": "run-578b49d04cc24714a6c8740bd56db374:04",
+    "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:04",
     "path": "snapshots/04-planning-baseline.json",
-    "sha256": "sha256:4727494aadbea16e3273f81b73ad9c935d3a4e86c3276ae05f9e465047ebc2d7"
+    "sha256": "sha256:0caac60c417c44b9e22ddd464867c27a785c55de485756d693f6aa24137d820e"
   },
   "consumed_record_ids": [
     "scope:objective",

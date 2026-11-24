@@ -13,7 +13,7 @@ python3 -m venv .venv
 .venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables --through publication-validation
 ```
 
-Expect 71 passing tests, followed by verification JSON with nine snapshots, seven evidence files and complete planning status for the inspected case. Owner approvals remain pending. Complete describes the validated planning drafts.
+Expect 115 passing tests, followed by verification JSON with nine snapshots, seven evidence files and complete planning status for the inspected case. Owner approvals remain pending. Complete describes the validated planning drafts.
 
 ## Repeat from captured evidence
 
@@ -24,6 +24,7 @@ stage5_review_parent=$(mktemp -d)
 mkdir -p "$stage5_review_parent/run/snapshots"
 cp deliverables/snapshots/0[1-7]-*.json "$stage5_review_parent/run/snapshots/"
 cp -R deliverables/snapshots/evidence "$stage5_review_parent/run/snapshots/"
+if [ -d deliverables/history ]; then cp -R deliverables/history "$stage5_review_parent/run/"; fi
 .venv/bin/python -B event-planning-coordination-brief/scripts/run.py --through publication-validation --resume-review --output-dir "$stage5_review_parent/run"
 .venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py "$stage5_review_parent/run" --through publication-validation
 ```
@@ -37,7 +38,7 @@ stage5_live_parent=$(mktemp -d)
 .venv/bin/python -B event-planning-coordination-brief/scripts/run.py --through publication-validation --output-dir "$stage5_live_parent/run"
 ```
 
-This requires outbound HTTPS. A later source revision or failed source can legitimately produce a partial/blocked result. Existing directories or completed publication files are rejected until Stage 6 implements replacement and recovery.
+This requires outbound HTTPS. A later source revision or failed source can legitimately produce a partial/blocked result. Full runs archive and replace recognized existing outputs. Resume publication continues to reject existing drafts or final snapshots.
 
 ## Observable case results
 
@@ -65,6 +66,6 @@ The standalone verifier checks chain integrity and actual file hashes, then pars
 
 ## Limits and failure behavior
 
-Automatic replacement, archival and recovery remain Stage 6 work. Current resume modes extend a verified run once. Publication stops before overwriting an existing draft or snapshot. If rendering or semantic validation fails after writing begins, the actual attempts remain and `failure.json` identifies the publication boundary. A failed Stage 09 never becomes a successful publication report.
+Full-run replacement, archival and recovery are described in the [recovery guide](recovery.md). Current resume modes extend a verified run once. Publication stops before overwriting an existing draft or snapshot. If rendering or semantic validation fails after writing begins, the actual attempts remain and `failure.json` identifies the publication boundary. A failed Stage 09 never becomes a successful publication report.
 
 The exercise business clock, live retrieval dates and actual draft timestamp remain distinct. Resuming a captured review preserves the captured basis. Changes to external sources require a fresh run and subsequent review.

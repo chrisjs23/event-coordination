@@ -160,6 +160,8 @@ def publication_state(context):
 
 def validate_existing(output):
     output = Path(output)
+    if (output / "failure.json").exists() or (output / "failure.json").is_symlink():
+        raise ValueError("Current run has an unresolved failure record")
     final = json.loads((output / "snapshots" / FILENAMES[8]).read_text())
     context = load_context(output, created_at=final["state"]["rendered_at"])
     checks = validate_drafts(output, context)

@@ -43,6 +43,7 @@ stage4_review_parent=$(mktemp -d)
 mkdir -p "$stage4_review_parent/run/snapshots"
 cp deliverables/snapshots/0[1-4]-*.json "$stage4_review_parent/run/snapshots/"
 cp -R deliverables/snapshots/evidence "$stage4_review_parent/run/snapshots/"
+if [ -d deliverables/history ]; then cp -R deliverables/history "$stage4_review_parent/run/"; fi
 .venv/bin/python -B event-planning-coordination-brief/scripts/run.py --through decision-and-approval --resume-baseline --output-dir "$stage4_review_parent/run"
 .venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py "$stage4_review_parent/run" --through decision-and-approval
 ```
@@ -62,4 +63,4 @@ For manual review, open snapshots 05–07. Independently total each category and
 
 ## Limits
 
-Automatic archival, repeated replacement of completed reviews, and recovery remain Stage 6 work. Resume rejects already-existing review snapshots. Current output status stays partial until Stage 5 supplies the drafts and final publication checks. This is an exercise planning recommendation supported by the retained case records.
+Full-run archival and recovery are implemented. See [recovery](recovery.md) for independent checks. Captured review extensions preserve already-written review snapshots. Resume rejects already-existing review snapshots. Current output status stays partial until Stage 5 supplies the drafts and final publication checks. This is an exercise planning recommendation supported by the retained case records.
