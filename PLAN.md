@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stages 1–4 manually verified. Stage 5 authorized.**
+**Status: Approved. Stages 1–5 manually verified. Stage 6 authorized.**
 
 ## Project overview and objectives
 
@@ -11,7 +11,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
 - `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
-- Stages 1–4 provide source capture, a validated baseline, option comparisons, feasibility checks and pending review gates through snapshot 07. Draft rendering and publication checks remain for Stage 5.
+- Stages 1–5 provide the nine linked snapshots and four consistent local planning drafts, with evidence, option checks and pending owner review requests. Automatic archival and recovery remain for Stage 6.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -40,7 +40,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | 2. Skill and command shell | Define skill workflow, runtime, dependencies, CLI inputs, output paths, and safe draft-only behavior. | `SKILL.md`, minimal runner, setup/one-command documentation. | Skill metadata and CLI smoke check; no external side effects. | Complete · verified |
 | 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Complete · verified |
 | 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Complete · verified |
-| 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Not started; depends on 4 |
+| 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Complete · verified |
 | 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Not started; depends on 5 |
 | 7. End-to-end execution and handoff | Run against the disclosed live sources, inspect outputs, document choices, tradeoffs, unresolved owners, and exact command/setup; verify session capture. | Review-ready current `deliverables/` plus usage documentation. | Full schema chain, evidence/media existence, source-to-claim traceability, cross-artifact audit, and Entire checkpoint check. | Not started; depends on 6 |
 
@@ -169,3 +169,41 @@ Known limits remain automatic archival/replacement and recovery (Stage 6), and f
 Package metadata validation passed. The local skill scan exited 0 with the same MEDIUM network-declaration heuristic and INFO missing-license findings documented for Stage 3. Their dispositions remain unchanged after manual review of the new read-only comparison code.
 
 - Stage 4 tests manually verified by the user. Stage 4 approved for commit and Stage 5 authorized.
+
+### Reproduce Stage 5
+
+Stage 4 was committed as `2cd7dfd` with Entire checkpoint `01M85RE6V3DPST1PJGKZ5X30KN`. The user manually verified its tests and authorized Stage 5.
+
+Stage 5 is complete and awaits review before Stage 6. The configured `implementer` tasks wrote calendar serialization, the nine-stage snapshot extension and focused tests. The primary agent handled business prose, semantic consistency validation, integration and review of the delegated work.
+
+The current run `run-578b49d04cc24714a6c8740bd56db374` now includes all nine snapshots and four artifacts. Snapshots 01–07 and retained evidence are byte-for-byte unchanged from the verified captured review. Source retrieval timestamps remain those of that run. Publication has its own actual timestamp, stored in Stage 09 and the calendar DTSTAMP.
+
+From the repository root with Python 3.10+:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables --through publication-validation
+```
+
+Expected and observed results are 71 passing tests and a complete planning result with nine snapshots and seven evidence files. The [publication guide](event-planning-coordination-brief/references/publication.md) provides exact captured-run reproduction and fresh end-to-end commands, expected results, manual checks and limits.
+
+New and updated verification:
+- [tests/test_calendar_draft.py](tests/test_calendar_draft.py) parses calendar output and checks timezone-aware bounds, tentative state, UID stability, constraint qualifiers, folding, escaping and deferral.
+- [tests/test_drafts.py](tests/test_drafts.py) asserts known amounts, headcounts and programme/calendar records, unknown-cost reasons and unsent-message metadata, then corrupts individual artifacts to exercise rejection.
+- [tests/test_publication.py](tests/test_publication.py) covers CLI publication and standalone verification, preservation of the captured run, repeated-write rejection, failed draft evidence, mismatched model rejection and a blocked nine-stage result with an empty calendar.
+- [tests/test_snapshots.py](tests/test_snapshots.py) extends integrity checks to all nine snapshots and exact four-artifact bindings between stages 08 and 09.
+- [tests/test_command.py](tests/test_command.py) now expects the publication pipeline capability to be available.
+
+The renderer uses the shared Stage 07 model and checks it against stages 03–06 before writing. Written CSV/Markdown/calendar/message content is validated after writing. Stage 08 records successful byte-write checks and propagation dependencies. Stage 09 records exact hashes and semantic checks. A failed draft validation retains actual attempts and a failed result rather than reporting success.
+
+The calendar dependency is pinned as icalendar 7.3.0. It handles RFC 5545 serialization and parsing, including UTC timestamps and folding. The main tentative event corresponds to 17 October 2026 at 09:30–17:00 Asia/Taipei. All eight source calendar records are retained descriptively in the calendar and separately in the event plan. Deferred selections produce an empty valid calendar.
+
+Manual inspection confirmed ten comparison rows, two feasible totals (TWD 494,000 and TWD 512,000), 260 planning people, the page/region locators, the twelve demonstrations with distinct changeovers, and fifteen labelled unsent messages. All category and Operations approvals remain pending. A complete planning result describes the validated drafts, with the later human decisions still requested.
+
+Limitations are automatic replacements, archival and recovery (Stage 6), plus actual human review of evidence interpretation and tradeoffs. Resume publication is a one-time extension and preserves existing artifacts on repeated invocation. The explicit fresh end-to-end endpoint is `--through publication-validation`. Invocation without an operation mode exits 3 with guidance.
+
+Skill metadata validation passed. The local skill scan exited 0 with the previously documented MEDIUM network-declaration heuristic and INFO missing-license finding at `SKILL.md`. Both dispositions remain unchanged after manual review. The scanner's GPU warning did not prevent completion. No new source-access blocker was encountered.
+
+- Stage 5 tests manually verified by the user. Stage 5 approved for commit and Stage 6 authorized.

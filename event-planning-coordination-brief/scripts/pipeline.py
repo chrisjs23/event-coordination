@@ -9,6 +9,7 @@ from capture import capture_sources, fetch_public, json_bytes, utcnow
 from snapshots import FILENAMES, SnapshotWriter, verify_baseline, verify_review
 from options import build_review
 from records import read_sheet, validate_sheet
+from publication import publish_review
 
 
 def record_ids(value):
@@ -46,10 +47,13 @@ def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline
             writer.write(sequence, state, earlier, produced,
                          json.loads(json_bytes(unresolved)), status="partial")
             earlier.extend(produced)
-        if through == "decision-and-approval":
-            return append_review(root, output, sources, rows, blocks, baseline, constraints)
+        if through in {"decision-and-approval", "publication-validation"}:
+            review_result = append_review(root, output, sources, rows, blocks, baseline, constraints)
+            if through == "publication-validation":
+                return publish_review(root, output)
+            return review_result
         result = verify_baseline(output, root / "snapshot.schema.json")
-        result.update(completed_through="planning-baseline", pipeline_available=False,
+        result.update(completed_through="planning-baseline", pipeline_available=True,
                       output_dir=str(output.resolve()))
         return result
     except Exception as exc:
@@ -58,14 +62,16 @@ def run_baseline(root, output, fetch=fetch_public, *, through="planning-baseline
                     for p in sorted(output.glob("snapshots/evidence/*")) if p.is_file()]
         failure = {"run_id": run_id, "observed_at": utcnow(),
                    "error": str(exc) if isinstance(exc, (ValueError, OSError)) else type(exc).__name__,
-                   "affected_stage": "source-to-planning-baseline",
+                   "affected_stage": through,
                    "available_evidence": evidence,
                    "affected_artifacts": [p.relative_to(output).as_posix()
                                           for p in sorted(output.glob("snapshots/*.json"))],
                    "next_owner": "Operations",
                    "recovery_action": "Inspect retained attempts and source validation; retry in a fresh output directory"}
-        (output / "failure.json").write_bytes(json_bytes(failure))
-        raise ValueError("baseline execution failed; inspect " + str(output / "failure.json")) from exc
+        if not (output / "failure.json").exists():
+            (output / "failure.json").write_bytes(json_bytes(failure))
+        label = "baseline execution failed" if through == "planning-baseline" else "planning execution failed"
+        raise ValueError(label + "; inspect " + str(output / "failure.json")) from exc
 
 
 def append_review(root, output, sources, rows, blocks, baseline, constraints):
@@ -91,7 +97,7 @@ def append_review(root, output, sources, rows, blocks, baseline, constraints):
     result.update(option_count=len(states[0]["options"]),
                   feasible_options=sum(r["feasibility"] == "feasible" for r in states[1]["option_results"]),
                   recommendation=states[2]["recommendation"],
-                  completed_through="decision-and-approval", pipeline_available=False,
+                  completed_through="decision-and-approval", pipeline_available=True,
                   output_dir=str(output.resolve()))
     return result
 

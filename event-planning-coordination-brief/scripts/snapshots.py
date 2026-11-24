@@ -23,6 +23,8 @@ STAGES = (
     "option-generation",
     "feasibility-testing",
     "decision-and-approval",
+    "draft-propagation",
+    "publication-validation",
 )
 FILENAMES = (
     "01-scope-and-approval-gates.json",
@@ -32,6 +34,14 @@ FILENAMES = (
     "05-option-generation.json",
     "06-feasibility-testing.json",
     "07-decision-and-approval.json",
+    "08-draft-propagation.json",
+    "09-publication-validation.json",
+)
+PUBLICATION_ARTIFACTS = (
+    "vendor-comparison.csv",
+    "event-plan.md",
+    "event-calendar.ics",
+    "draft-communications.md",
 )
 
 
@@ -72,8 +82,8 @@ class SnapshotWriter:
 
     def write(self, sequence: int, state: dict, consumed: list[str], produced: list[str],
               unresolved: list[dict], *, status="partial", decisions=None) -> Path:
-        if not isinstance(sequence, int) or isinstance(sequence, bool) or not 1 <= sequence <= 7:
-            raise ValueError("sequence must be an integer from 1 through 7")
+        if not isinstance(sequence, int) or isinstance(sequence, bool) or not 1 <= sequence <= 9:
+            raise ValueError("sequence must be an integer from 1 through 9")
         self.snapshot_dir.mkdir(parents=True, exist_ok=True)
         target = self.snapshot_dir / FILENAMES[sequence - 1]
         if target.exists():
@@ -269,6 +279,55 @@ def _verify(output_dir: Path, schema_path: Path, snapshot_count: int) -> dict:
         check_evidence(doc["decisions"])
     statuses = [d["status"] for d in docs]
     overall_status = next((s for s in ("failed", "blocked", "partial") if s in statuses), "complete")
+    if snapshot_count == 9:
+        draft = docs[7]["state"]["artifact_drafts"]
+        final_state = docs[8]["state"]
+        artifacts = final_state["artifacts"]
+        expected_paths = set(PUBLICATION_ARTIFACTS)
+
+        def artifact_map(records, label):
+            by_path = {}
+            by_id = {}
+            for record in records:
+                path = record["path"]
+                artifact_id = record["id"]
+                if (path not in expected_paths or path in by_path or artifact_id in by_id
+                        or artifact_id != f"artifact:{path}"):
+                    raise ValueError(f"{label} contains duplicate or unexpected artifact reference")
+                _local_evidence_path(output_dir, path)
+                by_path[path] = record
+                by_id[artifact_id] = record
+            if set(by_path) != expected_paths:
+                raise ValueError(f"{label} must contain exactly the four publication artifacts")
+            return by_path
+
+        draft_by_path = artifact_map(draft, "stage 08 artifact drafts")
+        final_by_path = artifact_map(artifacts, "stage 09 artifacts")
+        for name in PUBLICATION_ARTIFACTS:
+            draft_record, final_record = draft_by_path[name], final_by_path[name]
+            if (draft_record["id"], draft_record["path"], draft_record["sha256"]) != (
+                final_record["id"], final_record["path"], final_record["sha256"]
+            ):
+                raise ValueError(f"artifact binding changed between stages 08 and 09: {name}")
+            path = _local_evidence_path(output_dir, name)
+            try:
+                content = path.read_bytes()
+            except OSError as exc:
+                raise ValueError(f"missing publication artifact: {name}") from exc
+            if sha256(content) != final_record["sha256"]:
+                raise ValueError(f"publication artifact hash mismatch: {name}")
+        publication_status = final_state["publication_status"]
+        checks = final_state["validation_checks"]
+        if publication_status == "validated":
+            if not checks or any(check.get("outcome") != "passed" for check in checks):
+                raise ValueError("validated publication requires nonempty passed validation checks")
+            if any(artifact["validation_status"] != "valid" for artifact in artifacts):
+                raise ValueError("validated publication requires all artifacts to be valid")
+            overall_status = docs[8]["status"]
+        elif publication_status in ("blocked", "failed"):
+            overall_status = publication_status
+        else:
+            raise ValueError("invalid publication status")
     return {"run_id": run_id,
             "status": overall_status,
             "snapshots": snapshot_count, "evidence_files": evidence_count}
@@ -284,16 +343,28 @@ def verify_review(output_dir: Path, schema_path: Path) -> dict:
     return _verify(output_dir, schema_path, 7)
 
 
+def verify_publication(output_dir: Path, schema_path: Path) -> dict:
+    """Verify the nine-snapshot publication structure and artifact bindings."""
+    return _verify(output_dir, schema_path, 9)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Verify event-planning snapshots")
     parser.add_argument("output", type=Path)
-    parser.add_argument("--through", choices=("planning-baseline", "decision-and-approval"),
+    parser.add_argument("--through", choices=("planning-baseline", "decision-and-approval",
+                                                "publication-validation"),
                         default="planning-baseline")
     args = parser.parse_args(argv)
     schema_path = Path(__file__).resolve().parents[2] / "snapshot.schema.json"
     try:
-        verifier = verify_review if args.through == "decision-and-approval" else verify_baseline
-        print(json.dumps(verifier(args.output, schema_path), indent=2))
+        verifier = {"planning-baseline": verify_baseline,
+                    "decision-and-approval": verify_review,
+                    "publication-validation": verify_publication}[args.through]
+        result = verifier(args.output, schema_path)
+        if args.through == "publication-validation":
+            from publication import validate_existing
+            validate_existing(args.output)
+        print(json.dumps(result, indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError, jsonschema.ValidationError) as exc:
         print(f"verification failed: {exc}", file=sys.stderr)

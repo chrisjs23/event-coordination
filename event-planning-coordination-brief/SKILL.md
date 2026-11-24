@@ -7,7 +7,7 @@ description: Prepare or refresh Quillhaven Fellowship Demo Day planning drafts f
 
 Work in the repository containing this skill folder and `snapshot.schema.json`. Read the repository's `PLAN.md` for the approved implementation stage before changing the workflow.
 
-The command supports local preflight and capture through `--through decision-and-approval`. For option choices and review verification, read [option comparison](references/options.md). Use `--resume-baseline` only when explicitly reviewing a retained captured run. Read [command usage](references/command.md) before executing it. Its report includes `pipeline_available`, which is currently false. Report that limitation when asked to execute the full workflow.
+The command supports local preflight and capture and draft validation through `--through publication-validation`. For setup, repeat commands and artifact verification, read [publication](references/publication.md). For option choices, read [option comparison](references/options.md). Use `--resume-baseline` only when explicitly reviewing a retained captured run. Read [command usage](references/command.md) before executing it. Its report includes `pipeline_available`, which is true after the runtime dependencies are installed. Use the explicit publication endpoint for a new run, or `--resume-review` to render a verified captured review.
 
 ## Workflow
 

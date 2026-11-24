@@ -39,7 +39,7 @@ class CommandTests(unittest.TestCase):
             report = json.loads(result.stdout)
             self.assertEqual(report["status"], "ready")
             self.assertEqual(report["mode"], "preflight")
-            self.assertIs(report["pipeline_available"], False)
+            self.assertIs(report["pipeline_available"], True)
             self.assertEqual(report["business_clock"], "2026-08-26T12:00:00+08:00")
             self.assertEqual(
                 report["output_dir"], str((ROOT / "deliverables").resolve())

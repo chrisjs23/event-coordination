@@ -1,6 +1,6 @@
 # Command setup and verification
 
-The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Stage 4 adds options, feasibility and review requests through snapshot 07. Final drafts and automatic history/recovery handling remain for stages 5–6.
+The command supports local preflight and source capture through the planning baseline. Stage 3 writes the first four snapshots. Stage 4 adds options, feasibility and review requests through snapshot 07. Stage 5 adds all four drafts and publication checks through snapshot 09. Automatic history/recovery remains Stage 6 work.
 
 ## Setup
 
@@ -11,7 +11,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
 ```
 
-The installed dependencies are jsonschema 4.26.0 and rfc3339-validator 0.1.4. Snapshot checks use Draft 2020-12 with date-time format checking enabled. The library's validation interface is documented by its maintainers. [jsonschema validation documentation](https://python-jsonschema.readthedocs.io/en/stable/validate/)
+The installed dependencies are jsonschema 4.26.0, rfc3339-validator 0.1.4 and icalendar 7.3.0. Snapshot checks use Draft 2020-12 with date-time format checking enabled. The library's validation interface is documented by its maintainers. [jsonschema validation documentation](https://python-jsonschema.readthedocs.io/en/stable/validate/)
 
 Local review of an existing capture uses `--through decision-and-approval --resume-baseline`. This preserves the captured run and its retrieval timestamps.
 
@@ -26,7 +26,7 @@ Inspect help or run the local metadata preflight.
 .venv/bin/python event-planning-coordination-brief/scripts/run.py --check
 ```
 
-Expect exit code 0 and preflight JSON with `status: ready`, `mode: preflight`, `pipeline_available: false`, the exercise business clock, and resolved paths. This checks local schema identity and the sheet map. It creates no files and does not test source access.
+Expect exit code 0 and preflight JSON with `status: ready`, `mode: preflight`, `pipeline_available: true`, the exercise business clock, and resolved paths. This checks local schema identity and the sheet map. It creates no files and does not test source access.
 
 To independently repeat Stage 3, choose a fresh output path. The checked-in `deliverables/` already contains a live baseline run.
 
@@ -58,7 +58,7 @@ From the repository root after setup, run:
 .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Expect 55 passing tests. For the Stage 4 endpoint and its independent repeat procedure, read [option comparison and review](options.md).
+Expect 71 passing tests. For the Stage 4 endpoint and its independent repeat procedure, read [option comparison and review](options.md).
 
 | Test file | What it verifies |
 | --- | --- |
@@ -79,3 +79,5 @@ The Notion content route is a site implementation detail. Pagination, missing li
 CSV evidence retains declared aggregate columns in source order, preserving cell values and row order. Unrelated column values are omitted for privacy. Metadata records the original response hash, retained extract hash and ignored-column count. Review changes to declared free-text fields for privacy before sharing artifacts.
 
 The exercise clock governs dated planning inputs. Actual capture timestamps describe the live reads. Venue coordination statements remain fictional exercise evidence, and the drawing supplies spatial observations with separate operational limits. Automatic replacements, recovery, and full artifact validation remain scheduled for later stages.
+
+For the full nine-stage endpoint, independent publication repeat commands, manual checks and remaining limits, read [draft publication](publication.md). Calendar serialization uses the maintained [icalendar library](https://icalendar.readthedocs.io/en/stable/how-to/usage.html).

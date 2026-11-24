@@ -53,6 +53,28 @@ def fixture_chain(tmp_path):
     return output
 
 
+def fixture_publication(tmp_path):
+    output = fixture_chain(tmp_path)
+    writer = snapshots.SnapshotWriter(output, ROOT / "snapshot.schema.json", "run-test")
+    artifacts = []
+    for name in snapshots.PUBLICATION_ARTIFACTS:
+        content = f"placeholder: {name}\n".encode()
+        (output / name).write_bytes(content)
+        artifacts.append({"id": f"artifact:{name}", "path": name,
+                          "sha256": snapshots.sha256(content), "validation_status": "valid"})
+    writer.write(8, {"artifact_drafts": artifacts, "affected_dependencies": [],
+                     "unresolved_items": []}, ["approval-1"],
+                 [item["id"] for item in artifacts], [])
+    writer.write(9, {"artifacts": artifacts,
+                     "validation_checks": [{"id": "validation:artifact-checks",
+                                            "summary": "Artifact structure and hashes checked",
+                                            "evidence_ids": [], "outcome": "passed"}],
+                     "publication_status": "validated"},
+                 [item["id"] for item in artifacts], ["validation:artifact-checks"], [],
+                 status="complete")
+    return output
+
+
 class SnapshotTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -69,6 +91,40 @@ class SnapshotTests(unittest.TestCase):
         output = fixture_chain(self.tmp_path)
         result = snapshots.verify_review(output, ROOT / "snapshot.schema.json")
         self.assertEqual(result["snapshots"], 7)
+
+    def test_nine_snapshot_publication_round_trip_and_writer_limit(self):
+        output = fixture_publication(self.tmp_path)
+        result = snapshots.verify_publication(output, ROOT / "snapshot.schema.json")
+        self.assertEqual(result["snapshots"], 9)
+        self.assertEqual(result["status"], "complete")
+        writer = snapshots.SnapshotWriter(output, ROOT / "snapshot.schema.json", "run-test")
+        with self.assertRaisesRegex(ValueError, "1 through 9"):
+            writer.write(10, {}, [], [], [])
+
+    def test_publication_rejects_artifact_and_validation_failures(self):
+        for mutation in ("missing", "corrupt", "false-validation", "changed-metadata"):
+            with self.subTest(mutation=mutation):
+                case = self.tmp_path / mutation
+                case.mkdir()
+                output = fixture_publication(case)
+                artifact = snapshots.PUBLICATION_ARTIFACTS[0]
+                final = output / "snapshots" / snapshots.FILENAMES[8]
+                if mutation == "missing":
+                    (output / artifact).unlink()
+                elif mutation == "corrupt":
+                    (output / artifact).write_bytes(b"corrupt")
+                else:
+                    data = json.loads(final.read_text())
+                    if mutation == "false-validation":
+                        data["state"]["validation_checks"][0]["outcome"] = "failed"
+                    else:
+                        data["state"]["artifacts"][0]["sha256"] = snapshots.sha256(b"other")
+                    # Rebind stage 09 to stage 08 to reach artifact semantic checks.
+                    data["predecessor"]["sha256"] = snapshots.sha256(
+                        (output / "snapshots" / snapshots.FILENAMES[7]).read_bytes())
+                    final.write_text(json.dumps(data))
+                with self.assertRaises(ValueError):
+                    snapshots.verify_publication(output, ROOT / "snapshot.schema.json")
 
     def test_review_requires_all_seven_snapshots(self):
         output = fixture_chain(self.tmp_path)
@@ -121,7 +177,7 @@ class SnapshotTests(unittest.TestCase):
                     else:
                         decision.write_text(json.dumps(data))
                 # Rebind predecessor hashes so this reaches semantic checks.
-                for index, filename in enumerate(snapshots.FILENAMES[1:], 1):
+                for index, filename in enumerate(snapshots.FILENAMES[1:7], 1):
                     path = output / "snapshots" / filename
                     data = json.loads(path.read_text())
                     previous = output / "snapshots" / snapshots.FILENAMES[index - 1]
