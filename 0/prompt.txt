@@ -1,0 +1,100 @@
+Review the current project and prepare an implementation plan before making any implementation changes.
+
+First, inspect the repository structure, relevant documentation, requirements, and existing code. Follow `AGENTS.md` and any applicable project-level instructions.
+
+## Objectives
+
+1. **Understand the project:** Identify its purpose, requirements, constraints, existing implementation, and expected deliverables.
+2. **Assess the current state:** Determine what is already implemented, what remains incomplete, and whether existing components can be reused.
+3. **Identify uncertainties:** Highlight missing requirements, ambiguities, dependencies, or technical risks. Do not invent missing information.
+4. **Propose an approach:** Recommend the simplest maintainable solution that satisfies the requirements. Prefer existing tools and conventions over unnecessary complexity.
+5. **Develop an implementation roadmap:** Divide the work into small, logically ordered stages with clear deliverables, dependencies, and acceptance criteria.
+6. **Define verification:** Identify the focused tests or checks needed to establish correctness at each stage.
+7. **Plan delegation:** Identify tasks appropriate for lower-cost subagents and those requiring primary-agent oversight. Follow the repository's delegation policy and model configuration.
+
+## Plan documentation
+
+Create or update `PLAN.md` in the repository root as the persistent implementation plan.
+
+Organize it into the following sections:
+
+- Project overview and objectives
+- Current implementation status
+- Requirements and constraints
+- Proposed architecture and technical decisions
+- Incremental implementation roadmap
+- Acceptance criteria and verification strategy
+- Delegation recommendations
+- Known risks, assumptions, and unresolved questions
+- Progress tracking
+
+Each implementation stage should include its objective, scope, expected deliverables, verification steps, and completion status.
+
+If `PLAN.md` already exists, reconcile it with the current project state rather than blindly overwriting it. Preserve relevant decisions and completed work.
+
+Mark the plan as **Proposed** until I explicitly approve it.
+
+## Working principles
+
+- Minimize unnecessary context loading and token consumption.
+- Favor incremental, independently verifiable changes.
+- Avoid redundant analysis, excessive delegation, and premature optimization.
+- Distinguish confirmed requirements from assumptions and recommendations.
+- Keep documentation concise but sufficiently detailed to guide future agents.
+- During planning, only create or modify `PLAN.md`. Do not change implementation files, tests, configurations, or other project artifacts.
+
+## Expected result
+
+Save the proposed plan to `PLAN.md` and provide a concise summary of:
+
+1. Recommended implementation approach.
+2. Planned stages and dependencies.
+3. Important technical decisions and risks.
+4. Proposed delegation strategy.
+5. Questions requiring clarification.
+
+**Do not begin implementation until I explicitly approve the plan.**
+
+---
+
+The links you are looking for are accessible through the interview transcript
+
+---
+
+Are you saying you cannot access the information within the provided sources?
+
+---
+
+try this link: https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af
+
+---
+
+I have uploaded an updated interview transcript that includes links for the floor plan and calendar records
+
+---
+
+The implementation plan in `PLAN.md` is approved.
+
+Begin with the next incomplete stage, following `AGENTS.md` and the repository's cost-aware delegation policy.
+
+Implement the smallest maintainable solution, create or update relevant tests, run the appropriate verification steps, and update `PLAN.md` to reflect completed work, decisions, and any new blockers.
+
+For each completed stage, provide a reproducible verification procedure that allows me to independently validate the implementation. Include:
+
+- Tests added or modified, with their file paths and a brief description of what they verify.
+- Exact commands to run the relevant tests, including any prerequisites or required working directories.
+- Expected results or observable behavior that indicate successful verification.
+- Manual verification steps for functionality that cannot be adequately covered by automated tests.
+- Any known limitations, untested scenarios, or verification failures.
+
+Prefer reusable, deterministic tests that can be retained in the repository and used for future regression testing. Do not rely solely on your own confirmation that the implementation works.
+
+Stop after completing the stage and provide a concise summary of the implementation, verification results, and instructions for independent validation. Wait for my review and approval before proceeding to the next stage.
+
+---
+
+before moving further, can we handle the ambiguity in the entire logging?
+
+---
+
+Tests for stage 1 have been manually verified. Commit the changes for stage 1 and then proceed to the next stage.
