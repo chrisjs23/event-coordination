@@ -1,0 +1,72 @@
+{
+  "cli_version": "0.13.4",
+  "checkpoint_id": "01M85Q3BNK5V8PP46ADAW8KA1Y",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".gitignore",
+    "PLAN.md",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/01-scope-and-approval-gates.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/02-source-capture.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/03-constraint-model.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/04-planning-baseline.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/attendees.csv",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/brief.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/budget.csv",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/calendar.csv",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/capture-attempts.json",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/floorplan.pdf",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/interview-policies.txt",
+    "deliverables/history/run-c1142d60fa184bf9a0e80f193028e7e8/snapshots/evidence/vendors.csv",
+    "event-planning-coordination-brief/SKILL.md",
+    "event-planning-coordination-brief/references/command.md",
+    "event-planning-coordination-brief/references/venue-evidence.json",
+    "event-planning-coordination-brief/requirements.txt",
+    "event-planning-coordination-brief/scripts/records.py",
+    "event-planning-coordination-brief/scripts/run.py",
+    "event-planning-coordination-brief/scripts/snapshots.py",
+    "tests/check_source_csv.py",
+    "tests/test_capture.py",
+    "tests/test_records.py",
+    "tests/test_snapshots.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 47918,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 9549696,
+    "output_tokens": 32881,
+    "api_call_count": 47,
+    "subagent_tokens": {
+      "input_tokens": 118566,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 2253696,
+      "output_tokens": 29391,
+      "api_call_count": 61
+    },
+    "subagent_tokens_complete": true
+  },
+  "redaction": {
+    "replacements": 112,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 114,
+      "key_context": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    }
+  }
+}

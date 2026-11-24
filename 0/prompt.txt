@@ -1,0 +1,5 @@
+something caused the work to hang. Can we pick up where the work left off?
+
+---
+
+Tests for Stage 3 have been manually verified. Commit the changes for this stage and proceed to the next stage
