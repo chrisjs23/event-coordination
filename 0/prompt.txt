@@ -1,0 +1,1 @@
+Stage 6 tests, the recovery guide, and the updated PLAN file have been manually verified. Commit the changes for this stage and proceed to the next stage.
