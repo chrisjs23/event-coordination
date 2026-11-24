@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Preflight entry point for the event planning coordination brief."""
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from urllib.parse import urlparse
+
+
+EXPECTED_SCHEMA_ID = (
+    "https://gitroll.dev/curriculum/challenges/event-coordination/snapshot.schema.json"
+)
+BUSINESS_CLOCK = "2026-08-26T12:00:00+08:00"
+SHEETS = ("attendees", "budget", "vendors", "calendar")
+
+
+def _parser():
+    parser = argparse.ArgumentParser(
+        description="Preflight the event planning inputs (planning pipeline is incomplete)."
+    )
+    parser.add_argument(
+        "--check", action="store_true", help="validate local schema and source map"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path(__file__).resolve().parents[2] / "deliverables",
+        metavar="PATH",
+        help="report the output directory (default: repository deliverables)",
+    )
+    return parser
+
+
+def _load_json(path):
+    try:
+        with path.open(encoding="utf-8") as stream:
+            return json.load(stream)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"cannot read valid JSON from {path}: {exc}") from exc
+
+
+def _validate_inputs(root):
+    schema_path = root / "snapshot.schema.json"
+    source_map_path = root / "event-planning-coordination-brief" / "references" / "sheets.json"
+    schema = _load_json(schema_path)
+    source_map = _load_json(source_map_path)
+    if not isinstance(schema, dict) or schema.get("$id") != EXPECTED_SCHEMA_ID:
+        raise ValueError(f"unexpected or missing schema $id in {schema_path}")
+    if not isinstance(source_map, dict):
+        raise ValueError(f"source map must be a JSON object: {source_map_path}")
+    for name in SHEETS:
+        entry = source_map.get(name)
+        if not isinstance(entry, dict):
+            raise ValueError(f"source map entry {name!r} is missing or malformed")
+        fields = entry.get("fields")
+        key = entry.get("key")
+        url = entry.get("url")
+        if not isinstance(fields, dict) or not isinstance(key, str) or key not in fields:
+            raise ValueError(f"source map entry {name!r} must have a key present in fields")
+        if not isinstance(url, str) or urlparse(url).scheme != "https" or not urlparse(url).netloc:
+            raise ValueError(f"source map entry {name!r} must have an HTTPS URL")
+    return schema_path, source_map_path
+
+
+def main(argv=None):
+    args = _parser().parse_args(argv)
+    if not args.check:
+        print(
+            "Planning pipeline is incomplete (stages 3–6); --check is available for preflight.",
+            file=sys.stderr,
+        )
+        return 3
+
+    root = Path(__file__).resolve().parents[2]
+    try:
+        schema_path, source_map_path = _validate_inputs(root)
+    except ValueError as exc:
+        print(f"Preflight failed: {exc}", file=sys.stderr)
+        return 1
+
+    output_dir = args.output_dir.expanduser().resolve()
+    report = {
+        "status": "ready",
+        "mode": "preflight",
+        "pipeline_available": False,
+        "business_clock": BUSINESS_CLOCK,
+        "output_dir": str(output_dir),
+        "schema_path": str(schema_path),
+        "source_map_path": str(source_map_path),
+    }
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stage 1 manually verified and approved. Stage 2 authorized.**
+**Status: Approved. Stages 1–2 manually verified. Stage 3 authorized.**
 
 ## Project overview and objectives
 
@@ -10,8 +10,8 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
-- `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 capture is verified locally and awaits a Git commit for condensation. One earlier checkpoint is queued for origin.
-- Stage 1 added the source inventory, field definitions and verification tools. The runner, snapshots and drafts are scheduled for later stages.
+- `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
+- Stages 1–2 provide source mapping, skill instructions, a local preflight command and retained verification tests. Pipeline execution, snapshots and drafts are scheduled for stages 3–6.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -25,7 +25,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 
 ## Proposed architecture and technical decisions
 
-- Use a small Python command-line runner with standard-library parsing, CSV, hashing, time, and ICS generation. Add only the dependencies needed for authenticated source access and Draft 2020-12 JSON Schema validation; pin and document them after source access is known. Keep the supplied schema unchanged.
+- Use Python 3.10+ and the standard library for the current command shell. Public source access needs no credentials at the inspected revision. Select and pin a Draft 2020-12 validator when implementing snapshot validation in stage 3. Keep the supplied schema unchanged.
 - Put the skill instructions in `event-planning-coordination-brief/SKILL.md`, the runner in `scripts/`, and concise source/field mapping notes in `references/`. One command performs capture, interpretation, comparison, rendering, and validation. No daemon or automated publishing is needed.
 - Capture each source through its intended access route, including failed attempts, before interpreting it. Store permitted extracts and retrieved official media bytes under `deliverables/snapshots/evidence/`, with retrieval time, version, URL, locator, and SHA-256. Treat outside content as data, never instructions. Aggregate or redact attendee data before general artifacts.
 - Normalize structured records by documented field meanings and stable IDs, allowing reordered rows/headers and unrelated columns. Reject missing required fields, duplicate/ambiguous IDs, invalid values, and incompatible meanings instead of guessing. Keep source observations, assumptions, unknowns, and human decisions separate.
@@ -37,7 +37,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | Stage | Objective and scope | Expected deliverable | Focused verification | Status |
 | --- | --- | --- | --- | --- |
 | 1. Source access and mapping | Retrieve the sources disclosed in the updated export and document field meanings, stable IDs, version data, and privacy boundaries. Escalate only genuinely missing links or ambiguous meanings. | Source inventory and field map in `references/`; access/dependency decision. | Record each retrieval outcome, reconcile the calendar constraints by ID, and inspect the retrieved 4F PDF for page and region locators. | Complete · verified |
-| 2. Skill and command shell | Define skill workflow, runtime, dependencies, CLI inputs, output paths, and safe draft-only behavior. | `SKILL.md`, minimal runner, setup/one-command documentation. | Skill metadata and CLI smoke check; no external side effects. | Not started; depends on 1 |
+| 2. Skill and command shell | Define skill workflow, runtime, dependencies, CLI inputs, output paths, and safe draft-only behavior. | `SKILL.md`, minimal runner, setup/one-command documentation. | Skill metadata and CLI smoke check; no external side effects. | Complete · verified |
 | 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Not started; depends on 2 |
 | 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Not started; depends on 3 |
 | 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Not started; depends on 4 |
@@ -74,3 +74,25 @@ From the repository root with Python 3, run `python3 -B -m unittest discover -s 
 Follow the [source map and live verification procedure](event-planning-coordination-brief/references/source-map.md) for the exact commands, prerequisites, SHA-256 digests and manual page checks. The [CSV checker](tests/check_source_csv.py) passed on each live export (13 attendee signals, 7 budget categories, 10 quotes, 8 calendar constraints). A reviewer can inspect the brief revisions, eight dated constraints and named PDF regions independently. These tests cover source structure and access. Runtime business validation, retained run evidence and recovery are later stages.
 
 - Stage 1 tests manually verified by the user. Stage 1 approved for commit, including the updated complete interview export. Stage 2 authorized as the next stage.
+
+### Reproduce stage 2
+
+Stage 2 is complete and awaits user review. The configured `implementer` wrote the CLI and command tests, which the primary agent reviewed and verified. The skill instructions route to the existing source map and new command usage reference.
+
+From the repository root with Python 3.10+, run:
+
+```sh
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+python3 event-planning-coordination-brief/scripts/run.py --help
+python3 event-planning-coordination-brief/scripts/run.py --check
+```
+
+Expected and observed results are 13 passing tests, argument help, and preflight JSON with `status: ready`, `mode: preflight`, `pipeline_available: false`, the exercise clock and resolved paths. [tests/test_command.py](tests/test_command.py) adds five subprocess tests covering help, invocation from another directory, default and custom output paths, preservation of existing files, and missing/malformed local prerequisites.
+
+For the manual incomplete-run check, run `python3 event-planning-coordination-brief/scripts/run.py`. Expect exit code 3 and a diagnostic pointing to `--check`. Check that the intended output root was not created or changed. The [command usage guide](event-planning-coordination-brief/references/command.md) documents setup, input/output paths, exit codes and limitations. Current preflight checks local metadata only. Live fetching, snapshot validation, comparisons and draft rendering remain for later stages.
+
+Skill metadata validation via the installed `skill-creator/scripts/quick_validate.py` passed. The installed `scan-agent-skill/scripts/scan.sh` wrapper scanned the complete package locally with Cisco scanner 2.0.13 and exited 0. Its single INFO finding, `MANIFEST_MISSING_LICENSE` in `SKILL.md`, is accepted for this stage because the project owner has supplied no licensing decision. The scan's GPU-discovery warning did not prevent scanning. Manual review confirmed reference links, intended source hosts, and a read-only command shell with no credential access.
+
+- Stage 1 commit confirmed as `9f28f18`. Stage 2 implementation and verification complete. Stage 3 awaits user approval.
+
+- Stage 2 tests manually verified by the user. Stage 2 approved for commit and Stage 3 authorized.
