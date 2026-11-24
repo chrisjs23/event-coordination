@@ -1,0 +1,62 @@
+{
+  "attendees": {
+    "url": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU",
+    "tab": "Attendee Signals",
+    "key": "signal_id",
+    "fields": {
+      "signal_id": "Identity of one aggregate observation.",
+      "source": "Origin of the observation, such as a registration form, operations plan or forecast.",
+      "segment": "Group to which the signal applies.",
+      "signal": "Measure within that segment. Distinguish registrations, required presence, forecasts and support requests.",
+      "value": "Quantity of the named measure.",
+      "unit": "Unit of the quantity, currently people or meals.",
+      "observed_at": "Date the source observed the signal.",
+      "confidence": "Source confidence label. No numerical probability is supplied."
+    }
+  },
+  "budget": {
+    "url": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM",
+    "tab": "Budget",
+    "key": "category",
+    "fields": {
+      "category": "Budget area, unique within this register revision. Match quote categories by disclosed meaning.",
+      "planned_amount_twd": "Planned category allocation in integer TWD.",
+      "approval_limit_twd": "Category approval ceiling in integer TWD. The brief also sets an overall ceiling.",
+      "committed_amount_twd": "Existing commitments in integer TWD. Account for these when assessing remaining room.",
+      "owner": "Team responsible for reviewing this category.",
+      "record_version": "Source-supplied budget revision."
+    }
+  },
+  "vendors": {
+    "url": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko",
+    "tab": "Vendor Quotes",
+    "key": "quote_id",
+    "fields": {
+      "quote_id": "Identity of a specific quote.",
+      "vendor": "Supplier named on that quote.",
+      "category": "Budget area the offer covers.",
+      "option": "Quoted package and scope.",
+      "quote_amount_twd": "Quoted package amount in integer TWD.",
+      "capacity": "Coverage of this service, interpreted with package and notes. Quiet-room staffing covers quiet-room demand.",
+      "available_date": "Event date to which the offer applies.",
+      "valid_until": "Quote expiry date evaluated against the exercise business clock.",
+      "status": "Supplier availability or hold state, subject to recorded conditions.",
+      "notes": "Inclusions, exclusions and prerequisites specific to the quote."
+    }
+  },
+  "calendar": {
+    "url": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s",
+    "tab": "Calendar Constraints",
+    "key": "constraint_id",
+    "fields": {
+      "constraint_id": "Identity of a single calendar constraint.",
+      "owner": "Team or venue responsible for the record.",
+      "constraint_type": "Purpose of the time or interval, including deadlines and conditional holds.",
+      "start_at": "Start instant with UTC offset.",
+      "end_at": "End instant with UTC offset. A deadline can have equal start and end.",
+      "priority": "Hard or soft as supplied.",
+      "notes": "Expiry, fallback limitations, prerequisites or other qualifications.",
+      "record_version": "Source-supplied calendar revision."
+    }
+  }
+}
