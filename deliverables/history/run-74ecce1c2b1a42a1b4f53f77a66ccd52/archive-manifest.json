@@ -1,0 +1,17 @@
+{
+  "files": {
+    "snapshots/evidence/interview-policies.txt": {
+      "sha256": "955cd3df1d54122063bf735faf13de39f3380d78e07a6fded1a02b6237f16bd5",
+      "size": 657
+    },
+    "snapshots/evidence/capture-attempts.json": {
+      "sha256": "73bf5fca4e8157f1a7cb9d6c8600d880a48bbff63cedea3a19b76f445a3b6477",
+      "size": 6238
+    },
+    "failure.json": {
+      "sha256": "eafa10eee04d5e5065db172dcf81647a28f45926b5afbd417193b4e5abbf16f6",
+      "size": 715
+    }
+  },
+  "recorded_at": "2026-11-24T15:44:15.132326+00:00"
+}

@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Quillhaven Academy//Event Coordination//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:UNSENT DRAFT — Fellowship Demo Day
+DTSTART:20261017T013000Z
+DTEND:20261017T090000Z
+DTSTAMP:20261124T143357Z
+UID:quillhaven-fellowship-demo-day@event-coordination.local
+DESCRIPTION:Pending human approval\; this is an unsent planning draft.\nPl
+ anning people: 260\nCost: 512000 TWD\nCalendar records considered:\nconstr
+ aint_id=CAL-001\; owner=Operations\; constraint_type=preferred_event_windo
+ w\; start_at=2026-10-17T09:30:00+08:00\; end_at=2026-10-17T17:00:00+08:00
+ \; priority=hard\; notes=Preferred event date\; record_version=calendar-20
+ 26-08-26\nconstraint_id=CAL-002\; owner=Operations\; constraint_type=fallb
+ ack_event_window\; start_at=2026-10-24T09:30:00+08:00\; end_at=2026-10-24T
+ 17:00:00+08:00\; priority=soft\; notes=Fallback date\; record_version=cale
+ ndar-2026-08-26\nconstraint_id=CAL-003\; owner=TICC\; constraint_type=venu
+ e_hold\; start_at=2026-10-17T07:30:00+08:00\; end_at=2026-10-17T18:30:00+0
+ 8:00\; priority=hard\; notes=Hold expires 2026-09-05\; record_version=cale
+ ndar-2026-08-26\nconstraint_id=CAL-004\; owner=Programme\; constraint_type
+ =keynote_availability\; start_at=2026-10-17T10:00:00+08:00\; end_at=2026-1
+ 0-17T11:00:00+08:00\; priority=hard\; notes=Keynote unavailable on fallbac
+ k date\; record_version=calendar-2026-08-26\nconstraint_id=CAL-005\; owner
+ =Operations\; constraint_type=decision_deadline\; start_at=2026-09-04T17:0
+ 0:00+08:00\; end_at=2026-09-04T17:00:00+08:00\; priority=hard\; notes=Plan
+  and budget decision\; record_version=calendar-2026-08-26\nconstraint_id=C
+ AL-006\; owner=Learner Experience\; constraint_type=accessibility_walkthro
+ ugh\; start_at=2026-09-25T14:00:00+08:00\; end_at=2026-09-25T16:00:00+08:0
+ 0\; priority=hard\; notes=Venue confirmation required first\; record_versi
+ on=calendar-2026-08-26\nconstraint_id=CAL-007\; owner=Programme\; constrai
+ nt_type=rehearsal_window\; start_at=2026-10-16T15:00:00+08:00\; end_at=202
+ 6-10-16T18:00:00+08:00\; priority=soft\; notes=Remote backup acceptable\; 
+ record_version=calendar-2026-08-26\nconstraint_id=CAL-008\; owner=TICC\; c
+ onstraint_type=teardown_deadline\; start_at=2026-10-17T17:00:00+08:00\; en
+ d_at=2026-10-17T18:30:00+08:00\; priority=hard\; notes=All vendors clear b
+ y 18:30\; record_version=calendar-2026-08-26
+STATUS:TENTATIVE
+X-OPTION-ID:option:Q-001-Q-004-Q-005-Q-006-Q-009-Q-010
+X-RUN-ID:run-6caf453ae6ab4299bbde8f18764ac26d
+END:VEVENT
+END:VCALENDAR

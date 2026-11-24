@@ -1,0 +1,16 @@
+{
+  "run_id": "run-74ecce1c2b1a42a1b4f53f77a66ccd52",
+  "observed_at": "2026-11-24T15:42:28.020471+00:00",
+  "error": "Scope needs a readable brief and one valid calendar decision deadline",
+  "affected_stage": "publication-validation",
+  "available_evidence": [
+    "snapshots/evidence/capture-attempts.json",
+    "snapshots/evidence/interview-policies.txt"
+  ],
+  "affected_artifacts": [],
+  "next_owner": "Operations",
+  "recovery_action": "Inspect retained attempts and source validation; retry in a fresh output directory",
+  "supersedes_run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
+  "predecessor_history": "history/run-6caf453ae6ab4299bbde8f18764ac26d",
+  "previous_integrity": "validated-publication"
+}

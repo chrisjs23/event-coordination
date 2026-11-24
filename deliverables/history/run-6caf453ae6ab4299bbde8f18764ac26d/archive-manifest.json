@@ -1,0 +1,89 @@
+{
+  "files": {
+    "event-plan.md": {
+      "sha256": "99d1147c990cd3dd2a67b0b5f09fcda9190450dbedc2a95064608a77d1ca444d",
+      "size": 23166
+    },
+    "event-calendar.ics": {
+      "sha256": "476075e0453c960d6447c70cf9bf077c52bed0a8ffa28cb7f7c346f2586800ea",
+      "size": 2569
+    },
+    "vendor-comparison.csv": {
+      "sha256": "aba32b8c3c0886301eba9b8734ce4dee25e92e40dde6c695ba37bb1d578561df",
+      "size": 30310
+    },
+    "snapshots/04-planning-baseline.json": {
+      "sha256": "0caac60c417c44b9e22ddd464867c27a785c55de485756d693f6aa24137d820e",
+      "size": 22442
+    },
+    "snapshots/05-option-generation.json": {
+      "sha256": "519565be37715d317c2b244e99cd907eeed4a02fc4b90df8269c08b8ad4ad182",
+      "size": 123264
+    },
+    "snapshots/02-source-capture.json": {
+      "sha256": "106c532d644ea236c9c7e37d4a2c4f34977a2aa38cfd2eb598d2ac4290097292",
+      "size": 58141
+    },
+    "snapshots/01-scope-and-approval-gates.json": {
+      "sha256": "6b9601919d6dff3ed743b911767ae0d8d2be8904b8848cf77623fadec83cfdde",
+      "size": 6314
+    },
+    "snapshots/evidence/interview-policies.txt": {
+      "sha256": "955cd3df1d54122063bf735faf13de39f3380d78e07a6fded1a02b6237f16bd5",
+      "size": 657
+    },
+    "snapshots/evidence/calendar.csv": {
+      "sha256": "58955b175e66ccd7cd22cb12602d9534bf3fbe6d128e6a002757eac5cd9b1619",
+      "size": 1207
+    },
+    "snapshots/evidence/capture-attempts.json": {
+      "sha256": "7fc7951f444ca3f1ac9b0b69bb0981df1a3f09bf6f86e6044790b427ef5100cb",
+      "size": 52040
+    },
+    "snapshots/evidence/attendees.csv": {
+      "sha256": "e04cfd19d5023ecf71c0d4a67e97b9ab71c19dd96c76479b348bfe5d26e12276",
+      "size": 1045
+    },
+    "snapshots/evidence/floorplan.pdf": {
+      "sha256": "8805ab527b7bb202a70534120ed4037dbde633301f1935e80bd04f12a7c70367",
+      "size": 522512
+    },
+    "snapshots/evidence/brief.json": {
+      "sha256": "72eb021d990cf1e8a27f45a2515d230758752aaefcd047f216a2478d68e4671b",
+      "size": 10938
+    },
+    "snapshots/evidence/vendors.csv": {
+      "sha256": "5f387ebcee49e3cff4755ad25e5608ba9473002601ed60d0bf10e48a3e7afedf",
+      "size": 1765
+    },
+    "snapshots/evidence/budget.csv": {
+      "sha256": "14647562a43d9029d9223239c2dcfb8f5b04182b1e6ce58ccdddb225405bf407",
+      "size": 482
+    },
+    "snapshots/09-publication-validation.json": {
+      "sha256": "ab2b4471a4dcb59292a1ddccf5759bf166ca39ad779aaf69116413e5f7e7e5b4",
+      "size": 56296
+    },
+    "snapshots/07-decision-and-approval.json": {
+      "sha256": "b289763d8615a96239dfdc67b29fbda3169786615cccbed9a719e28c89519163",
+      "size": 496052
+    },
+    "snapshots/06-feasibility-testing.json": {
+      "sha256": "ea4372f3f8d3e366baf8652e9bbfbccd2fbf356883c787d05e14258e924c769c",
+      "size": 299661
+    },
+    "snapshots/03-constraint-model.json": {
+      "sha256": "eb81bd3af5c4f538dc69971a0a8ee8903b969461f069cea8fa7df66e33a1dcf6",
+      "size": 8497
+    },
+    "snapshots/08-draft-propagation.json": {
+      "sha256": "ad8c8fe1dae1f16521caa141fe62611a61062fdf7ae42268b9aa0d949d50cce1",
+      "size": 56981
+    },
+    "draft-communications.md": {
+      "sha256": "9f3f9f83e106c5c3522a5a55b487f32d13773e760f15f60ce9399c657b6e2ebd",
+      "size": 8006
+    }
+  },
+  "recorded_at": "2026-11-24T15:42:27.922975+00:00"
+}

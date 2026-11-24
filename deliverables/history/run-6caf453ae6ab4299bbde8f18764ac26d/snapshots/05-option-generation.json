@@ -1,0 +1,3679 @@
+{
+  "schema_version": "event-coordination-stage-snapshot/2",
+  "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:05",
+  "run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
+  "stage": "option-generation",
+  "sequence": 5,
+  "created_at": "2026-11-24T14:33:57.550664+00:00",
+  "status": "partial",
+  "predecessor": {
+    "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:04",
+    "path": "snapshots/04-planning-baseline.json",
+    "sha256": "sha256:0caac60c417c44b9e22ddd464867c27a785c55de485756d693f6aa24137d820e"
+  },
+  "consumed_record_ids": [
+    "scope:objective",
+    "scope:deadline",
+    "scope:category-approval",
+    "scope:operations-approval",
+    "source:brief",
+    "obs:brief:3ba0b700-541e-81d0-af55-dc1a8f49f5af",
+    "obs:brief:fe0e1946-b3c9-4a62-8a82-938eecfc8854",
+    "obs:brief:792e90b1-947b-45db-8397-24e8ecf8a3f8",
+    "obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1",
+    "obs:brief:4aa2f6dc-3460-435b-8649-99a67d325798",
+    "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91",
+    "obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc",
+    "obs:brief:2fe3fca1-8583-47f9-bc95-bf1805acb28c",
+    "obs:brief:7b00ee3a-16fa-4538-a6ce-890593513cc9",
+    "obs:brief:5eb74389-3826-4942-83bb-41e6bad56dd6",
+    "obs:brief:333afcd6-4e59-4fde-a1c0-6a470363a4d9",
+    "obs:brief:99d8d3b3-2fd2-496c-a8ee-1dddd5d49507",
+    "obs:brief:1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc",
+    "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f",
+    "obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f",
+    "obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45",
+    "obs:brief:f58c12b1-089e-42b8-974c-4dd2305d3f26",
+    "obs:brief:4a86cac9-38e6-44f5-9d04-0eb3bac6c92b",
+    "obs:brief:cad780df-377c-4b3f-a1ae-64f3b0b4b02d",
+    "obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c",
+    "obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b",
+    "obs:brief:413649ad-9782-4a9f-8ade-40adb5f58ccb",
+    "obs:brief:0e9768a0-7cc6-4096-8bc9-77b1956b9be4",
+    "obs:brief:99807928-2434-4e30-9f24-d3d878803331",
+    "obs:brief:3af34366-805b-42d8-a40a-e1a7d56ee103",
+    "source:attendees",
+    "obs:attendees:SIG-001",
+    "obs:attendees:SIG-002",
+    "obs:attendees:SIG-003",
+    "obs:attendees:SIG-004",
+    "obs:attendees:SIG-005",
+    "obs:attendees:SIG-006",
+    "obs:attendees:SIG-007",
+    "obs:attendees:SIG-008",
+    "obs:attendees:SIG-009",
+    "obs:attendees:SIG-010",
+    "obs:attendees:SIG-011",
+    "obs:attendees:SIG-012",
+    "obs:attendees:SIG-013",
+    "source:budget",
+    "obs:budget:venue",
+    "obs:budget:catering",
+    "obs:budget:accessibility",
+    "obs:budget:production",
+    "obs:budget:communications",
+    "obs:budget:security",
+    "obs:budget:contingency",
+    "source:vendors",
+    "obs:vendors:Q-001",
+    "obs:vendors:Q-002",
+    "obs:vendors:Q-003",
+    "obs:vendors:Q-004",
+    "obs:vendors:Q-005",
+    "obs:vendors:Q-006",
+    "obs:vendors:Q-007",
+    "obs:vendors:Q-008",
+    "obs:vendors:Q-009",
+    "obs:vendors:Q-010",
+    "source:calendar",
+    "obs:calendar:CAL-001",
+    "obs:calendar:CAL-002",
+    "obs:calendar:CAL-003",
+    "obs:calendar:CAL-004",
+    "obs:calendar:CAL-005",
+    "obs:calendar:CAL-006",
+    "obs:calendar:CAL-007",
+    "obs:calendar:CAL-008",
+    "source:floorplan",
+    "obs:floorplan:wheelchair",
+    "obs:floorplan:elevators",
+    "obs:floorplan:restroom",
+    "obs:floorplan:quiet-room",
+    "source:interview",
+    "obs:interview:supplier-preference",
+    "obs:interview:buffer-policy",
+    "obs:interview:approval-order",
+    "constraint:brief-hard",
+    "constraint:success",
+    "constraint:calendar:CAL-001",
+    "constraint:calendar:CAL-003",
+    "constraint:calendar:CAL-004",
+    "constraint:calendar:CAL-005",
+    "constraint:calendar:CAL-006",
+    "constraint:calendar:CAL-008",
+    "constraint:calendar:CAL-002",
+    "constraint:calendar:CAL-007",
+    "preference:familiar-suppliers",
+    "issue:buffer-policy",
+    "baseline:headcount",
+    "baseline:checkin-target",
+    "baseline:calendar:CAL-001",
+    "baseline:calendar:CAL-002",
+    "baseline:calendar:CAL-003",
+    "baseline:calendar:CAL-004",
+    "baseline:calendar:CAL-005",
+    "baseline:calendar:CAL-006",
+    "baseline:calendar:CAL-007",
+    "baseline:calendar:CAL-008",
+    "baseline:demo_ids",
+    "baseline:demo_minutes",
+    "baseline:changeover_minutes",
+    "baseline:readiness:0",
+    "baseline:readiness:1",
+    "baseline:budget:venue",
+    "baseline:budget:catering",
+    "baseline:budget:accessibility",
+    "baseline:budget:production",
+    "baseline:budget:communications",
+    "baseline:budget:security",
+    "baseline:budget:contingency",
+    "baseline:total-ceiling",
+    "baseline:demand:SIG-006",
+    "baseline:demand:SIG-007",
+    "baseline:demand:SIG-008",
+    "baseline:demand:SIG-009",
+    "baseline:demand:SIG-010",
+    "baseline:demand:SIG-011",
+    "baseline:demand:SIG-012",
+    "baseline:demand:SIG-013",
+    "baseline:audience_places",
+    "baseline:wheelchair_spaces",
+    "baseline:quiet_room_places",
+    "baseline:obs:floorplan:wheelchair",
+    "baseline:obs:floorplan:elevators",
+    "baseline:obs:floorplan:restroom",
+    "baseline:obs:floorplan:quiet-room",
+    "baseline:coordination:0",
+    "baseline:coordination:1"
+  ],
+  "produced_record_ids": [
+    "option:Q-001-Q-003-Q-005-Q-006-Q-009-Q-010",
+    "setup",
+    "readiness-checks",
+    "opening",
+    "event-overview",
+    "keynote",
+    "post-keynote-break",
+    "DEMO-01",
+    "DEMO-01:changeover",
+    "DEMO-02",
+    "DEMO-02:changeover",
+    "DEMO-03",
+    "DEMO-03:changeover",
+    "DEMO-04",
+    "DEMO-04:changeover",
+    "DEMO-05",
+    "DEMO-05:changeover",
+    "DEMO-06",
+    "DEMO-06:changeover",
+    "lunch",
+    "DEMO-07",
+    "DEMO-07:changeover",
+    "DEMO-08",
+    "DEMO-08:changeover",
+    "DEMO-09",
+    "DEMO-09:changeover",
+    "DEMO-10",
+    "DEMO-10:changeover",
+    "DEMO-11",
+    "DEMO-11:changeover",
+    "DEMO-12",
+    "DEMO-12:changeover",
+    "afternoon-break",
+    "partner-discussions-contingency",
+    "closing",
+    "teardown",
+    "option:Q-001-Q-003-Q-005-Q-006-Q-008-Q-009-Q-010",
+    "option:Q-001-Q-003-Q-005-Q-007-Q-009-Q-010",
+    "option:Q-001-Q-004-Q-005-Q-006-Q-009-Q-010",
+    "option:Q-001-Q-004-Q-005-Q-006-Q-008-Q-009-Q-010",
+    "option:Q-001-Q-004-Q-005-Q-007-Q-009-Q-010",
+    "option:Q-002-Q-003-Q-005-Q-006-Q-009-Q-010",
+    "option:Q-002-Q-003-Q-005-Q-007-Q-009-Q-010",
+    "option:Q-002-Q-004-Q-005-Q-006-Q-009-Q-010",
+    "option:Q-002-Q-004-Q-005-Q-007-Q-009-Q-010"
+  ],
+  "state": {
+    "options": [
+      {
+        "id": "option:Q-001-Q-003-Q-005-Q-006-Q-009-Q-010",
+        "summary": "Green Table with SoundArc on 2026-10-17",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-003",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-003",
+          "Q-005",
+          "Q-006",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 494000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 108000,
+            "committed_twd": 0,
+            "cost_twd": 108000,
+            "limit_twd": 135000,
+            "remaining_twd": 27000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 78000,
+            "committed_twd": 0,
+            "cost_twd": 78000,
+            "limit_twd": 100000,
+            "remaining_twd": 22000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 260,
+        "catering_headroom": 0,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "supported-by-exercise-record",
+        "approval_status": "pending",
+        "budget_remaining_twd": 26000
+      },
+      {
+        "id": "option:Q-001-Q-003-Q-005-Q-006-Q-008-Q-009-Q-010",
+        "summary": "Green Table with SoundArc on 2026-10-17 plus livestream",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-003",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-008",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-003",
+          "Q-005",
+          "Q-006",
+          "Q-008",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 549000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 108000,
+            "committed_twd": 0,
+            "cost_twd": 108000,
+            "limit_twd": 135000,
+            "remaining_twd": 27000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 133000,
+            "committed_twd": 0,
+            "cost_twd": 133000,
+            "limit_twd": 100000,
+            "remaining_twd": -33000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 260,
+        "catering_headroom": 0,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          },
+          {
+            "quote_id": "Q-008",
+            "vendor": "StreamNorth",
+            "category": "production",
+            "option": "livestream add-on",
+            "quote_amount_twd": 55000,
+            "capacity": 1000,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-11",
+            "status": "conditional",
+            "notes": "Network test required; supplied through TICC coordination in this synthetic case",
+            "_row": 9
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": -29000
+      },
+      {
+        "id": "option:Q-001-Q-003-Q-005-Q-007-Q-009-Q-010",
+        "summary": "Green Table with LiteStage on 2026-10-17",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-003",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-007",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-003",
+          "Q-005",
+          "Q-007",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 468000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 108000,
+            "committed_twd": 0,
+            "cost_twd": 108000,
+            "limit_twd": 135000,
+            "remaining_twd": 27000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 52000,
+            "committed_twd": 0,
+            "cost_twd": 52000,
+            "limit_twd": 100000,
+            "remaining_twd": 48000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 260,
+        "catering_headroom": 0,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          },
+          {
+            "quote_id": "Q-007",
+            "vendor": "LiteStage",
+            "category": "production",
+            "option": "basic AV package",
+            "quote_amount_twd": 52000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "No hearing loop included; supplied through TICC coordination in this synthetic case",
+            "_row": 8
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 52000
+      },
+      {
+        "id": "option:Q-001-Q-004-Q-005-Q-006-Q-009-Q-010",
+        "summary": "City Pantry with SoundArc on 2026-10-17",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-004",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-004",
+          "Q-005",
+          "Q-006",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 512000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 126000,
+            "committed_twd": 0,
+            "cost_twd": 126000,
+            "limit_twd": 135000,
+            "remaining_twd": 9000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 78000,
+            "committed_twd": 0,
+            "cost_twd": 78000,
+            "limit_twd": 100000,
+            "remaining_twd": 22000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 300,
+        "catering_headroom": 40,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "supported-by-exercise-record",
+        "approval_status": "pending",
+        "budget_remaining_twd": 8000
+      },
+      {
+        "id": "option:Q-001-Q-004-Q-005-Q-006-Q-008-Q-009-Q-010",
+        "summary": "City Pantry with SoundArc on 2026-10-17 plus livestream",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-004",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-008",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-004",
+          "Q-005",
+          "Q-006",
+          "Q-008",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 567000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 126000,
+            "committed_twd": 0,
+            "cost_twd": 126000,
+            "limit_twd": 135000,
+            "remaining_twd": 9000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 133000,
+            "committed_twd": 0,
+            "cost_twd": 133000,
+            "limit_twd": 100000,
+            "remaining_twd": -33000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 300,
+        "catering_headroom": 40,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          },
+          {
+            "quote_id": "Q-008",
+            "vendor": "StreamNorth",
+            "category": "production",
+            "option": "livestream add-on",
+            "quote_amount_twd": 55000,
+            "capacity": 1000,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-11",
+            "status": "conditional",
+            "notes": "Network test required; supplied through TICC coordination in this synthetic case",
+            "_row": 9
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": -47000
+      },
+      {
+        "id": "option:Q-001-Q-004-Q-005-Q-007-Q-009-Q-010",
+        "summary": "City Pantry with LiteStage on 2026-10-17",
+        "evidence_ids": [
+          "obs:vendors:Q-001",
+          "obs:vendors:Q-004",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-007",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-001",
+          "Q-004",
+          "Q-005",
+          "Q-007",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-17",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 486000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 126000,
+            "committed_twd": 0,
+            "cost_twd": 126000,
+            "limit_twd": 135000,
+            "remaining_twd": 9000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 52000,
+            "committed_twd": 0,
+            "cost_twd": 52000,
+            "limit_twd": 100000,
+            "remaining_twd": 48000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 300,
+        "catering_headroom": 40,
+        "quotes": [
+          {
+            "quote_id": "Q-001",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-05",
+            "status": "held",
+            "notes": "Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 2
+          },
+          {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          },
+          {
+            "quote_id": "Q-007",
+            "vendor": "LiteStage",
+            "category": "production",
+            "option": "basic AV package",
+            "quote_amount_twd": 52000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "No hearing loop included; supplied through TICC coordination in this synthetic case",
+            "_row": 8
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [
+          {
+            "id": "setup",
+            "label": "Venue setup",
+            "start_at": "2026-10-17T07:30:00+08:00",
+            "end_at": "2026-10-17T08:30:00+08:00",
+            "kind": "setup",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "readiness-checks",
+            "label": "Readiness checks",
+            "start_at": "2026-10-17T08:30:00+08:00",
+            "end_at": "2026-10-17T09:30:00+08:00",
+            "kind": "readiness",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "opening",
+            "label": "Opening",
+            "start_at": "2026-10-17T09:30:00+08:00",
+            "end_at": "2026-10-17T09:45:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "event-overview",
+            "label": "Event overview",
+            "start_at": "2026-10-17T09:45:00+08:00",
+            "end_at": "2026-10-17T10:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "keynote",
+            "label": "Keynote",
+            "start_at": "2026-10-17T10:00:00+08:00",
+            "end_at": "2026-10-17T11:00:00+08:00",
+            "kind": "keynote",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "post-keynote-break",
+            "label": "Break",
+            "start_at": "2026-10-17T11:00:00+08:00",
+            "end_at": "2026-10-17T11:15:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:15:00+08:00",
+            "end_at": "2026-10-17T11:25:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-01:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:25:00+08:00",
+            "end_at": "2026-10-17T11:28:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:28:00+08:00",
+            "end_at": "2026-10-17T11:38:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-02:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:38:00+08:00",
+            "end_at": "2026-10-17T11:41:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:41:00+08:00",
+            "end_at": "2026-10-17T11:51:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-03:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T11:51:00+08:00",
+            "end_at": "2026-10-17T11:54:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T11:54:00+08:00",
+            "end_at": "2026-10-17T12:04:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-04:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:04:00+08:00",
+            "end_at": "2026-10-17T12:07:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:07:00+08:00",
+            "end_at": "2026-10-17T12:17:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-05:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:17:00+08:00",
+            "end_at": "2026-10-17T12:20:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T12:20:00+08:00",
+            "end_at": "2026-10-17T12:30:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-06:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T12:30:00+08:00",
+            "end_at": "2026-10-17T12:33:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "lunch",
+            "label": "Lunch",
+            "start_at": "2026-10-17T12:33:00+08:00",
+            "end_at": "2026-10-17T13:33:00+08:00",
+            "kind": "meal",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:33:00+08:00",
+            "end_at": "2026-10-17T13:43:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-07:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:43:00+08:00",
+            "end_at": "2026-10-17T13:46:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:46:00+08:00",
+            "end_at": "2026-10-17T13:56:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-08:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T13:56:00+08:00",
+            "end_at": "2026-10-17T13:59:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T13:59:00+08:00",
+            "end_at": "2026-10-17T14:09:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-09:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:09:00+08:00",
+            "end_at": "2026-10-17T14:12:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:12:00+08:00",
+            "end_at": "2026-10-17T14:22:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-10:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:22:00+08:00",
+            "end_at": "2026-10-17T14:25:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:25:00+08:00",
+            "end_at": "2026-10-17T14:35:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-11:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:35:00+08:00",
+            "end_at": "2026-10-17T14:38:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12",
+            "label": "Demo presentation",
+            "start_at": "2026-10-17T14:38:00+08:00",
+            "end_at": "2026-10-17T14:48:00+08:00",
+            "kind": "demo",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "DEMO-12:changeover",
+            "label": "Changeover",
+            "start_at": "2026-10-17T14:48:00+08:00",
+            "end_at": "2026-10-17T14:51:00+08:00",
+            "kind": "changeover",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "afternoon-break",
+            "label": "Break",
+            "start_at": "2026-10-17T14:51:00+08:00",
+            "end_at": "2026-10-17T15:06:00+08:00",
+            "kind": "break",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "partner-discussions-contingency",
+            "label": "Partner discussions and contingency",
+            "start_at": "2026-10-17T15:06:00+08:00",
+            "end_at": "2026-10-17T16:30:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "closing",
+            "label": "Closing",
+            "start_at": "2026-10-17T16:30:00+08:00",
+            "end_at": "2026-10-17T17:00:00+08:00",
+            "kind": "programme",
+            "planning_basis": "planner-proposed"
+          },
+          {
+            "id": "teardown",
+            "label": "Venue teardown",
+            "start_at": "2026-10-17T17:00:00+08:00",
+            "end_at": "2026-10-17T18:30:00+08:00",
+            "kind": "teardown",
+            "planning_basis": "planner-proposed"
+          }
+        ],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 34000
+      },
+      {
+        "id": "option:Q-002-Q-003-Q-005-Q-006-Q-009-Q-010",
+        "summary": "Green Table with SoundArc on 2026-10-24",
+        "evidence_ids": [
+          "obs:vendors:Q-002",
+          "obs:vendors:Q-003",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-002",
+          "Q-003",
+          "Q-005",
+          "Q-006",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-24",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 494000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 108000,
+            "committed_twd": 0,
+            "cost_twd": 108000,
+            "limit_twd": 135000,
+            "remaining_twd": 27000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 78000,
+            "committed_twd": 0,
+            "cost_twd": 78000,
+            "limit_twd": 100000,
+            "remaining_twd": 22000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 260,
+        "catering_headroom": 0,
+        "quotes": [
+          {
+            "quote_id": "Q-002",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-24",
+            "valid_until": "2026-09-05",
+            "status": "available",
+            "notes": "Keynote is unavailable on this date; Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 3
+          },
+          {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 26000
+      },
+      {
+        "id": "option:Q-002-Q-003-Q-005-Q-007-Q-009-Q-010",
+        "summary": "Green Table with LiteStage on 2026-10-24",
+        "evidence_ids": [
+          "obs:vendors:Q-002",
+          "obs:vendors:Q-003",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-007",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-002",
+          "Q-003",
+          "Q-005",
+          "Q-007",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-24",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 468000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 108000,
+            "committed_twd": 0,
+            "cost_twd": 108000,
+            "limit_twd": 135000,
+            "remaining_twd": 27000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 52000,
+            "committed_twd": 0,
+            "cost_twd": 52000,
+            "limit_twd": 100000,
+            "remaining_twd": 48000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 260,
+        "catering_headroom": 0,
+        "quotes": [
+          {
+            "quote_id": "Q-002",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-24",
+            "valid_until": "2026-09-05",
+            "status": "available",
+            "notes": "Keynote is unavailable on this date; Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 3
+          },
+          {
+            "quote_id": "Q-003",
+            "vendor": "Green Table",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 108000,
+            "capacity": 260,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-07",
+            "status": "available",
+            "notes": "Supports listed vegetarian and halal meals; supplied through TICC coordination in this synthetic case",
+            "_row": 4
+          },
+          {
+            "quote_id": "Q-007",
+            "vendor": "LiteStage",
+            "category": "production",
+            "option": "basic AV package",
+            "quote_amount_twd": 52000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "No hearing loop included; supplied through TICC coordination in this synthetic case",
+            "_row": 8
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 52000
+      },
+      {
+        "id": "option:Q-002-Q-004-Q-005-Q-006-Q-009-Q-010",
+        "summary": "City Pantry with SoundArc on 2026-10-24",
+        "evidence_ids": [
+          "obs:vendors:Q-002",
+          "obs:vendors:Q-004",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-006",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-002",
+          "Q-004",
+          "Q-005",
+          "Q-006",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-24",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 512000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 126000,
+            "committed_twd": 0,
+            "cost_twd": 126000,
+            "limit_twd": 135000,
+            "remaining_twd": 9000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 78000,
+            "committed_twd": 0,
+            "cost_twd": 78000,
+            "limit_twd": 100000,
+            "remaining_twd": 22000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 300,
+        "catering_headroom": 40,
+        "quotes": [
+          {
+            "quote_id": "Q-002",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-24",
+            "valid_until": "2026-09-05",
+            "status": "available",
+            "notes": "Keynote is unavailable on this date; Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 3
+          },
+          {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          },
+          {
+            "quote_id": "Q-006",
+            "vendor": "SoundArc",
+            "category": "production",
+            "option": "AV package with hearing loop",
+            "quote_amount_twd": 78000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "Setup starts at 07:30; supplied through TICC coordination in this synthetic case",
+            "_row": 7
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 8000
+      },
+      {
+        "id": "option:Q-002-Q-004-Q-005-Q-007-Q-009-Q-010",
+        "summary": "City Pantry with LiteStage on 2026-10-24",
+        "evidence_ids": [
+          "obs:vendors:Q-002",
+          "obs:vendors:Q-004",
+          "obs:vendors:Q-005",
+          "obs:vendors:Q-007",
+          "obs:vendors:Q-009",
+          "obs:vendors:Q-010"
+        ],
+        "quote_ids": [
+          "Q-002",
+          "Q-004",
+          "Q-005",
+          "Q-007",
+          "Q-009",
+          "Q-010"
+        ],
+        "event_date": "2026-10-24",
+        "planning_people": 260,
+        "buffer_people": 15,
+        "cost_twd": 486000,
+        "currency": "TWD",
+        "category_costs": [
+          {
+            "category": "accessibility",
+            "owner": "Learner Experience",
+            "proposed_twd": 60000,
+            "committed_twd": 0,
+            "cost_twd": 60000,
+            "limit_twd": 80000,
+            "remaining_twd": 20000
+          },
+          {
+            "category": "catering",
+            "owner": "Operations",
+            "proposed_twd": 126000,
+            "committed_twd": 0,
+            "cost_twd": 126000,
+            "limit_twd": 135000,
+            "remaining_twd": 9000
+          },
+          {
+            "category": "communications",
+            "owner": "Communications",
+            "proposed_twd": 25000,
+            "committed_twd": 0,
+            "cost_twd": 25000,
+            "limit_twd": 30000,
+            "remaining_twd": 5000
+          },
+          {
+            "category": "contingency",
+            "owner": "Operations",
+            "proposed_twd": 40000,
+            "committed_twd": 0,
+            "cost_twd": 40000,
+            "limit_twd": 50000,
+            "remaining_twd": 10000
+          },
+          {
+            "category": "production",
+            "owner": "Programme",
+            "proposed_twd": 52000,
+            "committed_twd": 0,
+            "cost_twd": 52000,
+            "limit_twd": 100000,
+            "remaining_twd": 48000
+          },
+          {
+            "category": "security",
+            "owner": "Operations",
+            "proposed_twd": 28000,
+            "committed_twd": 0,
+            "cost_twd": 28000,
+            "limit_twd": 35000,
+            "remaining_twd": 7000
+          },
+          {
+            "category": "venue",
+            "owner": "Operations",
+            "proposed_twd": 155000,
+            "committed_twd": 0,
+            "cost_twd": 155000,
+            "limit_twd": 180000,
+            "remaining_twd": 25000
+          }
+        ],
+        "catering_capacity": 300,
+        "catering_headroom": 40,
+        "quotes": [
+          {
+            "quote_id": "Q-002",
+            "vendor": "TICC",
+            "category": "venue",
+            "option": "4F Plenary Hall front-500 allocation plus V.I.P. Room",
+            "quote_amount_twd": 155000,
+            "capacity": 500,
+            "available_date": "2026-10-24",
+            "valid_until": "2026-09-05",
+            "status": "available",
+            "notes": "Keynote is unavailable on this date; Synthetic full-day package; see venue coordination note; no real reservation",
+            "_row": 3
+          },
+          {
+            "quote_id": "Q-004",
+            "vendor": "City Pantry",
+            "category": "catering",
+            "option": "lunch and two breaks",
+            "quote_amount_twd": 126000,
+            "capacity": 300,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-12",
+            "status": "available",
+            "notes": "Allergy process requires named contacts; supplied through TICC coordination in this synthetic case",
+            "_row": 5
+          },
+          {
+            "quote_id": "Q-007",
+            "vendor": "LiteStage",
+            "category": "production",
+            "option": "basic AV package",
+            "quote_amount_twd": 52000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-08",
+            "status": "available",
+            "notes": "No hearing loop included; supplied through TICC coordination in this synthetic case",
+            "_row": 8
+          },
+          {
+            "quote_id": "Q-005",
+            "vendor": "ClearText",
+            "category": "accessibility",
+            "option": "live captions and transcript",
+            "quote_amount_twd": 42000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Two captioners included",
+            "_row": 6
+          },
+          {
+            "quote_id": "Q-009",
+            "vendor": "SafeVenue",
+            "category": "security",
+            "option": "four staff",
+            "quote_amount_twd": 28000,
+            "capacity": 500,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-15",
+            "status": "available",
+            "notes": "Includes first aid lead",
+            "_row": 10
+          },
+          {
+            "quote_id": "Q-010",
+            "vendor": "QuietWorks",
+            "category": "accessibility",
+            "option": "quiet room staffing",
+            "quote_amount_twd": 18000,
+            "capacity": 20,
+            "available_date": "2026-10-17",
+            "valid_until": "2026-09-10",
+            "status": "available",
+            "notes": "Room itself supplied by venue",
+            "_row": 11
+          }
+        ],
+        "schedule": [],
+        "availability_status": "see-conditions",
+        "approval_status": "pending",
+        "budget_remaining_twd": 34000
+      }
+    ],
+    "rejected_early": []
+  },
+  "unresolved": [],
+  "decisions": []
+}

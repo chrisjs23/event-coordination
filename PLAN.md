@@ -1,6 +1,6 @@
 # Event Planning and Coordination — Implementation plan
 
-**Status: Approved. Stages 1–5 manually verified and committed. Stage 6 implemented; awaiting manual review. Stage 7 not started.**
+**Status: Approved. All seven stages complete and manually verified. Stage 7 commit and push to origin authorized.**
 
 ## Project overview and objectives
 
@@ -11,7 +11,7 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 - `README.md` is the starter guide; `snapshot.schema.json` is the supplied contract and must stay unchanged. `REQUIREMENTS.md` contains the deliverable and recovery rules.
 - The [updated interview export](interviews/project-c-event-coordination-interview2.md) contains the earlier conversation plus the follow-up disclosing the calendar and floor plan. Use this complete export verbatim as the submission copy for this session.
 - `.codex/` configures the `implementer` subagent and Entire hooks. `.entire/settings.json` enables checkpoint logging. Host diagnostics verified the live Codex process, installed and approved hooks, and no stuck sessions. Entire's transcript includes the stage 1 request and completion, and its pending checkpoint preview includes the six changed files and completed implementer task. Stage 1 was committed as `9f28f18` with verified Entire checkpoint `01M85N4DXS63WNSNQKJQFJ8K41`. Commits and checkpoints remain local until pushed.
-- Stages 1–6 provide nine linked snapshots, four consistent local planning drafts, verified archival, fresh reruns and interrupted-run recovery. Owner approvals remain pending. Stage 7 handoff remains.
+- All seven stages are implemented and manually verified. The final live run provides nine linked snapshots and four consistent local drafts, with verified archival and recovery. `HANDOFF.md` documents decisions, exact commands and independent checks. Commit and push to origin are authorized; event owner approvals remain pending.
 - All four primary sources were readable during planning. Google's CSV exports returned 13 attendee signal rows, 7 budget rows, and 10 vendor quote rows. The public Notion page with the same page ID as the interview link returned the brief and its venue and programme clarifications. [Event brief and venue note](https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af)
 - The [calendar sheet](https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s) returned eight records, `CAL-001` through `CAL-008`. Preserve each record's owner, type, priority, start/end, notes and version. The decision deadline is 4 September 2026 at 17:00 Asia/Taipei. The preferred-date hold expires on 5 September, and the keynote is unavailable on the fallback date. Venue confirmation is a prerequisite for the accessibility walkthrough.
 - The [official TICC 4F floor plan](https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf) opened as a one-page PDF. At runtime, retain the retrieved bytes and hash, then cite the visible page region for each spatial observation.
@@ -41,8 +41,8 @@ Build and run an Agent Skills-compliant `event-planning-coordination-brief` for 
 | 3. Capture and baseline | Implement source capture, evidence IDs/hashes, validated parsing, privacy filtering, stage 01–04 snapshots, and headcount/schedule/budget/accessibility baselines. | Source evidence and first four linked snapshots. | Schema/link/hash checks; reordered/extra-column fixtures; missing/duplicate/invalid field and failed-retrieval cases. | Complete · verified |
 | 4. Options and review gates | Build materially distinct source-backed options; test capacity, schedule, cost, availability, accessibility, and uncertainty; model recommendation/deferral and pending owner approvals. | Stage 05–07 snapshots and a single planning model for drafts. | Arithmetic and interval checks; infeasible/conditional/rejected option checks; no inferred approval or unsupported claim. | Complete · verified |
 | 5. Drafts and publication validation | Render four consistent review drafts, stage 08–09 snapshots, artifact hashes, and cross-file checks. | Required CSV, Markdown, ICS, and final two snapshots. | CSV columns/amounts; ICS parser or format check; unsent labels; matching dates, headcount, options, totals, evidence, paths, and hashes. | Complete · verified |
-| 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Complete · awaiting manual verification |
-| 7. End-to-end execution and handoff | Run against the disclosed live sources, inspect outputs, document choices, tradeoffs, unresolved owners, and exact command/setup; verify session capture. | Review-ready current `deliverables/` plus usage documentation. | Full schema chain, evidence/media existence, source-to-claim traceability, cross-artifact audit, and Entire checkpoint check. | Not started; depends on 6 |
+| 6. Rerun and recovery | Archive previous run before material changes; refresh dependent work; detect and repair stale/corrupt outputs; preserve incomplete/failure evidence. | History handling and explicit partial/blocked/failed behavior. | Changed-source rerun, unchanged-input integrity check, corrupt-output recovery, unavailable-source and failure cases. | Complete · verified |
+| 7. End-to-end execution and handoff | Run against the disclosed live sources, inspect outputs, document choices, tradeoffs, unresolved owners, and exact command/setup; verify session capture. | Review-ready current `deliverables/` plus usage documentation. | Full schema chain, evidence/media existence, source-to-claim traceability, cross-artifact audit, and Entire checkpoint check. | Complete · verified |
 
 ## Acceptance criteria and verification strategy
 
@@ -242,3 +242,32 @@ The live refresh produced `run-6caf453ae6ab4299bbde8f18764ac26d`, superseding `r
 Skill metadata validation passed. The local scan exited 0 with no HIGH/CRITICAL findings; the previously reviewed MEDIUM network-declaration heuristic and INFO missing-license finding remain. Public reads are documented in the workflow; a license choice remains with the owner.
 
 Known limits: locking requires POSIX `fcntl`; native Windows and network filesystems are untested. Two directory renames can briefly leave the current path unavailable to unlocked readers. Tests cover process interruptions and ordinary I/O failure paths, not physical power loss or arbitrary tampering with private transaction directories. Concurrent manual edits cause an explicit refusal. No new source-access blocker was found. Stage 7 remains pending review.
+
+### Stage 7 — final execution and handoff
+
+The user manually verified Stage 6 tests, the recovery guide and this plan, and approved commit and progression. Stage 6 was committed as `3cf9802`, with verified local Entire checkpoint `01M873HHVKR3E4XV2PW2BM9E8S`. Stage 7 was handled directly by the primary agent because it consists of final source interpretation, integration checks and concise handoff documentation. No subagents were spawned for this stage.
+
+Delivered [HANDOFF.md](HANDOFF.md), a README entry point with setup and one end-to-end command, and a final live `deliverables/` run. No runtime code, dependencies or tests changed. Existing deterministic tests and standalone semantic/integrity verification cover the final execution; the handoff maps test paths to coverage and gives manual source-to-claim, arithmetic, programme, calendar and communication checks.
+
+The initial network-sandbox attempt failed and was retained as `run-74ecce1c2b1a42a1b4f53f77a66ccd52`. Repeating the command with approved outbound HTTPS recovered to `run-00f5d021edca4438a6f42aa7a74dcdbd` on 2026-11-24. Both the failed attempt and earlier successful Stage 6 run remain archived with verified manifests. Stage 01 correctly records the immediately preceding failed run as unverified, without claiming historical observations were reusable. An independent comparison found all seven retained source hashes equal to the earlier verified Stage 6 capture.
+
+#### Reproduce Stage 7
+
+Use the setup prerequisites and exact commands in [HANDOFF.md](HANDOFF.md). From the repository root with the existing virtual environment:
+
+```sh
+.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python -B event-planning-coordination-brief/scripts/snapshots.py deliverables --through publication-validation
+```
+
+Observed and expected for the retained case: all 115 tests pass; verifier exits 0 with `status: complete`, nine snapshots and seven evidence files. The command checks schema/run/predecessor links, evidence existence and hashes, record references, archive lineage and actual draft content/hashes. No tests were added or modified in this final verification stage. See the handoff's retained-test table for file paths and descriptions. For an independent live execution or repair exercise on a copy, follow the recovery guide; changed/unavailable sources may produce an explicit incomplete result.
+
+Final audit passed: ten options, feasible totals TWD 494,000 and 512,000, seven category totals summing to 512,000, twelve demos and twelve separate non-overlapping changeovers, all eight calendar records, one tentative calendar event without attendees, fifteen unsent drafts and seven retrieved sources. The recommendation remains City Pantry/SoundArc, 260 planning people, catering capacity 300 and TWD 8,000 remaining. Human approvals and the venue-confirmation prerequisite remain pending. Review the handoff's five manual checks for source interpretation, page-region spatial claims and proposed tradeoffs; automated validation does not grant approvals or establish venue readiness.
+
+Initial ad hoc audit errors were a wrong Markdown total-column index and incorrect source/hash dictionary keys. After inspecting the actual structures, the audit was corrected and passed; no implementation or artifact correction was required. The supplied schema, requirements and interview exports remain unchanged. The updated complete interview export is designated in the handoff; the earlier export remains preserved as superseded material.
+
+Host-level `entire status --detailed` confirmed an active session syncing checkpoints to `origin`; `entire doctor` confirmed installed and approved Git/Codex hooks and no stuck sessions. Seven checkpoints are local and not yet on origin. The sandbox's misleading exited-process report is the previously documented PID-namespace limitation. No capture configuration was changed.
+
+Stage 7 is complete and uncommitted, awaiting manual review. No further implementation stage remains. External submission, origin synchronization and facilitator access have not been performed or verified. Existing POSIX, mutable-source, floor-plan re-review and power-loss limits remain as documented in the handoff and recovery guide.
+
+- Final approval: The user manually reviewed HANDOFF.md and PLAN.md, manually verified Stage 7 tests, and authorized committing Stage 7 and pushing to origin. All implementation stages are complete. Verify the final remote commit and outgoing Entire checkpoint queue after push; facilitator account access remains a separate confirmation.

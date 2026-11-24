@@ -1,0 +1,147 @@
+{
+  "run_id": "run-74ecce1c2b1a42a1b4f53f77a66ccd52",
+  "sources": [
+    {
+      "id": "source:brief",
+      "summary": "Captured brief",
+      "evidence_ids": [],
+      "source_role": "event-brief",
+      "locator": "https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af",
+      "retrieved_at": "2026-11-24T15:42:28.014925+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:attendees",
+      "summary": "Captured attendees",
+      "evidence_ids": [],
+      "source_role": "attendee-signals",
+      "locator": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU",
+      "retrieved_at": "2026-11-24T15:42:28.017498+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU/gviz/tq?tqx=out%3Acsv&sheet=Attendee+Signals",
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:budget",
+      "summary": "Captured budget",
+      "evidence_ids": [],
+      "source_role": "budget",
+      "locator": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM",
+      "retrieved_at": "2026-11-24T15:42:28.017946+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM/gviz/tq?tqx=out%3Acsv&sheet=Budget",
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:vendors",
+      "summary": "Captured vendors",
+      "evidence_ids": [],
+      "source_role": "vendor-record",
+      "locator": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko",
+      "retrieved_at": "2026-11-24T15:42:28.018297+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko/gviz/tq?tqx=out%3Acsv&sheet=Vendor+Quotes",
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:calendar",
+      "summary": "Captured calendar",
+      "evidence_ids": [],
+      "source_role": "calendar",
+      "locator": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s",
+      "retrieved_at": "2026-11-24T15:42:28.018599+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "request_url": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s/gviz/tq?tqx=out%3Acsv&sheet=Calendar+Constraints",
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:floorplan",
+      "summary": "Captured floorplan",
+      "evidence_ids": [],
+      "source_role": "floor-plan-or-image",
+      "locator": "https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf",
+      "retrieved_at": "2026-11-24T15:42:28.018851+00:00",
+      "retrieval_status": "unavailable",
+      "content_type": "application/octet-stream",
+      "version_metadata": {
+        "error": "network retrieval failed"
+      },
+      "content_hash": null,
+      "local_reference": null,
+      "observations": []
+    },
+    {
+      "id": "source:interview",
+      "summary": "Captured interview",
+      "evidence_ids": [],
+      "source_role": "other",
+      "locator": "interviews/project-c-event-coordination-interview2.md",
+      "retrieved_at": "2026-11-24T15:42:28.019072+00:00",
+      "retrieval_status": "retrieved",
+      "content_type": "text/plain",
+      "version_metadata": {
+        "representation": "permitted planning-policy paragraphs",
+        "response_sha256": "sha256:5636e2dce80cd64551e8a10cb83e5a1233bbd6de2cc3d483335abf112b44669c"
+      },
+      "content_hash": "sha256:955cd3df1d54122063bf735faf13de39f3380d78e07a6fded1a02b6237f16bd5",
+      "local_reference": "snapshots/evidence/interview-policies.txt",
+      "observations": [
+        {
+          "id": "obs:interview:supplier-preference",
+          "summary": "A preference I have is using familiar suppliers because it makes setup much easier for the team, though it is not a hard rule. Is there another aspect of the workflow you'd like to dive into?",
+          "locator": {
+            "kind": "section",
+            "value": "A preference I have is using familiar suppliers because it makes setup"
+          }
+        },
+        {
+          "id": "obs:interview:buffer-policy",
+          "summary": "Since our attendee numbers change constantly, and I haven't established a standard policy for how many extra meals or seats to plan for, it's difficult to settle on a final headcount without risking a shortage or waste.",
+          "locator": {
+            "kind": "section",
+            "value": "Since our attendee numbers change constantly, and I haven't establishe"
+          }
+        },
+        {
+          "id": "obs:interview:approval-order",
+          "summary": "Yes, that's their typical order. Each category owner reviews their budget allocation and commits amounts first, and then Operations gives the final approval for the plan as a whole. Do you want to dive into how we handle exceptions or changes?",
+          "locator": {
+            "kind": "section",
+            "value": "Yes, that's their typical order. Each category owner reviews their bud"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,20 @@
-# Event Planning & Coordination — starter
+# Event Planning & Coordination
 
 Build a reusable Skill that compares event options and produces consistent planning drafts.
+
+## Run and review
+
+The implemented skill produces nine evidence-linked snapshots and four local review drafts. From the repository root, use Python 3.10+ on Linux/WSL with a local POSIX filesystem:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r event-planning-coordination-brief/requirements.txt
+.venv/bin/python -B event-planning-coordination-brief/scripts/run.py --through publication-validation --output-dir deliverables
+```
+
+The command requires outbound HTTPS to the disclosed sources. It archives a recognized existing run, retrieves fresh evidence and regenerates the drafts. Human approvals remain pending. See the [handoff and independent verification](HANDOFF.md), [command reference](event-planning-coordination-brief/references/command.md) and [recovery guide](event-planning-coordination-brief/references/recovery.md). The [implementation plan](PLAN.md) records stage completion and review status.
+
+The original starter and interview requirements follow.
 
 ## Start
 

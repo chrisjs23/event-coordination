@@ -1,5 +1,5 @@
 {
-  "run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
+  "run_id": "run-00f5d021edca4438a6f42aa7a74dcdbd",
   "sources": [
     {
       "id": "source:brief",
@@ -7,7 +7,7 @@
       "evidence_ids": [],
       "source_role": "event-brief",
       "locator": "https://private-pecorino-70e.notion.site/Project-3-Event-Coordination-Event-Brief-3ba0b700541e81d0af55dc1a8f49f5af",
-      "retrieved_at": "2026-11-24T14:33:52.039951+00:00",
+      "retrieved_at": "2026-11-24T15:44:15.204945+00:00",
       "retrieval_status": "retrieved",
       "content_type": "application/json",
       "version_metadata": {
@@ -234,7 +234,7 @@
       "evidence_ids": [],
       "source_role": "attendee-signals",
       "locator": "https://docs.google.com/spreadsheets/d/1IXAEAFsZM6Q9IZZ_9pGqbFQ7l2ikr-oThqrEKudHwIU",
-      "retrieved_at": "2026-11-24T14:33:52.393627+00:00",
+      "retrieved_at": "2026-11-24T15:44:15.435254+00:00",
       "retrieval_status": "retrieved",
       "content_type": "text/csv",
       "version_metadata": {
@@ -515,7 +515,7 @@
       "evidence_ids": [],
       "source_role": "budget",
       "locator": "https://docs.google.com/spreadsheets/d/1Cxo7CvcgImz9HbT8PThZyvaTuyd44ug7w5rBA1z5qlM",
-      "retrieved_at": "2026-11-24T14:33:52.791612+00:00",
+      "retrieved_at": "2026-11-24T15:44:15.840431+00:00",
       "retrieval_status": "retrieved",
       "content_type": "text/csv",
       "version_metadata": {
@@ -667,7 +667,7 @@
       "evidence_ids": [],
       "source_role": "vendor-record",
       "locator": "https://docs.google.com/spreadsheets/d/1cULbGrOQS-vuj862nV2EWND4oe0H5kf-smJ85VZegko",
-      "retrieved_at": "2026-11-24T14:33:53.304898+00:00",
+      "retrieved_at": "2026-11-24T15:44:16.396512+00:00",
       "retrieval_status": "retrieved",
       "content_type": "text/csv",
       "version_metadata": {
@@ -913,7 +913,7 @@
       "evidence_ids": [],
       "source_role": "calendar",
       "locator": "https://docs.google.com/spreadsheets/d/1f_i6tUCHbJV-Ug_j6U3T4LEZ3yAr2ucdBnID-4C_-8s",
-      "retrieved_at": "2026-11-24T14:33:53.658089+00:00",
+      "retrieved_at": "2026-11-24T15:44:16.983518+00:00",
       "retrieval_status": "retrieved",
       "content_type": "text/csv",
       "version_metadata": {
@@ -1100,7 +1100,7 @@
       "evidence_ids": [],
       "source_role": "floor-plan-or-image",
       "locator": "https://www.ticc.com.tw/wSite/public/Attachment/f1710485827023.pdf",
-      "retrieved_at": "2026-11-24T14:33:53.951759+00:00",
+      "retrieved_at": "2026-11-24T15:44:17.359992+00:00",
       "retrieval_status": "retrieved",
       "content_type": "application/pdf",
       "version_metadata": {
@@ -1153,7 +1153,7 @@
       "evidence_ids": [],
       "source_role": "other",
       "locator": "interviews/project-c-event-coordination-interview2.md",
-      "retrieved_at": "2026-11-24T14:33:57.396983+00:00",
+      "retrieved_at": "2026-11-24T15:44:20.461280+00:00",
       "retrieval_status": "retrieved",
       "content_type": "text/plain",
       "version_metadata": {

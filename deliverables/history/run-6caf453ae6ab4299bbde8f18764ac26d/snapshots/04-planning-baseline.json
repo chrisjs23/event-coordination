@@ -1,0 +1,649 @@
+{
+  "schema_version": "event-coordination-stage-snapshot/2",
+  "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:04",
+  "run_id": "run-6caf453ae6ab4299bbde8f18764ac26d",
+  "stage": "planning-baseline",
+  "sequence": 4,
+  "created_at": "2026-11-24T14:33:57.458699+00:00",
+  "status": "partial",
+  "predecessor": {
+    "snapshot_id": "run-6caf453ae6ab4299bbde8f18764ac26d:03",
+    "path": "snapshots/03-constraint-model.json",
+    "sha256": "sha256:eb81bd3af5c4f538dc69971a0a8ee8903b969461f069cea8fa7df66e33a1dcf6"
+  },
+  "consumed_record_ids": [
+    "scope:objective",
+    "scope:deadline",
+    "scope:category-approval",
+    "scope:operations-approval",
+    "source:brief",
+    "obs:brief:3ba0b700-541e-81d0-af55-dc1a8f49f5af",
+    "obs:brief:fe0e1946-b3c9-4a62-8a82-938eecfc8854",
+    "obs:brief:792e90b1-947b-45db-8397-24e8ecf8a3f8",
+    "obs:brief:298c39a7-ff6a-49a9-a259-bfbc100124b1",
+    "obs:brief:4aa2f6dc-3460-435b-8649-99a67d325798",
+    "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91",
+    "obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc",
+    "obs:brief:2fe3fca1-8583-47f9-bc95-bf1805acb28c",
+    "obs:brief:7b00ee3a-16fa-4538-a6ce-890593513cc9",
+    "obs:brief:5eb74389-3826-4942-83bb-41e6bad56dd6",
+    "obs:brief:333afcd6-4e59-4fde-a1c0-6a470363a4d9",
+    "obs:brief:99d8d3b3-2fd2-496c-a8ee-1dddd5d49507",
+    "obs:brief:1d25bdcc-ce4a-40e0-8a3d-e2e38ec16dcc",
+    "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f",
+    "obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f",
+    "obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45",
+    "obs:brief:f58c12b1-089e-42b8-974c-4dd2305d3f26",
+    "obs:brief:4a86cac9-38e6-44f5-9d04-0eb3bac6c92b",
+    "obs:brief:cad780df-377c-4b3f-a1ae-64f3b0b4b02d",
+    "obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c",
+    "obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b",
+    "obs:brief:413649ad-9782-4a9f-8ade-40adb5f58ccb",
+    "obs:brief:0e9768a0-7cc6-4096-8bc9-77b1956b9be4",
+    "obs:brief:99807928-2434-4e30-9f24-d3d878803331",
+    "obs:brief:3af34366-805b-42d8-a40a-e1a7d56ee103",
+    "source:attendees",
+    "obs:attendees:SIG-001",
+    "obs:attendees:SIG-002",
+    "obs:attendees:SIG-003",
+    "obs:attendees:SIG-004",
+    "obs:attendees:SIG-005",
+    "obs:attendees:SIG-006",
+    "obs:attendees:SIG-007",
+    "obs:attendees:SIG-008",
+    "obs:attendees:SIG-009",
+    "obs:attendees:SIG-010",
+    "obs:attendees:SIG-011",
+    "obs:attendees:SIG-012",
+    "obs:attendees:SIG-013",
+    "source:budget",
+    "obs:budget:venue",
+    "obs:budget:catering",
+    "obs:budget:accessibility",
+    "obs:budget:production",
+    "obs:budget:communications",
+    "obs:budget:security",
+    "obs:budget:contingency",
+    "source:vendors",
+    "obs:vendors:Q-001",
+    "obs:vendors:Q-002",
+    "obs:vendors:Q-003",
+    "obs:vendors:Q-004",
+    "obs:vendors:Q-005",
+    "obs:vendors:Q-006",
+    "obs:vendors:Q-007",
+    "obs:vendors:Q-008",
+    "obs:vendors:Q-009",
+    "obs:vendors:Q-010",
+    "source:calendar",
+    "obs:calendar:CAL-001",
+    "obs:calendar:CAL-002",
+    "obs:calendar:CAL-003",
+    "obs:calendar:CAL-004",
+    "obs:calendar:CAL-005",
+    "obs:calendar:CAL-006",
+    "obs:calendar:CAL-007",
+    "obs:calendar:CAL-008",
+    "source:floorplan",
+    "obs:floorplan:wheelchair",
+    "obs:floorplan:elevators",
+    "obs:floorplan:restroom",
+    "obs:floorplan:quiet-room",
+    "source:interview",
+    "obs:interview:supplier-preference",
+    "obs:interview:buffer-policy",
+    "obs:interview:approval-order",
+    "constraint:brief-hard",
+    "constraint:success",
+    "constraint:calendar:CAL-001",
+    "constraint:calendar:CAL-003",
+    "constraint:calendar:CAL-004",
+    "constraint:calendar:CAL-005",
+    "constraint:calendar:CAL-006",
+    "constraint:calendar:CAL-008",
+    "constraint:calendar:CAL-002",
+    "constraint:calendar:CAL-007",
+    "preference:familiar-suppliers",
+    "issue:buffer-policy"
+  ],
+  "produced_record_ids": [
+    "baseline:headcount",
+    "baseline:checkin-target",
+    "baseline:calendar:CAL-001",
+    "baseline:calendar:CAL-002",
+    "baseline:calendar:CAL-003",
+    "baseline:calendar:CAL-004",
+    "baseline:calendar:CAL-005",
+    "baseline:calendar:CAL-006",
+    "baseline:calendar:CAL-007",
+    "baseline:calendar:CAL-008",
+    "baseline:demo_ids",
+    "baseline:demo_minutes",
+    "baseline:changeover_minutes",
+    "baseline:readiness:0",
+    "baseline:readiness:1",
+    "baseline:budget:venue",
+    "baseline:budget:catering",
+    "baseline:budget:accessibility",
+    "baseline:budget:production",
+    "baseline:budget:communications",
+    "baseline:budget:security",
+    "baseline:budget:contingency",
+    "baseline:total-ceiling",
+    "baseline:demand:SIG-006",
+    "baseline:demand:SIG-007",
+    "baseline:demand:SIG-008",
+    "baseline:demand:SIG-009",
+    "baseline:demand:SIG-010",
+    "baseline:demand:SIG-011",
+    "baseline:demand:SIG-012",
+    "baseline:demand:SIG-013",
+    "baseline:audience_places",
+    "baseline:wheelchair_spaces",
+    "baseline:quiet_room_places",
+    "baseline:obs:floorplan:wheelchair",
+    "baseline:obs:floorplan:elevators",
+    "baseline:obs:floorplan:restroom",
+    "baseline:obs:floorplan:quiet-room",
+    "baseline:coordination:0",
+    "baseline:coordination:1"
+  ],
+  "state": {
+    "headcount_basis": [
+      {
+        "id": "baseline:headcount",
+        "summary": "Unbuffered attendance basis",
+        "evidence_ids": [
+          "obs:attendees:SIG-005",
+          "obs:attendees:SIG-001",
+          "obs:attendees:SIG-002",
+          "obs:attendees:SIG-004",
+          "obs:attendees:SIG-003"
+        ],
+        "registered_people": 180,
+        "required_people": 30,
+        "forecast_people": 35,
+        "unbuffered_people": 245,
+        "chosen_buffer": null,
+        "planning_people": null,
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:checkin-target",
+        "summary": "Registered check-in success target",
+        "evidence_ids": [
+          "obs:brief:e6940ea5-d391-47cb-b64c-196387d979fc"
+        ],
+        "target_percent": 80,
+        "registered_people": 180,
+        "target_people": 144,
+        "owner": "Learner Experience"
+      }
+    ],
+    "schedule_dependencies": [
+      {
+        "id": "baseline:calendar:CAL-001",
+        "summary": "preferred_event_window: Preferred event date",
+        "evidence_ids": [
+          "obs:calendar:CAL-001"
+        ],
+        "owner": "Operations",
+        "constraint_type": "preferred_event_window",
+        "priority": "hard",
+        "start_at": "2026-10-17T09:30:00+08:00",
+        "end_at": "2026-10-17T17:00:00+08:00",
+        "notes": "Preferred event date"
+      },
+      {
+        "id": "baseline:calendar:CAL-002",
+        "summary": "fallback_event_window: Fallback date",
+        "evidence_ids": [
+          "obs:calendar:CAL-002"
+        ],
+        "owner": "Operations",
+        "constraint_type": "fallback_event_window",
+        "priority": "soft",
+        "start_at": "2026-10-24T09:30:00+08:00",
+        "end_at": "2026-10-24T17:00:00+08:00",
+        "notes": "Fallback date"
+      },
+      {
+        "id": "baseline:calendar:CAL-003",
+        "summary": "venue_hold: Hold expires 2026-09-05",
+        "evidence_ids": [
+          "obs:calendar:CAL-003"
+        ],
+        "owner": "TICC",
+        "constraint_type": "venue_hold",
+        "priority": "hard",
+        "start_at": "2026-10-17T07:30:00+08:00",
+        "end_at": "2026-10-17T18:30:00+08:00",
+        "notes": "Hold expires 2026-09-05"
+      },
+      {
+        "id": "baseline:calendar:CAL-004",
+        "summary": "keynote_availability: Keynote unavailable on fallback date",
+        "evidence_ids": [
+          "obs:calendar:CAL-004"
+        ],
+        "owner": "Programme",
+        "constraint_type": "keynote_availability",
+        "priority": "hard",
+        "start_at": "2026-10-17T10:00:00+08:00",
+        "end_at": "2026-10-17T11:00:00+08:00",
+        "notes": "Keynote unavailable on fallback date"
+      },
+      {
+        "id": "baseline:calendar:CAL-005",
+        "summary": "decision_deadline: Plan and budget decision",
+        "evidence_ids": [
+          "obs:calendar:CAL-005"
+        ],
+        "owner": "Operations",
+        "constraint_type": "decision_deadline",
+        "priority": "hard",
+        "start_at": "2026-09-04T17:00:00+08:00",
+        "end_at": "2026-09-04T17:00:00+08:00",
+        "notes": "Plan and budget decision"
+      },
+      {
+        "id": "baseline:calendar:CAL-006",
+        "summary": "accessibility_walkthrough: Venue confirmation required first",
+        "evidence_ids": [
+          "obs:calendar:CAL-006"
+        ],
+        "owner": "Learner Experience",
+        "constraint_type": "accessibility_walkthrough",
+        "priority": "hard",
+        "start_at": "2026-09-25T14:00:00+08:00",
+        "end_at": "2026-09-25T16:00:00+08:00",
+        "notes": "Venue confirmation required first"
+      },
+      {
+        "id": "baseline:calendar:CAL-007",
+        "summary": "rehearsal_window: Remote backup acceptable",
+        "evidence_ids": [
+          "obs:calendar:CAL-007"
+        ],
+        "owner": "Programme",
+        "constraint_type": "rehearsal_window",
+        "priority": "soft",
+        "start_at": "2026-10-16T15:00:00+08:00",
+        "end_at": "2026-10-16T18:00:00+08:00",
+        "notes": "Remote backup acceptable"
+      },
+      {
+        "id": "baseline:calendar:CAL-008",
+        "summary": "teardown_deadline: All vendors clear by 18:30",
+        "evidence_ids": [
+          "obs:calendar:CAL-008"
+        ],
+        "owner": "TICC",
+        "constraint_type": "teardown_deadline",
+        "priority": "hard",
+        "start_at": "2026-10-17T17:00:00+08:00",
+        "end_at": "2026-10-17T18:30:00+08:00",
+        "notes": "All vendors clear by 18:30"
+      },
+      {
+        "id": "baseline:demo_ids",
+        "summary": "demo_ids",
+        "evidence_ids": [
+          "obs:brief:99807928-2434-4e30-9f24-d3d878803331"
+        ],
+        "value": [
+          "DEMO-01",
+          "DEMO-02",
+          "DEMO-03",
+          "DEMO-04",
+          "DEMO-05",
+          "DEMO-06",
+          "DEMO-07",
+          "DEMO-08",
+          "DEMO-09",
+          "DEMO-10",
+          "DEMO-11",
+          "DEMO-12"
+        ],
+        "owner": "Programme"
+      },
+      {
+        "id": "baseline:demo_minutes",
+        "summary": "demo_minutes",
+        "evidence_ids": [
+          "obs:brief:99807928-2434-4e30-9f24-d3d878803331"
+        ],
+        "value": 10,
+        "owner": "Programme"
+      },
+      {
+        "id": "baseline:changeover_minutes",
+        "summary": "changeover_minutes",
+        "evidence_ids": [
+          "obs:brief:99807928-2434-4e30-9f24-d3d878803331"
+        ],
+        "value": 3,
+        "owner": "Programme"
+      },
+      {
+        "id": "baseline:readiness:0",
+        "summary": "For the 17 October 2026 exercise plan, Operations' fictional supplier-coordination record confirms that the venue arrangement and the base service bundles using either Q-003 or Q-004 together with Q-005, Q-006, Q-009 and Q-010 can complete setup and all pre-opening readiness checks between 07:30 and the 09:30 opening. The required captioning, hearing-loop, staffed quiet space and security services are ready by 09:30; the catering service covers the planned event window. These base bundles can finish teardown and clear the venue between the 17:00 programme finish and 18:30. This confirms schedule feasibility for the exercise only, not a completed real-world test, booking, spending approval or an optional livestream; Q-008's network-test and venue-confirmation conditions remain unresolved until evidenced.",
+        "evidence_ids": [
+          "obs:brief:5adfbcd1-1ab9-4161-a22a-5d200888f65c"
+        ],
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:readiness:1",
+        "summary": "The planner may choose a compatible setup and check sequence within 07:30–09:30 and a compatible teardown sequence within 17:00–18:30. No individual vendor duration or additional mandatory buffer is specified. Q-009 is SafeVenue security and first-aid staffing; communications and contingency are budget allowances, not additional vendor services covered by this readiness confirmation.",
+        "evidence_ids": [
+          "obs:brief:41f6349d-bb54-4100-8044-09a06878ec6b"
+        ],
+        "owner": "Operations"
+      }
+    ],
+    "budget_baseline": [
+      {
+        "id": "baseline:budget:venue",
+        "summary": "venue allocation",
+        "evidence_ids": [
+          "obs:budget:venue"
+        ],
+        "owner": "Operations",
+        "category": "venue",
+        "planned_amount_twd": 155000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 180000,
+        "remaining_limit_twd": 180000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:catering",
+        "summary": "catering allocation",
+        "evidence_ids": [
+          "obs:budget:catering"
+        ],
+        "owner": "Operations",
+        "category": "catering",
+        "planned_amount_twd": 115000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 135000,
+        "remaining_limit_twd": 135000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:accessibility",
+        "summary": "accessibility allocation",
+        "evidence_ids": [
+          "obs:budget:accessibility"
+        ],
+        "owner": "Learner Experience",
+        "category": "accessibility",
+        "planned_amount_twd": 65000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 80000,
+        "remaining_limit_twd": 80000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:production",
+        "summary": "production allocation",
+        "evidence_ids": [
+          "obs:budget:production"
+        ],
+        "owner": "Programme",
+        "category": "production",
+        "planned_amount_twd": 85000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 100000,
+        "remaining_limit_twd": 100000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:communications",
+        "summary": "communications allocation",
+        "evidence_ids": [
+          "obs:budget:communications"
+        ],
+        "owner": "Communications",
+        "category": "communications",
+        "planned_amount_twd": 25000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 30000,
+        "remaining_limit_twd": 30000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:security",
+        "summary": "security allocation",
+        "evidence_ids": [
+          "obs:budget:security"
+        ],
+        "owner": "Operations",
+        "category": "security",
+        "planned_amount_twd": 25000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 35000,
+        "remaining_limit_twd": 35000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:budget:contingency",
+        "summary": "contingency allocation",
+        "evidence_ids": [
+          "obs:budget:contingency"
+        ],
+        "owner": "Operations",
+        "category": "contingency",
+        "planned_amount_twd": 40000,
+        "committed_amount_twd": 0,
+        "approval_limit_twd": 50000,
+        "remaining_limit_twd": 50000,
+        "approval_status": "pending"
+      },
+      {
+        "id": "baseline:total-ceiling",
+        "summary": "Overall planning ceiling",
+        "evidence_ids": [
+          "obs:brief:14165ffe-1d73-4931-a197-998aff3efd91"
+        ],
+        "cost_twd": 520000,
+        "owner": "Operations"
+      }
+    ],
+    "accessibility_baseline": [
+      {
+        "id": "baseline:demand:SIG-006",
+        "summary": "wheelchair_spaces",
+        "evidence_ids": [
+          "obs:attendees:SIG-006"
+        ],
+        "value": 6,
+        "unit": "people",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-007",
+        "summary": "mobility_companions",
+        "evidence_ids": [
+          "obs:attendees:SIG-007"
+        ],
+        "value": 4,
+        "unit": "people",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-008",
+        "summary": "live_caption_requests",
+        "evidence_ids": [
+          "obs:attendees:SIG-008"
+        ],
+        "value": 23,
+        "unit": "people",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-009",
+        "summary": "hearing_loop_requests",
+        "evidence_ids": [
+          "obs:attendees:SIG-009"
+        ],
+        "value": 7,
+        "unit": "people",
+        "confidence": "medium",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-010",
+        "summary": "quiet_room_requests",
+        "evidence_ids": [
+          "obs:attendees:SIG-010"
+        ],
+        "value": 9,
+        "unit": "people",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-011",
+        "summary": "vegetarian_meals",
+        "evidence_ids": [
+          "obs:attendees:SIG-011"
+        ],
+        "value": 28,
+        "unit": "meals",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-012",
+        "summary": "halal_meals",
+        "evidence_ids": [
+          "obs:attendees:SIG-012"
+        ],
+        "value": 12,
+        "unit": "meals",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:demand:SIG-013",
+        "summary": "severe_allergy_follow_up",
+        "evidence_ids": [
+          "obs:attendees:SIG-013"
+        ],
+        "value": 4,
+        "unit": "people",
+        "confidence": "high",
+        "owner": "Learner Experience"
+      },
+      {
+        "id": "baseline:audience_places",
+        "summary": "Exercise coordination audience_places",
+        "evidence_ids": [
+          "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f"
+        ],
+        "value": 500,
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:wheelchair_spaces",
+        "summary": "Exercise coordination wheelchair_spaces",
+        "evidence_ids": [
+          "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f"
+        ],
+        "value": 6,
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:quiet_room_places",
+        "summary": "Exercise coordination quiet_room_places",
+        "evidence_ids": [
+          "obs:brief:071b80d1-36cd-4615-906d-da9cf47e860f"
+        ],
+        "value": 20,
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:obs:floorplan:wheelchair",
+        "summary": "Wheelchair-area symbols are shown beside seating near the Plenary Hall Stage.",
+        "evidence_ids": [
+          "obs:floorplan:wheelchair"
+        ],
+        "locator": {
+          "kind": "page-region",
+          "value": "page 1, right half, seating beside Plenary Hall Stage"
+        },
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:obs:floorplan:elevators",
+        "summary": "Accessible-elevator symbols are shown beside JOY.",
+        "evidence_ids": [
+          "obs:floorplan:elevators"
+        ],
+        "locator": {
+          "kind": "page-region",
+          "value": "page 1, lower centre beside JOY"
+        },
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:obs:floorplan:restroom",
+        "summary": "An accessible-restroom symbol is shown in the lower restroom cluster.",
+        "evidence_ids": [
+          "obs:floorplan:restroom"
+        ],
+        "locator": {
+          "kind": "page-region",
+          "value": "page 1, lower restroom cluster beside stairs A/B"
+        },
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:obs:floorplan:quiet-room",
+        "summary": "The V.I.P. ROOM is labelled on the floor drawing.",
+        "evidence_ids": [
+          "obs:floorplan:quiet-room"
+        ],
+        "locator": {
+          "kind": "page-region",
+          "value": "page 1, lower-left wing, V.I.P. ROOM label"
+        },
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:coordination:0",
+        "summary": "For this case, venue coordination confirms step-free access between the 4F accessible elevators, audience area, V.I.P. Room and accessible restroom. The public floor plan supplies spatial locators; it does not prove today's elevator operation, unobstructed route, seating configuration or acoustic performance. Those case conditions are supplied by this fictional coordination record, and a real deployment must obtain current confirmation rather than treat this exercise note as evidence about TICC.",
+        "evidence_ids": [
+          "obs:brief:8f25fe93-a57e-441f-be1b-f1875290301f"
+        ],
+        "owner": "Operations"
+      },
+      {
+        "id": "baseline:coordination:1",
+        "summary": "The package includes setup and teardown access, the quiet space and its separation from the programme. QuietWorks supplies staffing under Q-010; ClearText supplies captions under Q-005. Q-003/Q-004 catering and Q-006/Q-007 AV are fictional TICC-coordinated service offers, not permission to bring external food or equipment. StreamNorth Q-008 still requires its stated network test and venue confirmation before use. The exercise record confirms adequate captioning, hearing-loop and allergy coordination for the base plan using Q-004/Q-005/Q-006/Q-010; both catering options include an Operations-coordinated dietary response for the 28 vegetarian meals, 12 halal meals and four severe-allergy requests. Named contacts are held by Operations; the learner records the response state without inventing or publishing personal medical details. The two menus differ in capacity and cost, not in whether safety may be ignored.",
+        "evidence_ids": [
+          "obs:brief:2fdefb04-6881-4c55-8302-3822705b5a45"
+        ],
+        "owner": "Operations"
+      }
+    ],
+    "conflicts": [],
+    "business_clock": "2026-08-26T12:00:00+08:00"
+  },
+  "unresolved": [
+    {
+      "id": "issue:buffer-policy",
+      "summary": "A headcount buffer has yet to be chosen with cost/shortage reasoning",
+      "evidence_ids": [
+        "source:interview"
+      ],
+      "owner": "Planner"
+    }
+  ],
+  "decisions": []
+}
